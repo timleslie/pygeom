@@ -1,0 +1,84 @@
+\chapter{Introduction}
+
+\section{Rational Trigonometry}
+
+Classical trigonometry, as generally taught to students in high school, defines distances in terms of square roots and angles in terms of the transcendental trigonometric functions.
+While these ideas have found many applications, both theoretical and practical, they have a number of drawbacks as well.
+In particular, the need to calculate square roots and trigonometric functions makes it impossible to get exact numerical answers in all but the most trivial of cases.
+
+\emph{Rational trigonometry}\cite{thebook} addresses these issues by replacing the notion of distance with that of \emph{quadrance} and the idea of angles with that of \emph{spread}.
+Quadrance is just the square of the distance while the spread between two lines with an angle $\theta$ is equal to $\sin^2\theta$.
+By working with these new quantities, it is possible to develop many geometrical theorems in purely algebraic terms.
+This means that all calculations can be made \emph{exactly}, overcoming this particular drawback of classical geometry.
+
+Although the spread is equivalent to $\sin^2\theta$, it can be defined algebraically without reference to the trigonometric functions.
+This allows trigonometry to be developed without having to first develop a theory of circular functions (i.e. $\sin$, $\cos$, etc).
+It can be argued that this makes teaching and learning trigonometry simpler, as the theory of triangles is kept separate from the theory of circles\cite{horizons}.
+
+It has been found that rational trigonometry provides a powerful set of theorems\footnote{For a series of video tutorials on Rational Trigonometry see the ``WildTrig'' series at \url{http://www.youtube.com/view_play_list?p=3C58498718451C47&search_query=wildtrig}}.
+While some of these theorems, such as the triple quad formula\cite{thebook} have no direct classical analogue, many of the theorems of classical geometry, such as Heron's formula and Pythagoras' theorem, can be derived from rational trigonometry\cite{greeks}.
+
+
+\section{Universal Geometry}
+
+The ideas of rational trigonometry can be extended from the two dimensional, Euclidean form to a completely general form which works over an $n$-dimensional vector space with a metric defined by a symmetric bilinear form\cite{wildberger:affine}.
+This \emph{universal geometry} allows results to be obtained in a general setting.
+By considering specific bilinear forms one can recover results for both Euclidean and hyperbolic geometry.
+
+The spread between two lines and the quadrance between two points in universal geometry is defined in terms of the bilinear form.
+As such all constructions can be done in terms of this single object.
+From this simple foundation many interesting ideas can be recovered, including many results of Euclidean geometry.
+While some work has been done to develop results in this area\cite{oneD}, there remains a broad scope for further investigations.
+
+\section{Chromogeometry}
+
+One particular area of universal geometry which has been developed is \emph{chromogeometry}\cite{wildberger:chromo}.
+In chromogeometry we consider the case of a two dimensional vector space over a general field.
+We then take the three different quadratic forms $G_b = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$, $G_r = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$ and $G_g = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ and get the three geometries known as the \emph{blue}, \emph{red} and \emph{green} geometries respectively.
+The blue geometry corresponds to the usual Euclidean geometry while the red and the green are both hyperbolic geometries.
+
+Chromogeometry investigates the three-fold symmetries which exist between geometrical objects in each of these geometries.
+For example, given a parabola, the focus and directrix will be different in each of the different geometries.
+An interesting result arises in that the directrices from the red and green geometries intersect at the blue focus, the red and blue directrices intersect at the green focus and the blue and green directrices intersect at the red focus\cite{wildberger:rel-conics}.
+
+\section{Planar Universal Geometry}
+
+\emph{Planar Universal Geometry} studies the specific case of universal geometry in a two dimensional plane.
+This contains the geometries of chromogeometry as a special case, but does not extend to the arbitrary dimensionality of universal geometry.
+Planar universal geometry has not been systematically studied in detail previously, and so this thesis aims to address this.
+
+Theories developed in this area may serve a number of purposes.
+Firstly, they will be useful in their own right in making numerical calculations and further developing the field.
+Secondly they may provide insight into the results which can be expected in the case of $n$-dimensional universal geometry.
+Finally, by developing theories in the case of an arbitrary quadratic form, one gets Euclidean geometry and chromogeometry as a special case.
+This removes the need to prove individual results from first principles in these cases.
+
+
+\section{Overview}
+
+This thesis comprises of two main sections. In the first, a set of theorems in planar universal geometry are proven.
+In the second, a software library for doing numerical calculations in planar universal geometry is presented.
+This software package implements many of the theorems proved in the first section, providing a practical tool to assist in further investigations in the field.
+
+In Chapter \ref{chap:metric} we introduce the idea of a geometry with a metric defined by a quadratic form, and develop some results for points and lines in such a geometry.
+Chapter \ref{chap:conics} builds on this, developing a set of theories relating to conics in planar universal geometry.
+In Chapter \ref{chap:pygeom} a new software library, \pygeom\!\!, is presented.
+Chapter \ref{chap:test} discusses the test framework which comes with \pygeom and ensures that it produces correct results in a robust manner.
+
+The source code of the \pygeom library is attached as a separate appendix.
+A soft copy of the code is available from the author upon request.
+
+\include{metric}
+\include{conics}
+\include{library}
+\include{testing}
+
+\chapter{Conclusion}
+
+The theories of planar universal geometry provide a bridge between the more general theories of universal geometry and the specific geometries of chromogeometry.
+In this thesis we have developed a number of new theories related to lines and conics in planar universal geometry, as well as recasting some old theories within this new framework.
+It is hoped that these will provide a foundation for further investigations in this field.
+
+We have also presented the \pygeom library, which allows numerical calculations to be performed in planar universal geometry.
+By virtue of the fact that chromogeometry and rational trigonometry arise as special cases of planar universal geometry, \pygeom is able to do calculations within these regimes.
+

@@ -1,0 +1,644 @@
+@comment{
+  This file contains common definitions for bibliography files.
+  Every \bibliography command should list this file first.
+
+  Do not sort this file, instead keep the address, journal and proceedings
+  strings separated (and sorted within the groups)
+}
+
+@comment{
+  Written by Gernot Heiser <G.Heiser%unsw.edu.au> 1991-08-19
+}
+
+
+@comment{
+  The following definition is for tricky sorting cases. Say you have
+		  two related entries, from different years (1971 and
+		  1973) and for some reason want them to appear in a
+		  sorted bibliography in the inverse order of the
+		  "year" field. You could then use the following:
+
+                      year = "{\noopsort{a}}1973}"
+
+                  and
+
+                      year = "{\noopsort{b}}1971}"
+}
+
+@preamble{ "\providecommand{\noopsort}[1]{} "}
+@preamble{ "\providecommand{\url}{\error{The bib files now require the `url' package!}}"}
+
+
+
+
+@comment{Strings denoting organizations/addresses:}
+
+@string{acm =		"ACM"}
+@string{iee =		"IEE"}
+@string{ieee =		"IEEE"}
+@string{ieeecs =	ieee # " Computer Society"}
+@string{ieice =		"IEICE"}
+@string{iere =  	"Institution of Electronic and Radio Engineers"}
+@string{tapa =		"TAPA"}
+@string{ukuug =		"UKUUG"}
+@string{usenix =	"USENIX"}
+
+@string{unsw =		"University of NSW"}
+@string{unswadr =	unsw # ", Sydney 2052, Australia"}
+@string{cse =		"School of Computer Science and Engineering"}
+@string{cseadr =	cse # ", " # unswadr}
+@string{eecs =		"School of Electrical Engineering and Computer Science"}
+@string{ee =		"School of Electrical Engineering"}
+
+
+
+@comment{Strings denoting journals:}
+
+@string{acj =		"The Australian Computer Journal"}
+@string{acmcs =		acm # " Computing Surveys"}
+@string{adal =		acm # " Ada Letters"}
+@string{advphy = 	"Advances in Physics"}
+@string{aeep = 		"Advances in Electronics and Electron Physics"}
+@string{ap =		"Applied Physics"}
+@string{apa =		ap # " A"}
+@string{apl =		"Applied Physics Letters"}
+@string{bit =		"BIT"}
+@string{bstj =          "The Bell System Technical Journal"}
+@string{byte =		"Byte"}
+@string{c =             "Cryogenics"}
+@string{cacm =		"Communications of the " # acm}
+@string{can =		"Computer Architecture News"}
+@string{ccr =		"Computer Communication Review"}
+@string{cgraph =	"Computer Graphics"}
+@string{cjp =    	"Canadian Journal of Physics"}
+@string{cmame =		"Computer Methods in Applied Mechanics and Engineering"}
+@string{cnet =		"Computer Networks"}
+@string{cnis =		"Computer Networks and ISDN Systems"}
+@string{comp =		"IEEE Computer"}
+@string{conc =		"IEEE Concurrency"}
+@string{compj =		"The Computer Journal"}
+@string{cpe =		"Concurrency: Practice and Experience"}
+@string{csse =		"Computer Systems Science \& Engineering"} 
+@string{compsys =	"Computing Systems"}		  
+@string{dico = 		"Distributed Computing"}
+@string{ecj = 		"Electronics and Communications in Japan"}
+@string{ecj2 = 		ecj # ", Part 2: Electronics"}
+@string{ecsm = 		"Extended Abstracts of the Electrochemical Society"}
+@string{el =            "Europhysics Letters"}
+@string{electronics = 	"Electronics"}
+@string{f =             "Festk{\"o}rperprobleme"}
+@string{fgcs =		"Future Generation Computer Systems"}
+@string{hr = 		"Hitachi Review"}
+@string{ibmjrd = 	"IBM Journal of Research and Development"}
+@string{ibmsj = 	"IBM Systems Journal"}
+@string{ibmtech = 	"IBM Technical Disclosures Bulletin"}
+@string{ieeetcos =      ieee # " Bulletin of the Technical Committee on
+		  	Operating Systems and Application Environments"}
+@string{ieeeedl = 	ieee # " Electron Device Letters"}
+@string{ieeesac =	ieee # " Journal on Selected Areas in Communications"}
+@string{ieeepdt =       ieee # " Parallel and Distributed Technology"}
+@string{ieeesw =	ieee # " Software"}
+@string{ieeetc =	ieee # " Transactions on Computers"}
+@string{ieeetcad = 	ieee # " Transactions on CAD ICAS"}
+@string{ieeetcom = 	ieee # " Transactions on Communications"}
+@string{ieeeted = 	ieee # " Transactions on Electron Devices"}
+@string{ieeetedl = 	ieeeted # " Letters"}
+@string{ieeetit = 	ieee # " Transactions on Information Theory"}
+@string{ieeetns =	ieee # " Transactions on Nuclear Science"}
+@string{ieeetpds =	ieee # " Transactions on Parallel and Distributed " #
+                        "Systems"}
+@string{ieeetose =	ieee # " Transactions on Software Engineering"}
+@string{ieep =          "IEE Proceedings"}
+@string{ieicete =       ieice # " Transactions on Electronics"}
+@string{ip =		"Information Processing"}
+@string{ijpc =		"International Journal on Parallel Computing"}
+@string{ijssc = 	ieee # " Journal Solid-State Circuits"}
+@string{ijssc = 	ieee # " Journal Solid-State Circuits"}
+@string{ijhsc =		"International Journal of High-Speed Computing"}
+@string{ijnme =		"International Journal of Numerical Methods in Eng."}
+@string{ijsca =		"International Journal of Supercomputer Applications"}
+@string{ibmdscl =	"IBM Technical Disclosure Bulletin"}
+@string{ibmjrd =	"IBM Journal for Research and Development"}
+@string{iretec = 	"IRE Transactions on Electronic Computers"}
+@string{jal =           "Journal of Algorithms"}
+@string{jap = 		"Journal of Applied Physics"}
+@string{japl = 		jap # " Letters"}
+@string{jcphys =	"Journal of Computational Physics"}
+@string{jecs =          "Journal of the Electrochemical Society"}
+@string{jem =           "Journal of Electronic Materials"}
+@string{jjap = 		"Japanese Journal of Applied Physics"}
+@string{jncs = 		"Journal of Non-Crystalline Solids"}
+@string{joop = 		"Journal of Object Orientation"}
+@string{jp = 		"Journal of Physics"}
+@string{jpdc = 		"Journal of Parallel and Distributed Computing"}
+@string{jpd = 		jp # " D: Applied Physics"}
+@string{jpcs = 		"Journal of Physis and Chemistry of Solids"}
+@string{jpsj = 		"Journal of the Physical Society of Japan"}
+@string{jss = 		"Journal of Systems and Software"}
+@string{mathcomp = 	"Mathematics of Computation"}
+@string{me = 		"Microelectronic Engineering"}
+@string{meje = 		"Microelectronics Journal"}
+@string{micro =		"IEEE Micro"}
+@string{mpms = 		"Microprocessors and Microsystems"}
+@string{nummath = 	"Numerische Mathematik"}
+@string{oops =		"OOPS Messenger"}
+@string{osr =		"Operating Systems Review"}
+@string{pc =		"Parallel Computing"}
+@string{piee =		"Proceedings of the " # iee}
+@string{pieee =		"Proceedings of the " # ieee}
+@string{ppsl =		"Proceedings of the Physical Society London"}
+@string{prsl =		"Proceedings of the Royal Society London"}
+@string{per = 		"Performance Evaluation Review"}
+@string{pipv =          "Progress in Photovoltaics"}
+@string{pm =            "Philosophical Magazine"}
+@string{pml =           "Philosophical Magazine Letters"}
+@string{pr = 		"Physical Review"}
+@string{pra = 		pr # " A"}
+@string{prb = 		pr # " B"}
+@string{prc = 		pr # " C"}
+@string{prd = 		pr # " D"}
+@string{pre = 		pr # " E"}
+@string{prl = 		pr # " Letters"}
+@string{ps =  		"Progress in Semiconductors"}
+@string{pss =  		"Physica Status Solidi"}
+@string{ptp =  		"Progress in Theoretical Physics"}
+@string{rmp =  		"Reviews of Modern Physics"}
+@string{rpp =  		"Reports on Progress in Physics"}
+@string{sa = 		"Scientific American"}
+@string{sc = 		"Solar Cells"}
+@string{sem =	 	"Solar Energy Materials"}
+@string{semsc = 	"Solar Energy Materials and Solar Cells"}
+@string{si = 		"Semiconductor International"}
+@string{simax = 	"SIAM Journal on Matrix Analysis and Applications"}
+@string{sisc = 		"SIAM Journal on Scientific Computing"}
+@string{sissc = 	"SIAM Journal on Scientific and Statistical Computing"}
+@string{sina = 		"SIAM Journal on Numerical Analysis"}
+@string{siemens = 	"Siemens Research and Development Reports"}
+@string{signum =	acm # " SIGNUM Newsletter"}
+@string{sigplan =	"SIGPLAN Notices"}
+@string{sigsmall =	acm # " SIGSMALL Newsletter"}
+@string{sp = 		"Soviet Physics"}
+@string{spe =		"Software: Practice and Experience"}
+@string{sps = 		"Soviet Physics of Semiconductors"}
+@string{spss = 		"Soviet Physics - Solid State"}
+@string{ssc = 		"Solid State Communications"}
+@string{sse = 		"Solid-State Electronics"}
+@string{ssp = 		"Solid-State Phenomena"}
+@string{tcos =		ieee # " Technical Committee on Operating
+		  Systems Newsletter"}
+@string{tocs =		acm # " Transactions on Computer Systems"}
+@string{tods =		acm # " Transactions on Database Systems"}
+@string{tomacs =	acm # " Transactions on Modeling and Computer " #
+                        "Simulation"}
+@string{topls =		acm # " Transactions on Programming Languages " #
+                        "and Systems"}
+@string{vldbj =		"VLDB Journal"}
+@string{zamm =		"Zeitschrift f{\"u}r Angewandte Mathematik und " #
+		  	" Mechanik"}
+@string{zfp =		"Zeitschrift f{\"u}r Physik"}
+
+
+@comment{Strings denoting series:}
+
+@string{lics = 		"Lecture Notes in Computer Science"}
+
+
+@comment{Strings denoting conferences ("booktitles"):}
+
+@string{proc = 		"Proceedings of the "}
+@string{digest = 	" Digest of Technical Papers"}
+
+
+
+@string{acac	 =	"Australasian Computer Architecture Conference (ACAC)"}
+@string{acac96	 =	proc # "1st " # acac}
+@string{acac97	 =	proc # "2nd " # acac}
+@string{acac98	 =	proc # "3rd " # acac}
+@string{acac99	 =	proc # "4th " # acac}
+@string{acac00	 =	proc # "5th " # acac}
+@string{acsac	 =	"Australasian Computer Systems Architecture "
+                  # "Conference (ACSAC)"}
+@string{apcsac	 =	"Asia-Pacific Computer Systems Architecture "
+                  # "Conference (ACSAC)"}
+@string{acsac01	 =	proc # "6th " # acsac}
+@string{acsac02	 =	proc # "7th " # apcsac}
+@string{acsc	 =	"Australasian Computer Science Conference (ACSC)"}
+@string{acsc88	 =	proc # "11th " # acsc}
+@string{acsc89	 =	proc # "12th " # acsc}
+@string{acsc90	 =	proc # "13th " # acsc}
+@string{acsc91	 =	proc # "14th " # acsc}
+@string{acsc92	 =	proc # "15th " # acsc}
+@string{acsc93	 =	proc # "16th " # acsc}
+@string{acsc94	 =	proc # "17th " # acsc}
+@string{acsc95	 =	proc # "18th " # acsc}
+@string{acsc96	 =	proc # "19th " # acsc}
+@string{acsc97	 =	proc # "20th " # acsc}
+@string{acsc98	 =	proc # "21st " # acsc}
+@string{acsc99	 =	proc # "22nd " # acsc}
+@string{aoug	 =	proc # "Australian Occam User Group Conference"}
+@string{asplos =	"International Conference on Architectural Support " #
+                        "for Programming Languages and Operating " #
+                        "Systems (ASPLOS)"}
+@string{asplos82 =	proc # "1st " # asplos}
+@string{asplos89 =	proc # "3rd " # asplos}
+@string{asplos91 =	proc # "4th " # asplos}
+@string{asplos92 =	proc # "5th " # asplos}
+@string{asplos94 =	proc # "6th " # asplos}
+@string{asplos96 =	proc # "7th " # asplos}
+@string{asplos98 =	proc # "8th " # asplos}
+@string{bctm =		proc # "" # ieee # " Bipolar Circuits and Technology " #
+                        "Meeting"}
+@string{cxx =		proc # usenix # " C++ Workshop"}
+@string{cicc =		ieee # " Custom Integrated Circuits Conference"}
+@string{compcon =	"COMPCON"}
+@string{compcon-s =	"Spring " # compcon}
+@string{cpld =		acm # " Conference on Programming Language Design"}
+@string{cpsc =		acm # " Conference on Personal and Small Computers"}
+@string{csc =		acm # " Computer Science Conference"}
+@string{drc = 		"Device Research Conference"}
+@string{ecoop = 	"European Conference on Object Oriented Programming " #
+		        "(ECOOP)"}
+@string{ecoop93 = 	proc # "7th " # ecoop}
+@string{ecoop94 = 	proc # "8th " # ecoop}
+@string{ecpvsec = 	"European Communities Photovoltaic Solar Energy " #
+		        "Conference"}
+@string{ejcc = 		proc # "Eastern Joint Computer Conference"}
+@string{epsec = 	"European Photovoltaic Solar Energy Conference"}
+@string{epsec77 = 	proc # "1st " # ecpvsec}
+@string{epsec86 = 	proc # "7th " # ecpvsec}
+@string{epsec88 = 	proc # "8th " # ecpvsec}
+@string{epsec89 = 	proc # "9th " # ecpvsec}
+@string{epsec91 = 	proc # "10th " # ecpvsec}
+@string{epsec92 = 	proc # "11th " # epsec}
+@string{epsec94 = 	proc # "12th " # epsec}
+@string{epsec95 = 	proc # "13th " # epsec}
+@string{epsec97 = 	proc # "14th " # epsec}
+@string{epsec00 = 	proc # "16th " # epsec}
+@string{essderc = 	"Proceedings of ESSDERC"}
+@string{esa = 		"European Annual Symposium on Algorithms"}
+@string{esa94 = 	proc # "2nd " # esa}
+@string{esigops = 	"European SIGOPS Conference"}
+@string{esigops00 = 	proc # " " # esigops}
+@string{esprit = 	"Proceedings of ESPRIT"}
+@string{europar =	"Euro-Par"}
+@string{europar96 =	proc # " " # europar}
+@string{europar98 =	proc # " " # europar}
+@string{europen =	"EurOpen Conference"}
+@string{ewpc92 = 	"European Workshop on Parallel Computing"}
+@string{hpca = 		"IEEE Symposium on High-Performance Computer " #
+                        "Architecture (HPCA)"}
+@string{hpca97 = 	proc # " 3rd " # hpca}
+@string{hicss = 	"Hawaii International Conference on System Sciences " #
+                        "(HICSS)"}
+@string{hicss84 = 	proc # "17th " # hicss}
+@string{hicss85 = 	proc # "18th " # hicss}
+@string{hicss86 = 	proc # "19th " # hicss}
+@string{hicss87 = 	proc # "20th " # hicss}
+@string{hicss88 = 	proc # "21th " # hicss}
+@string{hicss89 = 	proc # "22th " # hicss}
+@string{hicss90 = 	proc # "23rd " # hicss}
+@string{hicss91 = 	proc # "24th " # hicss}
+@string{hicss92 = 	proc # "25th " # hicss}
+@string{hicss93 = 	proc # "26th " # hicss}
+@string{hicss94 = 	proc # "27th " # hicss}
+@string{hicss95 = 	proc # "28th " # hicss}
+@string{hicss96 = 	proc # "29th " # hicss}
+@string{hicss97 = 	proc # "30th " # hicss}
+@string{hotos = 	"Workshop on Hot Topics in Operating Systems (HotOS)"}
+@comment{hotos92 = 	wwos92}
+@comment{hotos93 = 	wwos93}
+@string{hotos95 = 	proc # "5th " # hotos}
+@string{hotos97 = 	proc # "6th " # hotos}
+@string{hotos99 = 	proc # "7th " # hotos}
+@string{hotos01 = 	proc # "8th " # hotos}
+@string{ica3pp = 	"International Conference on Algorithms and " #
+                        "Architectures for Parallel Processing (ICA3PP)"}
+@string{ica3pp96 = 	proc # "2nd " # ica3pp}
+@string{iccc = 		"ICCC"}
+@string{iccd = 		"ICCD"}
+@string{iccw =		"International Conference on Computers and " #
+                        "Workstations"}
+@string{icdcs =		ieee # " International Conference on Distributed " #
+                        "Computing Systems (ICDCS)"}
+@string{icdcs84 =	proc # "4th " # icdcs}
+@string{icdcs85 =	proc # "5th " # icdcs}
+@string{icdcs86 =	proc # "6th " # icdcs}
+@string{icdcs87 =	proc # "7th " # icdcs}
+@string{icdcs88 =	proc # "8th " # icdcs}
+@string{icdcs89 =	proc # "9th " # icdcs}
+@string{icdcs90 =	proc # "10th " # icdcs}
+@string{icdcs91 =	proc # "11th " # icdcs}
+@string{icdcs92 =	proc # "12th " # icdcs}
+@string{icdcs93 =	proc # "13th " # icdcs}
+@string{icdcs94 =	proc # "14th " # icdcs}
+@string{icdcs95 =	proc # "15th " # icdcs}
+@string{icdcs96 =	proc # "16th " # icdcs}
+@string{icdcs97 =	proc # "17th " # icdcs}
+@string{icdcs98 =	proc # "18th " # icdcs}
+@string{icdcs99 =	proc # "19th " # icdcs}
+@string{icds = 		"International Conference on Defects in Semiconductors"}
+@string{icds84 = 	proc # "13th "# icds}
+@string{icpaa = 	"International Conference on Parallel " #
+                  	"Architectures and Algorithms"}
+@string{icpaa96 = 	proc # "1st " # icpaa}
+@string{icpdis =	"International Conference on Parallel and Distributed "#
+                        "Information Systems"}
+@string{icpdis94 =	proc # "3rd " # icpdis}
+@string{icpp =		"International Conference on Parallel Processing"}
+@string{icpp91 =	proc # "1991 " # icpp}
+@string{icps = 		"International Conference on Physics of Semiconductors"}
+@string{icps84 = 	proc # "17th "# icps}
+@string{icps86 = 	proc # "18th "# icps}
+@string{icps88 = 	proc # "19th "# icps}
+@string{icps90 = 	proc # "20th "# icps}
+@string{icpssn =	"International Conference on Private Switching " #
+                        "Systems and Networks"}
+@string{icse	 = 	"ICSE"}
+@string{icssdm = 	"Extended Abstracts of ICSSDM"}
+@string{iedm = 		"International Electron Devices Meeting"}
+@string{iedm78 = 	iedm}
+@string{iedm88 = 	iedm}
+@string{ieeertss =	ieee # " Real-Time Systems Symposium (RTSS)"}
+@string{ieeessp =	ieee # " Symposium on Security and Privacy"}
+@string{ieeessp87 =	proc # ieeessp}
+@string{ieeessp89 =	proc # ieeessp}
+@string{ieeessp95 =	proc # ieeessp}
+@string{ieeessp00 =	proc # ieeessp}
+@string{infocom =	"INFOCOM"}
+@string{infocom95 =	proc # "14th " # infocom}
+@string{ismm =		"International Symposium on Memory Management"}
+@string{ismm98 = 	proc # ismm}
+@string{iscs = 		"International Symposium on Circuits and Systems"}
+@string{isca = 		"International Symposium on Computer " #
+                        "Architecture (ISCA)"}
+@string{isca80 =	proc # "7th  " # isca}
+@string{isca81 =	proc # "8th  " # isca}
+@string{isca82 =	proc # "9th  " # isca}
+@string{isca83 =	proc # "10th  " # isca}
+@string{isca84 =	proc # "11th  " # isca}
+@string{isca85 =	proc # "12th  " # isca}
+@string{isca86 =	proc # "13th  " # isca}
+@string{isca87 =	proc # "14th  " # isca}
+@string{isca88 =	proc # "15th  " # isca}
+@string{isca89 =	proc # "16th  " # isca}
+@string{isca90 = 	proc # "17th " # isca}
+@string{isca91 = 	proc # "18th " # isca}
+@string{isca92 = 	proc # "19th " # isca}
+@string{isca93 = 	proc # "20th " # isca}
+@string{isca94 = 	proc # "21st " # isca}
+@string{isca95 = 	proc # "22nd " # isca}
+@string{isca96 = 	proc # "23rd " # isca}
+@string{isca97 = 	proc # "24th " # isca}
+@string{isca98 = 	proc # "25th " # isca}
+@string{isca99 = 	proc # "26th " # isca}
+@string{isca00 = 	proc # "27th " # isca}
+@string{isca01 = 	proc # "28th " # isca}
+@string{isca02 = 	proc # "29th " # isca}a
+@string{isftc = 	"ISFTC"}
+@string{islped =	"International Symposium on Low Power Electronics " #
+			"and Design"}
+@string{islped97 = 	proc # " " # islped}
+@string{ispp = 		"International Symposium on Parallel Processing"}
+@string{isscc = 	"International Solid-State Circuits Conference"}
+@string{iwcasspi = 	"International Workshop on Computer Architectures " #
+			"to Support Security and Persistence of Information"}
+@string{iwmm =		"International Workshop on Memory Management"}
+@string{iwmm92 = 	proc # iwmm # ", LCS \#637"}
+@string{iwmm95 = 	proc # iwmm # ", LCS \#986"}
+@string{iwooos =	ieee # " International Workshop on Object " #
+                        "Orientation in Operating Systems (IWOOOS)"}
+@string{iwooos90 = 	proc # "Workshop on Operating Systems and " #
+		  	"Object Orientation at ECOOP-OOPSLA"}
+@string{iwooos91 = 	proc # "1st " # iwooos}
+@string{iwooos92 = 	proc # "2nd " # iwooos}
+@string{iwooos93 = 	proc # "3rd " # iwooos}
+@string{iwooos95 = 	proc # "4th " # iwooos}
+@string{iwooos96 = 	proc # "5th " # iwooos}
+@string{oopsla =	acm # " Symposium on Object-Oriented Programming " #
+                        "Systems, Languages, and Applications (OOPSLA)"}
+@string{oopsla92 =	proc # " " # oopsla}
+@string{oopsla00 =	proc # " " # oopsla}
+@string{oopsla93-mmgc =	"OOPSLA Workshop on Memory Management and " #
+                        "Garbage Collection"}
+@string{oopsla95-od =	"OOPSLA Workshop on Object Database Behavior, " #
+                        "Benchmarks and Performance"}
+@string{osdi =		usenix # " Symposium on Operating Systems Design and " #
+		  	"Implementation (OSDI)"}
+@string{osdi94 =	proc # "1st " # osdi}
+@string{osdi96 =	proc # "2nd " # osdi}
+@string{osdi99 =	proc # "3rd " # osdi}
+@string{osdi00 =	proc # "4st " # osdi}
+@string{oug =	 	proc # "Occam User Group Conference"}
+@string{pacta = 	"PACTA"}
+@string{pcs =		proc # "Polycrystalline Semiconductors"}
+@string{pdc =		acm # " Symposium Principles of Distributed Computing"}
+@string{pdpta = 	"International Conference on Parallel and " #
+                        "Distributed Processing Techniques and Applications"}
+@string{pdpta96 = 	pdpta}
+@string{pjw = 		"International Workshop on Persistence and Java"}
+@string{pjw97 = 	proc # "2nd " # pjw}
+@string{pldi = 		"ACM SIGPLAN Conference on Programming Language " #
+                        "Design and Implementation (PLDI)"}
+@string{pldi96 = 	proc # pldi}
+@string{pldi97 = 	proc # pldi}
+@string{pldi98 = 	proc # pldi}
+@string{pldi99 = 	proc # pldi}
+@string{pldi00 = 	proc # pldi}
+@string{podc =		acm # " Annual Symposium on Principles of " #
+                        "Distributed Computing"}
+@string{podc97 =        proc # "16th " # podc}
+@string{popl =		acm # " SIGPLAN-SIGACT Symposium on Principles of " #
+                        "Programming Languages (POPL)"}
+@string{popl96 =        proc # "23th " # popl}
+@string{popl99 =        proc # "26th " # popl}
+@string{popl01 =        proc # "28th " # popl}
+@string{pos = 		"International Workshop on Persistent Object S" #
+                        "ystems (POS)"}
+@string{pos85 = 	proc # "1st " # pos}
+@string{pos87 = 	proc # "2nd " # pos}
+@string{pos88 = 	proc # "3rd " # pos}
+@string{pos90 = 	proc # "4th " # pos}
+@string{pos92 = 	proc # "5th " # pos}
+@string{pos94 = 	proc # "6th " # pos}
+@string{pos96 = 	proc # "7th " # pos}
+@string{pos98 = 	proc # "8th " # pos}
+@string{pos00 = 	proc # "9th " # pos}
+@string{ppopp = 	"Conference on Principles and Practice of Parallel " #
+                        "Programming"}
+@string{ppopp90 = 	proc # "2nd " # ppopp}
+@string{ppopp91 = 	proc # "3rd " # ppopp}
+@string{pvsc =		ieee # " Photovoltaic Specialists Conference"}
+@string{pvsc72 =	proc # " " # pvsc}
+@string{pvsc76 =	proc # "12th " # pvsc}
+@string{pvsc78 =	proc # "13th " # pvsc}
+@string{pvsc80 =	proc # "14th " # pvsc}
+@string{pvsc81 =	proc # "15th " # pvsc}
+@string{pvsc82 =	proc # "16th " # pvsc}
+@string{pvsc84 =	proc # "17th " # pvsc}
+@string{pvsc85 =	proc # "18th " # pvsc}
+@string{pvsc87 =	proc # "19th " # pvsc}
+@string{pvsc88 =	proc # "20th " # pvsc}
+@string{pvsc90 =	proc # "21st " # pvsc}
+@string{pvsc91 =	proc # "22nd " # pvsc}
+@string{pvsc93 =	proc # "23rd " # pvsc}
+@string{pvsc96 =	proc # "25th " # pvsc}
+@string{pvsc97 =	proc # "26th " # pvsc}
+@string{pvsec =		"International Photovoltaic Science and " #
+                        "Engineering Conference"}
+@string{pvsec89 =	"4th " # pvsec # digest}
+@string{pvsec90 =	"5th " # pvsec # digest}
+@string{pvsec92 = 	"6th " # pvsec # digest}
+@string{pvsec93 = 	"7th " # pvsec # digest}
+@string{pvsec99 = 	"11th " # pvsec # digest}
+@string{nasecode = 	"International Conference on Numerical Analysis of" #
+                        " Semiconductor Devices"}
+@string{nasecode83 = 	proc # "3rd " # nasecode}
+@string{nasecode85 = 	proc # "4th " # nasecode}
+@string{nasecode87 = 	proc # "5th " # nasecode}
+@string{ncsc =		"National Computer Security Conference"}
+@string{ncsc85 =	proc # "8th " # ncsc}
+@string{nissc =		"National Information Systems Security Conference"}
+@string{nissc95 =	proc # "18th " # nissc}
+@string{nissc98 =	proc # "21st " # nissc}
+@string{nossdav =	"International Workshop on Network and Operating " #
+                        "Systems Support for Digital Audio and Video"}
+@string{nossdav98 =	proc # "8th " # nossdav}
+@string{nupad = 	"International Workshop on Numerical Modeling of " #
+                        "Processes and Devices for Integrated Circuits"}
+@string{nupad90 = 	"3rd " # nupad}
+@string{nupad92 = 	"4th " # nupad}
+@string{nupad94 = 	"5th " # nupad}
+@string{microc = 	"IEEE Micro"}
+@string{microc95 = 	proc # " " # microc}
+@string{rbac =		acm # " Symposium on Role-Based Access Control (RBAC)"}
+@string{rbac95 =	proc # "1st " # rbac}
+@string{rbac99 =	proc # "4th " # rbac}
+@string{rds =		"Symposium on Reliable Distributed Systems"}
+@string{rds91 =         proc # "10th " # rds}
+@string{rds92 =         proc # "11th " # rds}
+@string{rds93 =         proc # "12th " # rds}
+@string{rds94 =         proc # "13th " # rds}
+@string{rds95 =		proc # "14th " # rds}
+@string{rtlws =		"Real-Time Linux Workshop"}
+@string{rtlws01 =	proc # "3rd " # rtlws}
+@string{rtss =          "Real Time-Systems Symposium"}
+@string{rtss84 =        proc # rtss}
+@string{sca =		"Symposium on Computer Architecture"}
+@string{sca80 =		proc # "7th " # sca}
+@string{sca81 =		proc # "8th " # sca}
+@string{sca90 =		proc # "17th " # sca}
+@string{slfp92 =	proc # "1992 ACM Symposium on Lisp and Functional " #
+                        "Programming"}
+@string{sigcomm = 	acm # " Conference on Communications (SIGCOMM)"}
+@string{sigcomm88 =	proc # "" # sigcomm}
+@string{sigcomm91 =	proc # "" # sigcomm}
+@string{sigcomm95 =	proc # "" # sigcomm}
+@string{sigmetrics = 	acm # " Conference on Measurement and " #
+                        "Modeling of Computer Systems (SIGMETRICS)"}
+@string{sigmetrics94 = 	proc # sigmetrics}
+@string{sigmetrics98 = 	proc # sigmetrics}
+@string{sigmetrics02 = 	proc # sigmetrics}
+@string{sigmod = 	acm # " International Conference on Management of " #
+                        "Data (SIGMOD)"}
+@string{sigmod93 = 	proc # sigmod}
+@string{sisdep	= 	"International Conference on " #
+                        "Simulation of Semiconductor Devices and Processes"}
+@string{sisdep86 = 	proc # "2nd " # sisdep}
+@string{sisdep88 = 	proc # "3rd " # sisdep}
+@string{sisdep91 = 	proc # "4th " # sisdep}
+@string{sisdep93 = 	proc # "5th " # sisdep}
+@string{sisdep95 = 	proc # "6th " # sisdep}
+@string{sispad	= 	"International Conference on " #
+                        "Simulation of Semiconductor Processes and Devices"}
+@string{sispad95 = 	sisdep95}
+@string{sispad96 = 	"2nd " # sispad}
+@string{sosp =		acm # " Symposium on OS Principles (SOSP)"}
+@string{sosp75 =	proc # "5th " # sosp}
+@string{sosp77 =	proc # "6th " # sosp}
+@string{sosp79 =	proc # "7th " # sosp}
+@string{sosp81 =	proc # "8th " # sosp}
+@string{sosp83 =	proc # "9th " # sosp}
+@string{sosp85 =	proc # "10th " # sosp}
+@string{sosp87 =	proc # "11th " # sosp}
+@string{sosp89 =	proc # "12th " # sosp}
+@string{sosp91 =	proc # "13th " # sosp}
+@string{sosp93 =	proc # "14th " # sosp}
+@string{sosp95 =	proc # "15th " # sosp}
+@string{sosp97 =	proc # "16th " # sosp}
+@string{sosp99 =	proc # "17th " # sosp}
+@string{sosp01 =	proc # "18th " # sosp}
+@string{spdp =          ieee # " Symposium on Parallel and Distributed Processing"}
+@string{spdp93 =        proc # "5th " # spdp}
+@string{sftc =          "International Symposium on Fault-Tolerant Computing"}
+@string{sftc95 =        proc # "25th " # sftc}
+@string{srds = 		"Symposium on Reliable Distributed Systems"}
+@string{srds95 = 	proc # " " # srds}
+@string{ssdm = 		"International Conference on Solid State Devices " #
+                        "and Materials"}
+@string{ssdm89 = 	proc # "21st " # ssdm}
+@string{ssdm90 = 	proc # "22nd " # ssdm}
+@string{ssdm93 = 	proc # "25nd " # ssdm}
+@string{ssdm95 = 	proc # "27nd " # ssdm}
+@string{usenixc =	usenix  # " Technical Conference"}
+@string{usenix85 =	proc # " 1985 " # usenixc}
+@string{usenix86s =	proc # " 1986 Summer " # usenixc}
+@string{usenix86w =	proc # " 1986 Winter " # usenixc}
+@string{usenix87w =	proc # " 1987 Winter " # usenixc}
+@string{usenix87s =	proc # " 1987 Summer " # usenixc}
+@string{usenix88w =	proc # " 1988 Winter " # usenixc}
+@string{usenix89w =	proc # " 1989 Winter " # usenixc}
+@string{usenix89s =	proc # " 1989 Summer " # usenixc}
+@string{usenix90w =	proc # " 1990 Winter " # usenixc}
+@string{usenix90s =	proc # " 1990 Summer " # usenixc}
+@string{usenix91w =	proc # " 1991 Winter " # usenixc}
+@string{usenix91s =	proc # " 1991 Summer " # usenixc}
+@string{usenix92w =	proc # " 1992 Winter " # usenixc}
+@string{usenix92s =	proc # " 1992 Summer " # usenixc}
+@string{usenix93w =	proc # " 1993 Winter " # usenixc}
+@string{usenix93s =	proc # " 1993 Summer " # usenixc}
+@string{usenix94w =	proc # " 1994 Winter " # usenixc}
+@string{usenix94s =	proc # " 1994 Summer " # usenixc}
+@string{usenix95  =     proc # " 1995 " # usenixc}
+@string{usenix96  =     proc # " 1996 " # usenixc}
+@string{usenix97  =     proc # " 1997 " # usenixc}
+@string{usenix98  =     proc # " 1998 " # usenixc}
+@string{usenix99  =     proc # " 1999 " # usenixc}
+@string{usenix00  =     proc # " 2000 " # usenixc}
+@string{usenixdms =	usenix # " Workshop on Experiences with Building " #
+			"Distributed and Multiprocessor Systems"}
+@string{usenixes =	usenix # " Embedded Systems Workshop"}
+@string{usenixes99 =	proc # " 1999 " # usenixes}
+@string{usenixmach =	proc # " USENIX Mach Workshop"}
+@string{usenixmk =	usenix # " Workshop on Microkernels and other Kernel " #
+			"Architectures"}
+@string{usenixmk92 =	proc # " " # usenixmk}
+@string{usenixmk93 =	proc # " 2nd " # usenixmk}
+@string{usenixnt =	usenix # " NT Workshop"}
+@string{usenixnt99 =	proc # " 1999 " # usenixnt}
+@string{usenixsec =	usenix # " Security Symposium"}
+@string{usenixsec93 =	proc # " 4th " # usenixsec}
+@string{usenixsec95 =	proc # " 5th " # usenixsec}
+@string{usenixsec96 =	proc # " 6th " # usenixsec}
+@string{usenixsec98 =	proc # " 7th " # usenixsec}
+@string{usenixsec99 =	proc # " 8th " # usenixsec}
+@string{usenixsec00 =	proc # " 9th " # usenixsec}
+@string{usenixsec01 =	proc # " 10th " # usenixsec}
+@string{vldb =		"VLDB Conference"}
+@string{vldb96 = 	proc # " 22nd " # vldb}
+@string{vlsitech = 	"International Symposium on VLSI Technology " #
+                        "Systems and Applications"}
+@string{wae =           "Workshop on Alorithmic Engineering"}
+@string{wae98 =         "2nd " # wae}
+@string{wcpec =         "World Conference on Photovoltaic Energy Conversion"}
+@string{wcpec94 =       "1st " # wcpec}
+@string{wcpec98 =       "2nd " # wcpec}
+@string{weiss =         usenix # " Workshop on Industrial Experiences with " #
+                        "Systems Software (WEISS)"}
+@string{weiss00 = 	"1st " # weiss}
+@string{wpdp =		"International Workshop on Parallel and " #
+                        "Distributed Processing"}
+@string{wmrd =		"Workshop on the Management of Replicated Data"}
+@string{wmrd92 =	proc # "2nd " # wmrd}
+@string{wwos =		"Workshop on Workstation Operating Systems"}
+@string{wwos92 =	proc # "3rd " # wwos}
+@string{wwos93 =	proc # "4th " # wwos}

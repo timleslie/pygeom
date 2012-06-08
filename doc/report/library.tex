@@ -1,0 +1,606 @@
+\chapter{Pygeom Library}\label{chap:pygeom}
+
+Having established the core mathematical theories involved in planar universal geometry, it will be helpful to have a tool which allows us to perform the calculations involved in any practical application.
+In this chapter we present the \pygeom library, a Python package for performing calculations in planar universal geometry.
+
+The classes, functions and interfaces provided by the library are described here.
+While full technical detail is avoided, it is assumed that the reader has a basic understanding of the Python language\footnote{For language references, tutorials and downloads see \url{http://www.python.org}}.
+
+\section{Overview}
+
+The \pygeom library contains a number of modules, each of which implements a particular piece of functionality.
+The modules described here are the \texttt{field}, \texttt{geometry}, \texttt{core} and \texttt{pairs} modules, which constitute the library API intended for the user.
+
+These modules form a natural hierarchy, with each building on the functionality provided by the previous.
+From simplest to most complex, the hierarchy of modules is $\texttt{field} \to \texttt{geometry} \to \texttt{core} \to \texttt{pairs}$.
+
+\section{Fields}
+
+The underlying premise of universal geometry is that all calculations are performed over some field $\mathbb{F}$, not of characteristic two.
+It stands to reason that \pygeom must be able to support field calculations over standard fields.
+In particular \pygeom currently supports the fields $\mathbb{Q}$ and $\mathbb{Z}_p$ for primes $p$.
+The design also provides the flexibility for users to define their own fields if they need to perform calculations in a non-supported field.
+
+\subsection{\texttt{Field}}
+
+Like most procedural programming languages, Python has operators for adding, subtracting, multiplying and dividing variables.
+Since these represent the core field operations, we would like to be able to use them to operate on the variables we use to represent members of a field.
+
+Another property of fields is that they each contain a zero element and a one element.
+Combined with the addition operator, it can be seen that every integer has a natural representation in any given field.
+As such we would like to support the addition, multiplication, etc of field variables with regular Python integers.
+
+Finally, from the closure property of fields, we expect that any mathematical operation on a field variable would return a new variable from the same field.
+
+These design considerations are all addressed in the implementation of fields in \pygeom\!.
+
+The class \texttt{Field} (Figure \ref{fig:field}), from \texttt{field.py}, provides a mostly abstract base class from which the classes for different fields should derive.
+It contains a number of methods, all of which must be implemented by any subclass.
+The interface for this class overrides all of the standard mathematical operators, as well as equality testing.
+It also provides a small number of non-operator methods.
+
+\begin{figure}[!hbt]
+\begin{verbatim}
+class Field(object):
+
+    def __init__(self, value, *args, **kwargs):
+
+    def __add__(self, other):
+
+    def __sub__(self, other):
+
+    def __mul__(self, other):
+
+    def __neg__(self):
+
+    def __div__(self, other):
+
+    def __radd__(self, other):
+
+    def __rsub__(self, other):
+
+    def __rmul__(self, other):
+
+    def __rdiv__(self, other):
+
+    def __eq__(self, other):
+
+    def __ne__(self, other):
+
+    def is_square(self):
+
+    def sqrt(self):
+
+    def reduce(self, others):
+
+    @classmethod
+    def random(cls):
+\end{verbatim}
+\caption{The \texttt{Field} class interface.}\label{fig:field}
+\end{figure}
+
+
+The \texttt{is\_square()} method is a boolean method which determines whether a value is a square number in the field.
+The \texttt{sqrt()} will return the square root of a number, assuming that it is indeed a square in the field.
+The \texttt{reduce()} method takes a set of numbers from the field and scales them all by a common factor to get them into a standard form, which is subclass specific.
+This method is particularly useful in finding standard representations of lines and conics.
+Finally, the class method \texttt{random()} creates a random element of the class.
+This method is particularly useful when generating test data.
+
+
+\subsection{\texttt{Rational}}
+
+The \texttt{Rational} class is a subclass of \texttt{Field} and implements the field $\mathbb{Q}$.
+Rational variables can be created either from pairs of integers, representing the numerator and denominator, or from individual integers.
+Internally, a standard \texttt{gcd} algorithm is used to ensure the the rational number is always stored in lowest terms.
+Since Python supports arbitrarily large integers, the \texttt{Rational} class can be used to represent fractions of arbitrary precision.
+
+When generating random \texttt{Rational} variables, numerators and denominators in the range $[-10, 10]$ are used, however this can be modified by adjusting the values of \texttt{Rational.\_min\_random} and \texttt{Rational.\_max\_random} as required.
+
+The \texttt{.reduce()} method on \texttt{Rational} objects multiplies the set of numbers by the lowest common multiple of their denominators, ensuring that the resulting set contains integers with no common factor.
+
+The \texttt{.sqrt()} method uses an algorithm based on Newton's method\footnote{See \url{http://en.wikipedia.org/wiki/Integer_square_root}}.
+Testing for squareness in \texttt{.is\_square()} is done by taking the square root and checking it squares back to the original number.
+This will always work, since the integer square root algorithm used always returns the floor of the square root (e.g. $isqrt(x) = \lfloor\sqrt{x}\rfloor$).
+As such only a square number will satisfy \texttt{x == x.sqrt()*x.sqrt()}.
+
+\subsection{\texttt{FiniteField}}
+
+The fields $\mathbb{Z}_p$, which are the integers modulo $p$ for prime $p$, are supported in \pygeom by the \texttt{FiniteField} class.
+Each object of type \texttt{FiniteField} will have a member \texttt{.\_base}, which specifies the value of $p$.
+To avoid having to specify this value each time a new variable is created, a class variable \texttt{.base} is maintained.
+This can be set once and all subsequent object instantiations will use the same value.
+It remains to be seen whether this design choice is sound, as it may end up making it confusing for a user who regularly wishes to switch between different bases.
+
+The \texttt{.reduce()} method multiplies each number in the set by the inverse of the first number, ensuring that the first number is always 1.
+
+The \texttt{.is\_square()} method uses the fact that if $x$ is a square number then $x^{(p-1)/2} \equiv 1$ (mod $p$).
+The current implementation uses an $O(p)$ algorithm to do this calculation, however this could be optimized to $O(ln(p))$ using modular exponentiation.
+The \texttt{.sqrt()} method uses an implementation of the Shanks-Tonelli algorithm\footnote{See \url{http://planetmath.org/encyclopedia/ShanksTonelliAlgorithm.html}}.
+If one assumes the Generalised Riemann Hypothesis then this algorithm can be shown to run in polynomial time with $O(ln^4p)$\cite{Cohen}.
+These algorithms were chosen for their ease of implementation over pure speed, and may be an area for optimization for future versions of \pygeom.
+
+\subsection{Field of Algebraic Expressions}
+
+If we consider the set of algebraic expressions consisting of zero or more variables we can see that it constitutes a field.
+In theory we could thus implement a class to represent this field and perform calculations symbolically.
+Such a class would in fact let us perform symbolic calculations, allowing us to quickly perform the algebra needed to calculate general geometric theorems.
+Indeed, a prototype class was initially implemented with this goal in mind, however it quickly became clear that the amount of computation involved in reducing algebraic expressions to their simplest terms was impractical.
+
+A future development goal for the \pygeom package should be to integrate it with a symbolic computing package, such as Sympy\footnote{\url{http://code.google.com/p/sympy/}}, to allow such calculations to be performed quickly and efficiently.
+
+\subsection{Real Numbers}
+
+A canonical field in mathematics is $\mathbb{R}$, the set of real numbers.
+Real numbers are generally represented as floating point numbers in software.
+The floating point numbers can only represent a finite number of different values and as such are only an approximation to the real numbers.
+In particular, they do not obey the field axioms.
+The following example demonstrates this.
+\begin{verbatim}
+In [1]: 1e100 + 1e-100 == 1e100
+Out[1]: True
+\end{verbatim}
+In this case we have $a + b = a$, where $b \neq 0$, which violates the field axioms.
+
+Consideration of any other representation scheme for the real numbers will also quickly run into problems and as such \pygeom is not able to provide a class to represent the real numbers.
+Users who wish to approximate the real numbers are advised to use the \texttt{Rational} class.
+
+\subsection{Examples}
+
+The following interactive Python session demonstrates some of ways in which \pygeom field variables can be used.
+
+\begin{verbatim}
+>>> from pygeom.field import Rational
+>>> # Create two varibles.
+>>> x = Rational(1, 2)
+>>> y = Rational(5, 3)
+>>> 
+>>> # Print their values.
+>>> print x, y
+1/2 5/3
+>>> 
+>>> # Field operations.
+>>> x + y
+13/6
+>>> x*y
+5/6
+>>> x/y
+3/10
+>>> x - y
+-7/6
+>>> x + 10
+21/2
+>>> 
+>>> # We expect x*x to be a square number, but not
+>>> # x on its own.
+>>> (x*x).is_square()
+True
+>>> x.is_square()
+False
+>>> 
+>>> # We expect the square root of x*x to be x.
+>>> (x*x).sqrt()
+1/2
+>>> (x*x).sqrt() == x
+True
+>>> 
+>>> # Multiply x and y by their LCM
+>>> x.reduce([y])
+[3/1, 10/1]
+>>> 
+>>> # Generate some random numbers.
+>>> Rational.random()
+-10/7
+>>> Rational.random()
+-6/1
+>>> 
+\end{verbatim}
+
+\section{Geometries}
+
+As well as operating over a particular field, any calculations in planar universal geometry must also be done in the context of a particular geometry, represented by a quadratic form.
+The \texttt{geometry.py} module provide support for creating and working with such objects.
+
+\subsection{\texttt{Geometry}}
+
+The geometries of planar universal geometry are represented with objects of the \texttt{Geometry} class, whose interface is given in Figure \ref{fig:geom}.
+This class has a single data member, $\texttt{.form}$, which stores the quadratic form of the geometry.
+The form is stored as a 3-tuple \texttt{(a, b, c)}, representing the quadratic form $\begin{pmatrix} a & b \\ b & c \end{pmatrix}$.
+
+\begin{figure}[hbt!]
+\begin{verbatim}
+class Geometry(object):
+
+    def __init__(self, a, b, c):
+
+    def dot(self, point1, point2):
+
+    def det(self):
+
+    def norm(self, point):
+
+    def __repr__(self):
+
+    def __eq__(self, other):
+
+    def __ne__(self, other):
+\end{verbatim}
+\caption{The \texttt{Geometry} class interface.}\label{fig:geom}
+\end{figure}
+
+
+The class has three methods.
+The \texttt{.det()} method calculates the determinant of the quadratic form, i.e. \texttt{G.det()} corresponds to $\Delta_G$.
+The \texttt{.norm()} method calculates the norm of a \texttt{Point} object (see section \ref{sec:point}), i.e if \texttt{X0} is a \texttt{Point} representing $X_0$ then \texttt{G.norm(X0)} corresponds to $\|\vec{X_0}\|_G$.
+The metric dot product of two \texttt{Point}s can be found with the \texttt{\.dot()} method, i.e. \texttt{G.dot(X0, X1)} corresponds to $\vec{X_0}\cdot_G\vec{X_1}$.
+
+
+\subsection{Chromogeometry}
+
+The \texttt{geometry.py} module also provides functions to create the three geometries of chromogeometry in a given field.
+The functions \texttt{blue(field)}, \texttt{red(field)} and \texttt{green(field)} will return \texttt{Geometry} objects corresponding to the respective geometries over the given field.
+
+\section{Core Objects}
+
+There are three types of geometrical objects which we encounter in planar universal geometry; points, lines and conics.
+In \pygeom these are represented in the classes \texttt{Point}, \texttt{Line} and \texttt{Conic} respectively, all of which are defined in \texttt{core.py}.
+
+Core objects may optionally be associated with a particular geometry.
+Indeed, certain methods of the core object require a geometry to be specified.
+The methods which require a geometry to be specified are decorated with the \texttt{@check\_geometry} decorator, which raises \texttt{GeometryError} if a geometry has not been specified.
+
+The core classes have two common methods.
+The \texttt{.form()} method returns a tuple of numbers (\texttt{Field} objects) which are the canonical form of the object.
+The \texttt{.eval()} method check whether an $(x, y)$ tuple ``corresponds'' to the object.
+For points this means that tuple is equal to the form of the point.
+For lines and conics, this means that the point $[x, y]$ lies on the line or conic.
+
+\subsection{\texttt{Point}}\label{sec:point}
+
+While the notions of a point and a vector are subtly distinct in an abstract sense, the two are sufficiently similar that \pygeom represents them both using a single class.
+The \texttt{Point} class (Figure \ref{fig:point}), when thought of as representing vectors, supports the basic vector space operations of addition and scalar multiplication.
+When the \texttt{Point} is associated with a particular geometry, the vector norm can also be taken using the \texttt{.norm()} method.
+The boolean method \texttt{.null()} determines whether the point is a null point in its geometry.
+
+\begin{figure}[hbt!]
+\begin{verbatim}
+class Point(Core):
+
+    def __init__(self, x, y, geometry=None):
+
+    def form(self):
+
+    def eval(self, x, y):
+
+    def __repr__(self):
+
+    def __sub__(self, other):
+
+    def __mul__(self, other):
+
+    def __rmul__(self, other):
+
+    def __add__(self, other):
+
+    def __div__(self, other):
+
+    @check_geometry
+    def null(self):
+
+    @check_geometry
+    def norm(self):
+
+    def circle(self, quadrance):
+\end{verbatim}
+\caption{The \texttt{Point} class interface.}\label{fig:point}
+\end{figure}
+
+Given a single point, the only geometric object we can construct is a circle.
+The \texttt{.circle()} method takes a quadrance and returns a \texttt{Conic} representing a circle centred at the point and having the given quadrance.
+
+\subsection{\texttt{Line}}
+
+The \texttt{Line} class (Figure \ref{fig:line}) represents the line $\langle a\!:\!b\!:\!c \rangle$ by storing the tuple \texttt{(a, b, c)} as the form. 
+Other than the core methods, this class only provides two new methods.
+The \texttt{.vector()} method returns a \texttt{Point} object, representing the vector representation of the line, e.g. the point $[-b, a]$.
+The boolean method \texttt{.null()} checks whether the line is a null line in its geometry.
+
+\begin{figure}[hbt!]
+\begin{verbatim}
+class Line(Core):
+    def __init__(self, a, b, c, geometry=None):
+
+    def form(self):
+
+    def eval(self, x, y):
+
+    def __repr__(self):
+
+    def vector(self):
+
+    @check_geometry
+    def null(self):
+\end{verbatim}
+\caption{The \texttt{Line} class interface.}\label{fig:line}
+\end{figure}
+
+
+\subsection{\texttt{Conic}}
+
+The \texttt{Conic} class represents the conic $\langle A\!:\!B\!:\!C\!:\!D\!:\!E\!:\!F\rangle$ by storing a tuple \texttt{(a, b, c, d, e, f)} as the form.
+
+
+\begin{figure}[hbt!]
+\begin{verbatim}
+class Conic(Core):
+    def __init__(self, a, b, c, d, e, f, geometry=None):
+    
+    def form(self):
+
+    def __repr__(self):
+
+    def eval(self, x, y):
+
+    def through(self, point):
+
+    def det(self):
+
+    def _point_on(self):
+
+    def is_parabola(self):
+
+    @check_geometry
+    def is_circle(self):
+
+    @check_geometry
+    def centre_quadrance(self):
+
+    @check_geometry
+    def focus_directrix(self):
+
+    def co_diagonal(self, line):
+
+    def tangent(self, point):
+
+    def is_tangent(self, line):
+    
+    def pole(self, polar):
+
+    def polar(self, pole):
+\end{verbatim}
+\caption{The \texttt{Conic} class interface.}\label{fig:conic}
+\end{figure}
+
+The boolean \texttt{.through()} method will determine whether the conic passes through the given point.
+The protected method \texttt{.\_point\_on()} will create a point which does lie on the conic, so \texttt{conic.through(conic.\_point\_on()) == True}.
+This method is protected as it is only expected to be used by the test suite (see chapter \ref{chap:test}) and is not part of the public API.
+
+If we take a conic object as representing the conic $\langle P\!:\!\vec{q}\!:\!r\rangle$ then the method \texttt{.det()} will return the value of the determinant $\Delta_P$.
+
+The method \texttt{.tangent()} will create the tangent line passing through the point given as a parameter.
+This method requires the point to lie on the conic.
+The method boolean \texttt{.is\_tangent()} will check whether the given line is a tangent of the conic.
+
+The method \texttt{.focus\_directrix()} can be used to find both focus/directrix pairs, as well as the associated constant, of a conic which is not a circle.
+This method returns a tuple \texttt{(focus\_direc\_1, focus\_direc\_2, K)} where the first two elements are \texttt{PointLine} objects and the last is a field value.
+
+If a conic is a grammola then given one diagonal, we can find its co-diagonal as well as the grammola constant.
+The \texttt{.co\_diagonal()} method will return a \texttt{(Line, Field)} tuple representing these values, given a valid diagonal line.
+
+If a conic is a circle then the method \texttt{.centre\_quadrance()} will return a \texttt{(Point, Field)} tuple representing the centre and the quadrance of the circle.
+
+The pair of methods \texttt{.is\_parabola()} and \texttt{.is\_circle()} are boolean functions to checks whether the conic is a parabola or a circle respectively. 
+The methods \texttt{.pole()} and \texttt{.polar()} allow poles and polars to be calculated. They are inverse functions of each other so \texttt{conic.polar(conic.pole(line)) == line}.
+
+
+\section{Paired Objects}
+
+While the core objects are the fundamental building blocks of the \pygeom library, they have limited power when taken as individual entities.
+However when we pair the objects together we open up a world of possible constructions.
+The \texttt{pairs.py} module provides three classes representing pairs of \texttt{Lines} and \texttt{Points}.
+Working with these classes we can construct many interesting geometrical objects.
+
+\subsection{\texttt{LineSegment}}
+
+If we take two distinct points $X_0$ and $X_1$ they represent a segment on a line.
+The \texttt{LineSegment} class (Figure \ref{fig:linesegment}) is constructed from two \texttt{Point} objects and can be used to construct objects with respect to these points and the line passing through them.
+
+\begin{figure}[!hbt]
+\begin{verbatim}
+class LineSegment(object):
+
+    def __init__(self, point1, point2):
+
+    def __eq__(self, other):
+
+    @check_geometry
+    def midpoint(self):
+
+    @check_geometry
+    def perp_bisector(self):
+
+    @check_geometry
+    def quadrance(self):
+
+    @check_geometry
+    def quadrola(self, K):
+\end{verbatim}
+\caption{The \texttt{LineSegment} class interface.}\label{fig:linesegment}
+\end{figure}
+
+The quadrance between the two points can be found with the \texttt{.quadrance()} method.
+The midpoint between the two points, being the point on the line which is equiquadrance from the two points, can be found using the \texttt{.midpoint()} method.
+Likewise, the \texttt{.perp\_bisector()} will construct the line passing through the midpoint, perpendicular to the line through the two points.
+
+The two points of a \texttt{LineSegment} can also be used to form a quadrola.
+If $X_0$ and $X_1$ are the two points represented by the \texttt{LineSegment} and $K$ is a number then the \texttt{.quadrola()} method will construct a \texttt{Conic} representing the quadrola satisfying $A(Q(X, X_0), Q(X, X_1), K) = 0$.
+
+
+\subsection{\texttt{Vertex}}
+
+A pair of non-parallel lines taken together meet at a vertex.
+This motivates the \pygeom class \texttt{Vertex} (Figure \ref{fig:vertex}), which represents a pair of lines, although we don't restrict ourselves to non-parallel lines.
+The point of intersection of the lines can be accessed through the \texttt{.point} class member.
+The boolean method \texttt{.parallel()} allows the user to check whether the lines are parallel or not.
+
+\begin{figure}[!hbt]
+\begin{verbatim}
+class Vertex(object):
+
+    def __init__(self, line1, line2):
+
+    def __eq__(self, other):
+
+    def parallel(self):
+
+    @check_geometry
+    def spread(self):
+
+    @check_geometry
+    def perpendicular(self):
+
+    @check_geometry
+    def bisect(self):
+
+    @check_geometry
+    def grammola(self, K):
+\end{verbatim}
+\caption{The \texttt{Vertex} class interface.}\label{fig:vertex}
+\end{figure}
+
+One of the fundamental ideas in universal geometry is the measure of the spread between two lines.
+The \texttt{.spread()} method will calculate the spread of the lines in a vertex.
+The boolean \texttt{.perpendicular()} method uses the spread to determine whether the two lines are perpendicular in their geometry.
+
+For any non-parallel pair of lines, there will be two bisectors.
+These two bisectors themselves form a new vertex and can be constructed with the \texttt{.bisect()} method.
+
+The two lines of a vertex can be used as the diagonals in the construction of a grammola, using the \texttt{.grammola()} method, which returns a new \texttt{Conic} object.
+
+\subsection{\texttt{PointLine}}
+
+The most versatile combination of core objects is to be found when a point and a line are combined.
+The \texttt{PointLine} class (Figure \ref{fig:pointline}) represents this pairing and provides a number of methods to make new constructions.
+It also provides the boolean method \texttt{.on()} to check whether the point lies on the line.
+
+\begin{figure}[!hbt]
+\begin{verbatim}
+class PointLine(object):
+
+    def __init__(self, point, line):
+
+    def __eq__(self, other):
+
+    def on(self):
+
+    @check_geometry
+    def reflection(self):
+
+    @check_geometry
+    def altitude(self):
+
+    def parallel(self):
+
+    @check_geometry
+    def quadrance(self):
+
+    @check_geometry
+    def construct_quadrance(self, quadrance):
+
+    @check_geometry
+    def construct_spread(self, spread):
+
+    @check_geometry
+    def parabola(self):
+
+    @check_geometry
+    def conic(self, K):
+\end{verbatim}
+\caption{The \texttt{PointLine} class interface.}\label{fig:pointline}
+\end{figure}
+
+The simplest construction is that of a new line which is parallel to the line and passes through the point.
+The \texttt{.parallel()} method constructs this line and should not be confused with the \texttt{.parallel()} method of the \texttt{Vertex} class.
+
+The \texttt{.altitude()} method returns a new \texttt{PointLine} representing the altitude, and its foot, of the point.
+A new \texttt{PointLine} can be constructed which is a reflection of the point through the line.
+This construction is performed by the \texttt{.reflection()} method.
+
+If one tries to construct a new line which passes through the point and forms a given spread with the original line they will find two solutions.
+These two solutions can be constructed in the form of a \texttt{Vertex} using the \texttt{.construct\_spread()} method.
+Likewise, there are, in general, two new points which lie on the line and are a given quadrance from the original point.
+A \texttt{LineSegment} can be constructed to represent these two solutions using the \texttt{.construct\_quadrance()} method.
+
+If we take the point and line as a focus and directrix pairing, we can construct a conic with constant $K$ with the \texttt{.conic()} method.
+Likewise, a parabola can be constructed with the \texttt{.parabola()} method.
+This is equivalent to calling \texttt{.conic()} with a value of 1.
+
+\section{Examples}
+
+To give a demonstration of how the library can be used, we will use it to solve the following problem:
+
+\begin{quote}
+Calculate the following in the field $\mathbb{Z}_{13}$ working with the red geometry.
+Given the points $A = [3, 7]$, $B = [4, 12]$, $C = [9, 2]$, verify that the altitudes of the triangle meet at a single point (the orthocentre).
+Find the circumcentre of the triangle and verify that it is equiquadrance from each of the vertices of the triangle
+\end{quote}
+To solve this, we put the following code into a file called \texttt{example.py}.
+\begin{verbatim}
+from pygeom.field import FiniteField
+from pygeom.geometry import red
+from pygeom.core import Point
+from pygeom.pairs import LineSegment, PointLine, Vertex
+
+# Set up the field
+f = FiniteField
+f.base = 13
+
+geometry = red(f)
+
+# Create the points
+A = Point(f(3), f(7), geometry)
+B = Point(f(4), f(12), geometry)
+C = Point(f(9), f(2), geometry)
+
+# Create the lines of the triangle
+AB = LineSegment(A, B)
+AC = LineSegment(A, C)
+BC = LineSegment(B, C)
+
+# Create the altitudes
+alt_a = PointLine(A, BC.line).altitude().line
+alt_b = PointLine(B, AC.line).altitude().line
+alt_c = PointLine(C, AB.line).altitude().line
+
+# Calculate the points of intersection of the altitudes
+O_ab = Vertex(alt_a, alt_b).point
+O_bc = Vertex(alt_b, alt_c).point
+O_ca = Vertex(alt_c, alt_a).point
+
+# Check that the points are indeed equal
+assert O_ab == O_bc == O_ca
+print ``Orthocentre:'', O_ab
+
+# Find the circumcentre
+C_a = BC.perp_bisector()
+C_b = AC.perp_bisector()
+C_0 = Vertex(C_a, C_b).point
+print ``Circumcentre:'', C_0
+
+# Check the quadrances
+Q_a = LineSegment(A, C_0).quadrance()
+Q_b = LineSegment(B, C_0).quadrance()
+Q_c = LineSegment(C, C_0).quadrance()
+assert Q_a == Q_b == Q_c
+\end{verbatim}
+When run, it gives the following result.
+\begin{verbatim}
+$ python example.py
+Orthocentre: [10 (13), 10 (13)]
+Circumcentre: [3 (13), 12 (13)]
+Circumquadrance: 1 (13)
+\end{verbatim}
+We have found the orthocentre, circumcentre and circumquadrance as required.
+The \texttt{assert} statements have also verified that the perpendicular bisectors meet at a single point and that the circumcentre is equiquadrance from the three vertices.
+
+This example shows that \pygeom can easily be used to perform calculations in planar universal geometry when attempting to solve specific problems.

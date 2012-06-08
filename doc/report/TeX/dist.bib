@@ -1,0 +1,4989 @@
+% Contents: Distributed and Parallel Systems, Networks and Protocols
+
+% Label convention:
+%   Thesis:        <author>:type
+%   Book:          <authors>:<abbreviated title>
+%   Paper:         <authors>_<year>
+%   Proceedings:   _<abbreviated title>_<year>
+%
+% Where <authors> is one of
+%		   <author>                          for single author
+%                  <author1>_<author2>	             for double author
+%                  <author1>_<author2-n's initials>  for multiple authors
+% <type> is one of "bsc", "be", "bce", "msc", "phd" etc.
+
+
+
+
+@Manual{ATT:Plan9,
+  key = 	 "ATT93",
+  title = 	 "{Plan} 9 from {Bell} {Labs} Second Release Notes",
+  organization = "AT{\&}T Bell Laboratories",
+  address =	 "Murray Hill, NJ, USA",
+  year =	 1993,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Abramson_Keedy_85,
+  author = 	 {David A. Abramson and J. Leslie Keedy},
+  title = 	 {Implementing a Large Virtual Memory in a Distributed
+		  Computing System},
+  booktitle =	 hicss85,
+  volume =	 2,
+  pages =	 {515--522},
+  year =	 1985,
+  keywords =	 {Monads, DSM},
+  heldby =	 {gernot},
+  annote =	 {PQ620.705/7}
+}
+
+@Article{Adve_Hill_93,
+  author = 	 "Sarita V. Adve and Mark D. Hill",
+  title = 	 "A Unified Formalization of Four Shared-Memory Models",
+  journal =	 ieeetpds,
+  year =	 1993,
+  volume =	 4,
+  pages =	 "613--624",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Adya_CLMS_97,
+  author = 	 {Atul Adya and Miguel Castro and Barbara Liskov and
+                  Umesh Maheshwari and Liuba Shrira},
+  title = 	 {Fragment Reconstruction: Providing Global Cache
+                  Coherence in a Transactional Storage System},
+  booktitle = 	 icdcs97,
+  pages =	 {2--11},
+  year =	 1997,
+  address =	 {Baltimore, MD, USA},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {checkpointing, DSM, fault tolerance, rollback-recovery},
+  heldby =	 {gernot}
+}
+
+@Article{Ahamad_DL_90,
+  author = 	 "Mustaque Ahamad and Parthe Dasgupta and LeBlanc,
+		  Jr., Richard J.",
+  title = 	 "Fault-tolerant Atomic Computations in an
+		  Object-Based Distributed System",
+  journal =	 dico,
+  year =	 1990,
+  volume =	 4,
+  pages =	 "69--80",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Alvisi_Marzullo_95,
+  author = 	 "Lorenzo Alvisi and Keith Marzullo",
+  title = 	 "Message Logging: Pessimistic, Optimistic, and Causal",
+  pages =	 "229--36",
+  booktitle =	 icdcs95,
+  year =	 1995,
+  organization = ieee,
+  address =	 "Vancouver, BC, Canada",
+  month =	 may,
+  keywords =	 "independent checkpointing",
+  heldby =	 {gernot}
+}
+
+@InProceedings{Alvisi_RV_98,
+  author = 	 {Lorenzo Alvisi and Sriram Rao and Harrick M. Vin},
+  title = 	 {Low-overhead Protocols for Fault-tolerant File Sharing},
+  booktitle = 	 icdcs98,
+  pages =	 {452--461},
+  year =	 1998,
+  address =	 {Amsterdam, The Netherlands},
+  month =	 may,
+  organization = ieee,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Amdahl_67,
+  author = 	 {G. M. Amdahl},
+  title = 	 {Validity of the Single-Processor approach to
+                  Achieving Large Scale computing Capabilities},
+  booktitle = 	 {AFIPS Conference},
+  pages =	 {483--485},
+  year =	 1967,
+  address =	 {Atlantic City, NJ, USA},
+  month =	 apr,
+  keywords =	 {Amdahl's Law}
+}
+
+@InProceedings{Amsaleg_FFS_95,
+  author = 	 {Laurent Amsaleg and Paulo Ferreira and Michael
+                  Franklin and Marc Shapiro},
+  title = 	 {Evaluating Garbage Collectors for Large Persistent Stores},
+  booktitle = 	 oopsla95-od,
+  year =	 1995,
+  address =	 {Austin, TX, USA},
+  month =	 oct,
+  pages =	 xyz,
+  heldby =	 {gernot},
+  annote =	 {\url{http://www-sor.inria.fr/publi/EGCLPS\_oopsla95ws.html}}
+}
+
+@InProceedings{Anderson_CGGYF_98,
+  author = 	 {Darrell C. Anderson and Jeffrey S. Chase and Syam
+                  Gadde and Andrew J. Gallatin and Kenneth G. Yocum
+                  and Michael J. Feeley},
+  title = 	 {Cheating the {I/O} Bottleneck: Network Storage with
+                  {Trapeze}/{Myrinet}},
+  booktitle = 	 usenix98,
+  year =	 1998,
+  address =	 {New Orleans, USA},
+  month =	 jun,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Anderson_CP_95,
+  author = 	 {Thomas Anderson and David E. Culler and David A. Patterson},
+  title = 	 {A Case for {NOW} (Networks of Workstations)},
+  booktitle = 	 micro,
+  pages =	 {54--64},
+  year =	 1995,
+  volume =	 15,
+  month =	 feb,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Anderson_RJ_97,
+  author = 	 {James H. Anderson and Srikanth Ramamurthy and Rohit
+                  Jain},
+  title = 	 {Implementing Wait-free Objects on Priority-based Systems},
+  booktitle = 	 podc97,
+  pages =	 {229--238},
+  year =	 1997,
+  address =	 {Santa Barbara, CA, USA},
+  month =	 aug,
+  heldby =	 {gernot}
+}
+
+@Article{Anderson_Snyder_91,
+  author = 	"Richard J. Anderson and Lawrence Snyder",
+  title = 	"A Comparison of Shared and Nonshared Memory Models of
+		 Parallel Computation",
+  journal = 	ieee,
+  year = 	1991,
+  volume = 	79,
+  pages = 	"480--7",
+  keywords = 	"DSM",
+  heldby = 	 "gernot"
+}
+
+@Article{Andrews_91,
+  author = 	"Gregory R. Andrews",
+  title = 	"Paradigms for Process Interaction in Distributed
+		 Programs",
+  journal = 	acmcs,
+  year = 	1991,
+  volume = 	23,
+  pages = 	"49--90",
+  keywords = 	"logical clocks, distributed semaphores, filters,
+                  client-server, heartbeat, probe/echo, broadcast,
+                  token-passing, bags of tasks",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Annaratone_FNV_90,
+  author = 	 "Marco Annaratone and Marco Fillo and Kiyoshi
+		 Nakabayashi and Marc Viredaz",
+  title = 	 "The {K2} Parallel Processor: Architecture and
+		 Hardware Implementation",
+  pages =	 xyz,
+  booktitle =	 sca90,
+  year =	 1990,
+  organization = ieee#"/"#acm
+}
+
+@InProceedings{Aron_DZ_99,
+  author = 	 {Mohit Aron and Peter Druschel and Willy Zwanepoel},
+  title = 	 {Efficient Support for {P-HTTP} in Cluster-Based Web Servers},
+  pages =	 {185--198},
+  booktitle = 	 usenix99,
+  year =	 1999,
+  address =	 {Monterey, CA, USA},
+  month =	 jun,
+  keywords =	 {load balancing, caching},
+  heldby =	 {gernot},
+  annote =	 {front-end forwards request to multiple back-end
+                  servers, with regard to load-balancing and caching}
+}
+
+@TechReport{Artsy_CF_84,
+  author = 	 "Yeshayahu Artsy and Hung-Yang Chang and Raphael Finkel",
+  title = 	 "{Charlotte}: Design and Implementation of a
+		  Distributed Kernel",
+  institution =  "Computer Sciences Deptartment, University of
+		  Wisconsin-Madison",
+  year = 	 1984,
+  type =	 "Technical Report",
+  number =	 554,
+  month =	 aug,
+  heldby =	 "gernot"
+}
+
+@Article{Attiya_BDPR_90,
+  author = 	 "Hagit Attiya and Amotz Bar-Noy and Danny Dolev and
+		  David Peleg and R{\"u}diger Reischuk",
+  title = 	 "Renaming in an Asynchronous Environment",
+  journal = 	 jacm,
+  year = 	 1990,
+  volume = 	 37,
+  pages = 	 "524--48",
+  keywords = 	 "distribut., concensus, fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@Article{Bagrodia_Shen_91,
+  author = 	 "Rajive L. Bagrodia and Chien-Chung Shen",
+  title = 	 "{MIDAS}: Integrated Design and Simulations of
+		  Distributed Systems",
+  journal = 	 ieeetose,
+  year = 	 1991,
+  volume = 	 17,
+  pages = 	 "1042--58",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Baker_HKSO_91,
+  author = 	 "Mary G. Baker and John H. Hartman and Michael D.
+		  Kupfer and Ken W. Shirriff and John K. Ousterhout",
+  title = 	 "Measurement of a Distributed File System",
+  pages =	 "198--212",
+  booktitle =	 sosp91,
+  year =	 1991,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Bal_KT_89,
+  author = 	 {Henri E. Bal and M. Frans Kaashoek and Andrew S. Tannenbaum},
+  title = 	 {A Distributed Implementation of the Shared
+                  Data-Object Model},
+  booktitle = 	 usenixdms,
+  year =	 1989,
+  address =	 {Fort Lauderdale, FL, USA},
+  month =	 oct,
+  pages =	 {1--19},
+  heldby =	 {gernot}
+}
+
+@Book{Balter_BBDKRSV:OS,
+  author = 	"Balter, Roland and Ban\^{a}tre, Jean-Pierre and
+                  Ban\^{a}tre, Michel and Deswarte, Yves and Krakowiak,
+                  Sacha and Rozier, Marc and Shapiro, Marc and Verjus,
+                  Jean-Pierre",
+  title = 	"Construction des Syst\`{e}mes d'Exploitation R\'{e}partis",
+  publisher = 	"INRIA",
+  year = 	1991,
+  series = 	"Collection Didactique",
+  note = 	"ISBN 2-7261-0691-9",
+  keywords = 	"Building Distributed Operating Systems"
+}
+
+@Article{Balter_BDFKMLNPRRPSV_91,
+  author = 	 "R. Balter and J. Bernadat and D. Decouchant and
+		  A. Freyssinet and S. Krakoviak and M. Meysembourg
+		  and P. Le Dot and Nguyen Van, N. and E. Paire and
+		  M. Riveill and C. Roisin and Rousset de Pina, X. and
+		  R. Scioville and G. Vand{\^o}me",
+  title = 	 "Architecture and Implementation of {G}uide, an
+		  Object-Oriented Distributed System",
+  journal =	 "Computing Systems",
+  year =	 1991,
+  volume =	 xyz,
+  pages =	 xyz,
+  heldby = 	 "gernot"
+}
+
+@Article{Bar-Noy_Dolev_91,
+  author = 	 "Amotz Bar-Noy and Danny Dolev",
+  title = 	 "Consensus Algorithms with One-Bit Messages",
+  journal =	 dico,
+  year =	 1991,
+  volume =	 4,
+  pages =	 "105--110",
+  heldby =	 "gernot"
+}
+
+@Article{Baratz_Segall_88,
+  author = 	 "Alan E. Baratz and Adrian Segall",
+  title = 	 "Reliable Link Initialization Procedure",
+  journal = 	 ieeetcom,
+  year = 	 1988,
+  volume = 	 "36",
+  pages = 	 "144--52",
+  keywords = 	 "DLC, synchronization, fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Batlivala_GHLPSA_92,
+  author = 	 {Nariman Batlivala and Barry Gleeson and Jim Hamrick
+                  and Scott Lurndal and Darren Price and James Soddy
+                  and Vadim Abrossimov},
+  title = 	 {Experience with {SVR4} Over {C}horus},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {223--241},
+  heldby =	 {gernot},
+  annote =	 "Knowing port name implies right to send"
+}
+
+@Article{Belsnes_76,
+  author = 	 "Dag Belsnes",
+  title = 	 "Single-message Communication",
+  journal = 	 ieeetcom,
+  year = 	 1976,
+  volume = 	 "COM-24",
+  pages = 	 "190--4",
+  keywords = 	 "fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Bennet_FS_96,
+  author = 	 {John K. Bennet and Katherine E. Fletcher and W. Evan
+                  Speight},
+  title = 	 {The Performance Value of Shared Network Caches in
+                  Clustered Multiprocessor Workstations},
+  pages =	 {64--74},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Bennett_CZ_90,
+  author = 	"John K. Bennett and John B. Carter and Willy Zwaenepoel",
+  title = 	"Munin: Distributed Shared Memory Based on
+		 Type-Specific Memory Coherence",
+  booktitle = 	 ppopp,
+  year = 	 1990,
+  pages = 	 "168--176",
+  organization = 	acm,
+  keywords =	 {distribute shared memory, DSM, coherence},
+  annote = 	 "Choice of coherence models",
+  heldby = 	 "gernot"
+}
+
+@Article{Benson_AA_91,
+  author = 	"Glenn S. Benson and Ian F. Akyildiz and William F.
+		 Appelbe",
+  title = 	"A Formal Protection Model of Security in Centralized,
+		 Parallel and Distributed Systems",
+  journal = 	tocs,
+  year = 	1991,
+  volume = 	8,
+  pages = 	"183--213",
+  heldby = 	 "gernot"
+}
+
+@Book{Bernstein_HG:CCRDBS,
+  author = 	"Philip A. Bernstein and Vassos Hadzilacos and Nathan Goodman",
+  title = 	"Concurrency Control and Recovery in Database Systems",
+  publisher = 	"Addison-Wesley",
+  year = 	1987,
+  heldby = 	 "gernot"
+}
+
+@Article{Bernstein_SR_80,
+  author = 	 {Philip A. Bernstein and David W. Shipman and James
+                  B. Rothnie},
+  title = 	 {Concurrency Control in a System of Distributed
+                  Databases ({SDD-1})},
+  journal = 	 tods,
+  year = 	 1980,
+  volume =	 5,
+  pages =	 {18--51},
+  keywords =	 {Time stamps},
+  heldby =	 {gernot}
+}
+
+@PhdThesis{Bershad:phd,
+  author = 	 "Brian N. Bershad",
+  title = 	 "High Performance Cross-Address Space Communication",
+  school = 	 "Dept.\ of Computer Science, University of Washington",
+  year = 	 1990,
+  address =	 "Seattle, WA, USA",
+  type =	 "PhD Thesis",
+  note =	 "Also TR 90-06-02",
+  heldby =	 "gernot"
+}
+
+@Article{Bershad_ALL_91,
+  author = 	 {Brian N. Bershad and Thomas Anderson and Edward
+                  Lazowska and Henry Levy},
+  title = 	 {User-Level Interprocess Communication for Shared
+                  Memory Multiprocessors},
+  journal = 	 tocs,
+  year = 	 1991,
+  volume =	 9,
+  pages =	 {175--198},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Billington_Kinny_89,
+  author = 	 "J. Billington and D. Kinny",
+  title = 	 "Computer Aided Protocol Engineering",
+  pages =	 "69--73",
+  booktitle =	 proc # " Conference on New Business Applications of
+		  Information Technology",
+  year =	 1989,
+  address =	 "Melbourne, Vic., Australia",
+  month =	 apr,
+  heldby =	 "gernot"
+}
+
+@Article{Billington_WW_88,
+  author = 	"Jonathan Billington and Geoffrey R. Wheeler and
+		 Michael C. Wilbur-Ham",
+  title = 	"{PROTEAN}: A High-level Petri Net Tool for the
+		 Specification and Verification of Communication Protocols",
+  journal = 	ieeetose,
+  year = 	1988,
+  volume = 	14,
+  pages = 	"301--16",
+  heldby = 	 "gernot"
+}
+
+@Article{Birman_85,	oldlabel = Birman:1985,
+  author =	"Birman, Kenneth P.",
+  title =	"Replication and Fault-Tolerance in the {ISIS} System",
+  year =	1985,
+  journal =	sosp,
+  pages =	"79--86",
+  keywords =	"Replication, Fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@Article{Birman_Joseph_87,
+  author = 	 "Kenneth P. Birman and Thomas A. Joseph",
+  title = 	 "Reliable Communication in the Presence of Failures",
+  journal = 	 tocs,
+  year = 	 1987,
+  volume = 	 5,
+  pages = 	 "47--76",
+  keywords = 	 "fault tolerance, protocol, ISIS",
+  heldby = 	 "gernot"
+}
+
+@Article{Birman_SS_91,
+  author = 	 "Kenneth P. Birman and Andr{\'e} Schiper and Pat Stephenson",
+  title = 	 "Lightweight Causal and Atomic Group Multicast",
+  journal = 	 tocs,
+  year = 	 1991,
+  volume = 	 9,
+  pages = 	 "272--314",
+  keywords = 	 "ISIS, fault tolerance, protocol, reliable multicast,
+                  CBCAST, ABCAST",
+  heldby = 	 "gernot"
+}
+
+@TechReport{Birrell_ENOW_93,
+  author = 	 "Andrew Birrell and David Evers and Greg Nelson and
+		  Susan Owicki and Edward Wobber",
+  title = 	 "Distributed Garbage Collection for Network Objects",
+  institution =  "DEC SRC",
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 116,
+  heldby =	 "gernot"
+}
+
+@TechReport{Birrell_NOW_94:tr,
+  author = 	 "Andrew Birrell and Greg Nelson and Susan Owicki and
+		  Edward Wobber",
+  title = 	 "Network Objects",
+  institution =  "DEC Systems Research Center",
+  year = 	 1994,
+  type =	 "SRC Report",
+  number =	 115,
+  address =	 "130 Lytton Avenue, Palo Alto, CA 94301, USA",
+  heldby = 	 "gernot"
+}
+
+@Article{Birrell_NOW_95,
+  author = 	 {Andrew Birrell and Greg Nelson and Susan Owicki and
+		  Edward Wobber},
+  title = 	 {Network Objects},
+  journal = 	 spe,
+  year = 	 1995,
+  volume =	 25,
+  pages =	 {S4/87--S4/130},
+  heldby =	 {gernot}
+}
+
+@Article{Birrell_Nelson_84,
+  author = 	 "Andrew D. Birrell and Bruce Jay Nelson",
+  title = 	 "Implementing Remote Procedure Calls",
+  journal = 	 tocs,
+  year = 	 1984,
+  volume = 	 2,
+  pages = 	 "39--59",
+  keywords = 	 "RPC",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Bisiani_Ravishankar_90,
+  author = 	 "Roberto Bisiani and Mosur Ravishankar",
+  title = 	 "{PLUS}: A Distributed Shared-Memory System",
+  booktitle = 	 "17th " # isca,
+  year = 	 1990,
+  pages = 	 "115--124",
+  organization = ieee,
+  annote = 	 "weak ordering; write update; H/W support, DSM,
+                  synchronisation, coherency",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Black_GJRDDFBTMB_92,
+  author = 	 {David L. Black and David B. Golub and Daniel
+                  P. Julin and Richard F. Rashid and Richard P. Draves
+                  and Randall W. Dean and Alessandro Forin and Joseph
+                  Barrera and Hideyuki Tokuda and Gerald Malan and
+                  David Bohrman},
+  title = 	 {Microkernel Operating Systems Architecture and {Mach}},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {11--30},
+  heldby =	 {gernot},
+  annote = 	 "Good overview of Mach"
+}
+
+@Article{Black_HJLC_87,
+  author = 	 "Andrew Black and Norman Hutchinson and Eric Jul and
+		  Henry Levy and Larry Carter",
+  title = 	 "Distribution and Abstract Types in {Emerald}",
+  journal =	 ieeetose,
+  year =	 1987,
+  volume =	 "SE-13",
+  pages =	 "65--76",
+  heldby = 	 "gernot"
+}
+
+@Article{Borg_BGHO_89,
+  author = 	 {Anita Borg and Wolfgang Blau and Wolfgang Graetsch
+                  and Ferdinand Herrmann and Wolfgang Oberle},
+  title = 	 {Fault Tolerance Under {UNIX}},
+  journal = 	 tocs,
+  year = 	 1989,
+  volume =	 7,
+  pages =	 {1--24},
+  keywords =	 {pessimistic checkpointing},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Borg_BG_83,
+  author = 	 {Anita Borg and J. Baumback and S. Glazer},
+  title = 	 {A Message System Supporting Fault Tolerance},
+  booktitle = 	 sosp83,
+  pages =	 {110-118},
+  year =	 1983,
+  month =	 oct,
+  keywords =	 {checkpointing, pessimistic, original ref?},
+  heldby =	 {gernot}
+}
+
+@TechReport{Boyer_CCFH_90,
+  author = 	 "Boyer, F. and Cayuela, J. and Chevalier, P. Y. and
+		  Freyssinet, A. and Hagimont, D.",
+  title = 	 "Supporting an Object-Oriented Distributed System:
+		  Experience with {Unix}, {Mach} and {Chorus}",
+  institution =  "Bull-IMAG",
+  year = 	 1990,
+  number = 	 "7-90",
+  address = 	 "Grenoble (France)",
+  month = 	 dec
+}
+
+@InProceedings{Burkowski_CD_89,
+  author = 	 "Burkowski, F.J. and Cormack, G.V. and Dueck, G.D.P.",
+  title = 	 "Architectural Support for Synchronous Task Communication",
+  pages =	 "40--53",
+  booktitle =	 asplos89,
+  year =	 1989,
+  keywords =	 "Thoth"
+}
+
+@Article{Burns_Neiger_94,
+  author = 	 "James E. Burns and Gil Neiger",
+  title = 	 "Fast and Simple Sidtributed Consensus",
+  journal =	 dico,
+  year =	 1994,
+  volume =	 8,
+  pages =	 "59--64",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Burston_92,
+  author = 	"A.K. Burston",
+  title = 	"An Architecture for a Broadband {LAN}",
+  booktitle = 	icpssn,
+  year = 	1992,
+  organization = 	iee,
+  address = 	"London, UK",
+  heldby = 	 "gernot"
+}
+
+@Article{Butcher_Zedan_91,
+  author = 	 "Paul Butcher and Hussein Zedan",
+  title = 	 "Lucinda --- An Overview",
+  journal = 	 sigplan,
+  year = 	 1991,
+  volume = 	 26,
+  number = 	 8,
+  pages = 	 "90--100",
+  heldby =	 "gernot",
+  keywords = 	 "Linda, Russell, polymorphism"
+}
+
+@Article{Butenuth_BH_96,
+  author = 	 "Roger Butenuth and Wolfgang Burke and Hans-Ulrich Hei{\ss}",
+  title = 	 "{Cosy}---An Operating System for Highly Parallel Computers",
+  journal =	 osr,
+  year =	 1996,
+  volume =	 30,
+  number =	 2,
+  pages =	 "81--91",
+  month =	 apr,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Cabillic_MP_95,
+  author = 	 "G. Cabillic and G. Muller and I. Puaut",
+  title = 	 "The performance of consistent checkpointing in
+		  distributed shared memory system",
+  pages =	 "96--105",
+  annote =	 {implementation techniques},
+  keywords =	 {incremental checkpointing, main memory
+                  checkpointing, copy-on-write},
+  booktitle =	 rds95,
+  year =	 1995,
+  heldby = 	 {gernot}
+}
+
+@article{Cahill_Kramer_90,
+  author = 	 "Cahill, Vinny and Kramer, Andre",
+  title = 	 "{OISIN}: Operating System Support for Objects in a
+		  Distributed Environment",
+  volume = 	 5,
+  number = 	 1,
+  pages = 	 "4--8",
+  journal = 	 ieeetcos,
+  year = 	 1991,
+  organization = ieee
+}
+
+@InProceedings{Campbell_RJ_87,
+  author = 	 "R.H. Campbell and V. Russo and G. Johnston",
+  title = 	 "{Choices}: The Design of a Multiprocessor Operating System",
+  pages =	 "109--23",
+  booktitle =	 usenix # " C++ Workshop",
+  year =	 1987,
+  address =	 "Santa Fe, NM, USA"
+}
+
+@Article{Carter_95,
+  author = 	 "John B. Carter",
+  title = 	 "Design of the {Munin} Distributed Shared Memory System",
+  journal =	 jpdc,
+  year =	 1995,
+  volume =	 29,
+  pages =	 "219--227",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Carter_BZ_91,
+  author = 	 "John B. Carter and John K. Bennett and Will Zwaenepoel",
+  title = 	 "Implementation and Performance of {Munin}",
+  booktitle = 	 sosp91,
+  year = 	 1991,
+  pages = 	 "152--64",
+  keywords = 	 "DSM, coherence",
+  annote = 	 "choice of consistency protocols, no fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@Article{Carter_BZ_95,
+  author = 	 {John B. Carter and John K. Bennett and Willy Zwaenepoel},
+  title = 	 {Techniques for Reducing Consistency-Related
+                  Communication in Distributed Shared Memory Systems},
+  journal = 	 tocs,
+  year = 	 {1995},
+  volume =	 13,
+  pages =	 {205--243},
+  keywords =	 {DSM, coherency, Munin},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Carter_CJZ_92,
+  author = 	 "John B. Carter and Alan L. Cox and David B. Johnson
+		  and Willy Zwaenepoel",
+  title = 	 "Distributed Operating Systems Based on a Protected
+		  Global Virtual Address Space",
+  booktitle =	 wwos92,
+  year = 	 1992,
+  organization = ieee,
+  address =	 "Key Biscayne, FL, USA",
+  pages =	 "75--9",
+  heldby = 	 "gernot"
+}
+
+@TechReport{Castro_95,
+  author = 	 "Maurice Castro",
+  title = 	 "The {Walnut} Kernel: User Level Programmer's Guide",
+  institution =  "Computer Science Dept., Monash University",
+  year = 	 1995,
+  type =	 "Technical Report",
+  number =	 "95/222",
+  address =	 "Clayton, Vic, Australia",
+  heldby =	 "gernot"
+}
+
+@Book{Ceri_Pelagatti:DistDB,
+  author = 	 {Stefano Ceri and Giuseppe Pelagatti},
+  title = 	 {Distributed Databases---Principles and Systems},
+  publisher = 	 {McGraw-Hill},
+  year = 	 1985,
+  heldby =	 {UNSW Library}
+}
+
+@InProceedings{Chaiken_Agarwal_94,
+  author = 	 {David Chaiken and Anant Agarwal},
+  title = 	 {Software-Extended Coherent Shared Memory:
+                  Performance and Cost},
+  booktitle = 	 isca94,
+  year =	 1994,
+  organization = acm,
+  pages =	 {314--324},
+  keywords =	 {Alewife, hardware/software},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Chandra_LR_94,
+  author = 	 {Satish Chandra and James R. Larus and Anne Rogers},
+  title = 	 {Where is Time Spent in Message-Passing and
+                  Shared-Memory Programs},
+  booktitle = 	 {asplos94},
+  year =	 1994,
+  organization = acm,
+  address =	 {San Jose, CA, USA},
+  pages =	 {61--73},
+  heldby =	 {gernot}
+}
+
+@Article{Chandy_Lamport_85,
+  author = 	 {K. Mani Chandy and Leslie Lamport},
+  title = 	 {Distributed Snapshots: Determining Global States of
+                  Distributed Systems},
+  journal = 	 tocs,
+  year = 	 1985,
+  volume =	 3,
+  pages =	 {63--75},
+  keywords =	 {consistent checkpointing},
+  heldby =	 {gernot}
+}
+
+@Article{Chang_91,
+  author = 	"Danial T. Chang",
+  title = 	"{CORAL}: A Concurrent Object-Oriented System for
+		 Constructing and Executing Sequential, Parallel and
+		 Distributed Applications",
+  journal = 	oops,
+  year = 	1991,
+  volume = 	2,
+  pages = 	"26--30",
+  heldby = 	 "gernot"
+}
+
+@Article{Chang_96,
+  author = 	 {Ye-In Chang},
+  title = 	 {A Simulation Study on Distributed Mutual Exclusion},
+  journal = 	 jpdc,
+  year = 	 1996,
+  volume =	 33,
+  pages =	 {107--121},
+  heldby =	 {gernot}
+}
+
+@Article{Chang_Maxemchuk_84,
+  author = 	 "Jo-Mei Chang and N. F. Maxemchuk",
+  title = 	 "Reliable Broadcast Protocols",
+  journal = 	 tocs,
+  year = 	 1984,
+  volume = 	 2,
+  pages = 	 "251--73",
+  keywords = 	 "fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@Article{Cheriton_84,
+  author = 	 "David R. Cheriton",
+  title = 	 "The {V} Kernel: A Software Base for Distributed Systems",
+  journal =	 ieeesw,
+  year =	 1984,
+  volume =	 1,
+  number =	 2,
+  pages =	 "19--42",
+  heldby =	 gernot
+}
+
+@InProceedings{Cheriton_86,
+  author = 	 "David R. Cheriton",
+  title = 	 "Problem-oriented Shared Memory: A Decentralized
+		  Approach to Distributed System Design",
+  booktitle = 	 icdcs,
+  year = 	 1986,
+  pages = 	 "190--7",
+  organization = ieee,
+  keywords = 	 "message passing, RPC, protocols, DSM, shared memory",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Cheriton_Mann_84,
+  author =	"Cheriton, David R. and Mann, Timothy P.",
+  title =	"Uniform Access to Distributed Name Interpretation in
+		 the {V}-System",
+  year =	1984,
+  booktitle =	icdcs84,
+  institution =	ieee,
+  pages =	"290-297",
+  keywords =	"Naming, File system",
+  annote =	"See p.291"
+}
+
+@Article{Chin_Chanson_91,
+  author = 	 "Roger S. Chin and Samuel T. Chanson",
+  title = 	 "Distributed Object-Based Programming Systems",
+  journal = 	 acmcs,
+  year = 	 1991,
+  volume = 	 23,
+  pages = 	 "91--124",
+  keywords = 	 "capabilities, error recovery, fault tolerance, method
+		  invocation, nested transaction, reliability,
+		  processor allocation, resource management,
+		  synchronization",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Chiola_Ciaccio_98,
+  author = 	 {G. Chiola and G. Ciaccio},
+  title = 	 {Active Ports: A Performance-oriented Operating
+                  System Support to Fast {LAN} Communications},
+  booktitle = 	 europar98,
+  pages =	 xyz,
+  year =	 1998,
+  address =	 xyz,
+  month =	 xyz,
+  heldby =	 {gernot},
+  annote =	 {a}
+}
+
+@Article{Chiu_Young_96,
+  author = 	 {Ge-Ming Chiu and Cheng-Ru Young},
+  title = 	 {Efficient Rollback-Recovery Techniques in
+                  Distributed Computing Systems},
+  journal = 	 ieeetpds,
+  year = 	 1996,
+  volume =	 7,
+  pages =	 {565--577},
+  keywords =	 {optimistic checkpointing},
+  heldby =	 {gernot}
+}
+
+@Article{Choi_Kim_91,
+  author = 	 "Dug-Kyoo Choi and B. G. Kim",
+  title = 	 "The Expected (Not Worst-Case) Throughput of the
+		  Ethernet Protocol",
+  journal = 	 ieeetc,
+  year = 	 1991,
+  volume = 	 40,
+  pages = 	 "245--52",
+  heldby = 	 "gernot"
+}
+
+@Article{Chong_Hwang_95,
+  author = 	 "Yong-Kim Chong and Kai Hwang",
+  title = 	 "Performance Analysis of Four Memory Consistency
+		  Models for Multithreaded Multiprocessors",
+  journal =	 ieeetpds,
+  year =	 1995,
+  volume =	 6,
+  pages =	 "1085--1099",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Clark_JR_92,
+  author = 	 {Raymond K. Clark and E. Douglas Jensen and Franklin
+                  D. Reynolds},
+  title = 	 {An Architectural Overview of the Alpha Real-Time
+                  Distributed Kernel},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {127--146},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Cohn_BGCK_92,
+  author = 	 "D.L. Cohn and A. Benerji and P.M. Greenawalt and
+		  M.R. Casey and D.C. Kulkarni",
+  title = 	 "Workstation Cooperation Through a Typed Distributed
+		  Shared Memory Abstraction",
+  booktitle =	 wwos92,
+  year = 	 1992,
+  organization = ieee,
+  address =	 "Key Biscayne, FL, USA",
+  pages =	 "70--4",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Colajanni_YC_98,
+  author = 	 {Michele Colajanni and Philip S. Yu and Valeria Cardellini},
+  title = 	 {Dynamic Load Balancing in Geographically Distributed
+                  Heterogenous Web Servers},
+  booktitle = 	 icdcs98,
+  pages =	 {285--302},
+  year =	 1998,
+  address =	 {Amsterdam, The Netherlands},
+  month =	 may,
+  organization = ieee,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Colbrook_BDW_91,
+  author = 	 "A. Colbrook and E. Brewer and C. Dellarocas and W. Weihl",
+  title = 	 "An algorithm for concurrent search trees",
+  volume =       3,
+  pages =	 "138--141",
+  booktitle =	 icpp91,
+  year =	 1991,
+  month =	 aug,
+  heldby = 	 "jinsong"
+}
+
+@Article{Cordsen_GSGGHS_97,
+  author = 	 {Jo{\"o}rg Cordsen and Thomas Garnatz and Michael
+                  Sander and Anne Gerischer and Marco Dimas Gubitoso
+                  and Ute Haack and Wolfgang Schr{\"o}der-Preikschat},
+  title = 	 {Vote for {Peace}: Implementation and Performance of
+                  a Parallel Operating System},
+  journal = 	 conc,
+  year = 	 1997,
+  volume =	 5,
+  number =	 2,
+  pages =	 {16--27},
+  keywords =	 {dsm},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Costa_GSNC_96,
+  author = 	 {Manuel Costa and Paulo Guedes and Manuel Sequeira
+                  and Nuno Neves and Miguel Castro},
+  title = 	 {Lightweight Logging for Lazy Release Consistent
+                  Distributed Shared Memory},
+  booktitle = 	 osdi96,
+  pages =	 {59--73},
+  year =	 1996,
+  address =	 {Seattle, WA, USA},
+  month =	 oct,
+  organization = acm # "/" # ieee # "/" # usenix,
+  keywords =	 {DSM, TreadMarks, fault-tolerance},
+  heldby =	 {gernot}
+}
+
+@Book{Coulouris_DK:DS,
+  author = 	 "Coulouris, George F. and Jean Dollimore and Tim Kindberg",
+  title = 	 "Distributed Systems: Concepts and Design",
+  publisher = 	 "Addison-Wesley",
+  year = 	 1994,
+  edition =	 {2nd},
+  heldby = 	 "gernot"
+}
+
+@Article{Cristian_91,
+  author = 	 "Flaviu Cristian",
+  title = 	 "Understanding Fault-Tolerant Distributed Computing Systems",
+  journal =	 cacm,
+  year =	 1991,
+  volume =	 34,
+  number =	 2,
+  pages =	 "56--78",
+  month =	 feb,
+  heldby = 	 "gernot"
+}
+
+@Book{Custer:NT,
+  author = 	 {Helen Custer},
+  title = 	 {Inside {Windows NT}},
+  publisher = 	 {Microsoft Press},
+  year = 	 1993,
+  heldby =	 {gernot}
+}
+
+@Book{Custer:NTFS,
+  author = 	 {Helen Custer},
+  title = 	 {Inside the {Windows NT} File System},
+  publisher = 	 {Microsoft Press},
+  year = 	 1994,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Damani_Garg_96,
+  author = 	 {Om P. Damani and Vijay K. Garg},
+  title = 	 {How to Recover Efficiently and Asynchronously when
+                  Optimism Fails},
+  booktitle = 	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  pages =	 {108--115},
+  keywords =	 {optimistic checkpointing},
+  heldby =	 {gernot}
+}
+
+@Article{Dasgupta_LAR_91,
+  author = 	"Partha Dasgupta and LeBlanc, Jr, Richard J. and
+		 Mustaque Ahamad and Umakishore Ramachandran",
+  title = 	"The {Clouds} Distributed Operating System",
+  journal = 	comp,
+  year = 	1991,
+  volume = 	24,
+  number = 	11,
+  pages = 	"34--44",
+  keywords = 	"object-thread, object-oriented",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Dasgupta_LA_88,
+  author = 	 "Partha Dasgupta and Richard J. LeBlanc and W.F. Appelbe",
+  title = 	 "The {Clouds} Distributed Operating System",
+  booktitle =	 icdcs88,
+  year =	 1988,
+  pages = 	 "2--9",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{DePaoli_GHJ_96,
+  author = 	 {De Paoli, D. and Andrzej Goscinski and M. Hobbs and P. Joyce},
+  title = 	 {Performance Comparison of Process Migration with
+                  Remote Process Creation Mechanisms in {RHODOS}},
+  pages =	 {554--561},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  keywords = 	 "load balancing, global sheduling",
+  heldby =	 "gernot"
+}
+
+@InProceedings{DePaoli_GHW_95,
+  author = 	 {De Paoli, D. and Andrzej Goscinski and M. Hobbs and G. Wickham},
+  title = 	 {The {RHODOS} Microkernel, Kernel Servers and their
+                  Cooperation},
+  booktitle =	 ica3pp,
+  year =	 1995,
+  organization = ieee,
+  address =	 "Brisbane, Australia",
+  month =	 apr
+}
+
+@TechReport{DePaoli_HG_95,
+  author = 	 {D. De Paoli and M. Hobbs and Andrzej Goscinski},
+  title = 	 {Paging in {RHODOS}},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1995,
+  number =	 {TR C95/23},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 jun,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Dearle_BFHLRV_92,
+  author = 	 "Alan Dearle and di Bona, Rex and James Farrow and
+		  Frans Henskens and Anders Linsdtr{\"o}m and John
+		  Rosenberg and Francis Vaughan",
+  title = 	 "Grasshopper---A Persistent Operating System for
+		  Conventional Hardware",
+  booktitle =	 iwooos92,
+  year = 	 1992,
+  editor =	 "Luis-Felipe Cabrera and Eric Jul",
+  organization = ieee,
+  address =	 "Dourdan, France",
+  pages =	 "81--5",
+  month = 	 sep,
+  heldby = 	 "gernot"
+}
+
+@TechReport{Decouchant_LRRP_91,
+  author = 	 "Decouchant, D. and Le Dot, P. and Riveill, M. and
+		  Roisin, C. and Rousset de Pina, X.",
+  title = 	 "A Synchronization Mechanism for an Object Oriented
+		  Distributed System",
+  institution =  "Bull-IMAG",
+  year = 	 1991,
+  number = 	 "9-91",
+  address = 	 "Grenoble (France)",
+  month = 	 mar
+}
+
+@PhdThesis{Delp:phd,
+  author = 	 "Delp, Gary",
+  title = 	 "The Architecture and Implementation of {Memnet}: a
+		  High-Speed Shared-Memory Computer Communications Network",
+  school = 	 "University of Delaware",
+  year = 	 1988,
+  heldby =	 "missing"
+}
+
+@TechReport{Delp_Farber_86,
+  author = 	 "Gary S. Delp and David J. Farber",
+  title = 	 "Memnet: An experiment in high speed memory mapped
+		  local network interfaces",
+  institution =  "Dept. Elect. Engin., Univ. Delaware",
+  year = 	 1986,
+  type = 	 "tech. report",
+  number = 	 "85-11-1R",
+  address = 	 "Newark, Delaware, USA",
+  keywords = 	 "memory mapped network, chache consistency, coherence",
+  annote = 	 "First DSM paper?",
+  heldby = 	 "gernot"
+}
+
+@Misc{Delp_Farber_89,
+  author = 	 "Gary S. Delp and David J. Farber",
+  title = 	 "Memnet---a Different Approach to a Network",
+  howpublished = 	"{USENET} article",
+  year = 	 1989,
+  month = 	 jun,
+  keywords = 	 "memory mapped network, chache consistency,
+                  coherence, DSM",
+  heldby = 	 "gernot"
+}
+
+@TechReport{Delp_SF_88,
+  author = 	 "Gary S. Delp and Adarshpal S. Sethi and David J. Farber",
+  title = 	 "An Analysis of {Memnet}: An Experiment in High-Speed
+		  Shared-Memory Local Networking",
+  institution =  "Dept. Elec. Engin, University of Delaware",
+  year = 	 1988,
+  type = 	 "technical report",
+  number = 	 "88-6-1",
+  address = 	 "Newark, Delaware, USA",
+  keywords = 	 "memory mapped network, chache consistency,
+                  coherence, DSM",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Devarakonda_KM_95,
+  author = 	 "Murthy Devarakonda and Bill Kish and Ajay Mohindra",
+  title = 	 "Server Recovery Using Naturally Replicated State: A
+		  Case Study",
+  pages =	 "213--20",
+  booktitle =	 icdcs95,
+  year =	 1995,
+  organization = ieee,
+  address =	 "Vancouver, BC, Canada",
+  month =	 may
+}
+
+@InProceedings{Dickman_MS_92,
+  author = 	 "Peter Dickman and Mesaac Makpangou and Marc Shapiro",
+  title = 	 "Contrasting Fragmented Objects with Uniform
+		  Transparent Object References for Distributed Programming",
+  pages =	 xyz,
+  booktitle =	 proc # "SIGOPS European Workshop",
+  year =	 1992,
+  organization = acm,
+  address =	 "Le Mont Saint-Michel, France",
+  month =	 sep,
+  heldby =	 "gernot"
+}
+
+@Article{Dini_Lopriore_00,
+  author = 	 {Gianluca Dini and Lanfranco Lopriore},
+  title = 	 {Sharing Objects in a Distributed, Single Address
+                  Space Environment},
+  journal = 	 fgcs,
+  year = 	 2000,
+  volume =	 17,
+  pages =	 {247--264},
+  heldby =	 {gernot}
+}
+
+@Misc{Droms:DHCP,
+  author =	 {R. Droms},
+  title =	 {Dynamic Host Configuration Protocol},
+  howpublished = {RFC~2131, Internet Engineering Task
+                  Force. \url{ftp://ftp.ietf.org/rfc/rfc2131.txt}},
+  month =	 mar,
+  year =	 1997,
+  heldby =	 {gernot},
+  annote =	 {DHCP}
+}
+
+@Article{Dubois_SB_88,
+  author = 	"Michael Dubois and Christoph Scheurich and Fay{\'e}
+		 A. Briggs",
+  title = 	"Synchronization, Coherence, and Event Ordering in
+		 Multiprocessors",
+  journal = 	comp,
+  year = 	1988,
+  volume = 	21,
+  pages = 	"9-21",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Dwarkadas_KCZ_93,
+  author = 	 {Sandhya Dwarkadas and Pete Keleher and Alan L. Cox
+                  and Willy Zwaenepoel},
+  title = 	 {Evaluation of Release Consistent Software
+                  Distributed Shared Memory on Emerging Network Technology},
+  booktitle = 	 isca93,
+  year =	 1993,
+  organization = acm,
+  pages =	 {144--155},
+  keywords =	 {DSM, coherency},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Dwork_Skeen_83,
+  author = 	 "Cynthia Dwork and Dale Skeen",
+  title = 	 "The Inherent Cost of Nonblocking Commitment",
+  booktitle = 	 pdc,
+  year = 	 1983,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Edelson_92,
+  author = 	 "Daniel R. Edelson",
+  title = 	 "Precompiling {C++} for Garbage Collection",
+  pages =	 xyz,
+  booktitle =	 iwmm92,
+  year =	 1992,
+  publisher =	 "Springer Verlag",
+  address =	 "Saint-Malo, France",
+  month =	 sep,
+  heldby =	 gernot
+}
+
+@InProceedings{Edwards_Muir_95,
+  author = 	 {Aled Edwards and Steve Muir},
+  title = 	 {Experiences Implementing a High Performance {TCP} in
+                  User-space},
+  booktitle = 	 sigcomm95,
+  pages =	 {nnn},
+  year =	 1995,
+  address =	 {xyz},
+  month =	 {xyz},
+  keywords =	 {device driver},
+  heldby =	 {gernot}
+}
+
+@Article{Eggers_91,
+  author = 	 "Susan J. Eggers",
+  title = 	 "Simplicity Versus Accuracy in a Model of Cache
+		  Coherency Overhead",
+  journal =	 ieeetc,
+  year =	 1991,
+  volume =	 40,
+  pages =	 "893--906",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Eicken_BBV_95,
+  author = 	 {von Eicken, Thorsten and Anindya Basu and Vineet
+                  Buch and Werner Vogels},
+  title = 	 {{U-Net}: A User-Level Network Interface for Parallel
+                  and Distributed Computing},
+  booktitle = 	 sosp95,
+  pages =	 {40--53},
+  year =	 1995,
+  address =	 {Copper Mountain, CO, USA},
+  month =	 dec,
+  keywords =	 {active networks, device driver},
+  heldby =	 {gernot},
+  annote =	 {Basic driver is still in kernel}
+}
+
+@Article{Eicken_BB_95,
+  author = 	 {von Eicken, Thorsten and Anindya Basu and Vineet Buch},
+  title = 	 {Low-Latency Communication Over {ATM} Networks Using
+                  Active Messages},
+  journal = 	 micro,
+  year = 	 1995,
+  volume =	 15,
+  number =	 1,
+  pages =	 {46--53},
+  month =	 feb,
+  heldby =	 {gernot}
+}
+
+@Article{El_Guibaly_89,
+  author = 	 "El Guibaly, Fayez",
+  title = 	 "Design and Analysis of Arbitration Protocols",
+  journal = 	 ieeetc,
+  year = 	 1989,
+  volume = 	 "C-38",
+  pages = 	 "161--71",
+  keywords = 	 "sharing",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Elnozahy_JZ_92,
+  author = 	 "E. N. Elnozahy and D. B. Johnson and W. Zwaenepoel",
+  title = 	 "The performance of consistent checkpointing",
+  pages =	 "39--47",
+  booktitle =	 rds92,
+  year =	 1992,
+  month =	 oct,
+  heldby = 	 "jinsong"
+}
+
+@Article{Elnozahy_Zwanepoel_92,
+  author = 	 "Elmootazbellah N. Elnozahy and Willy Zwanepoel",
+  title = 	 "Manethio: Transparent Rollback-Recovery With Low
+		  Overhead, Limited Rollback, and Fast Output Commit",
+  journal =	 ieeetc,
+  year =	 1992,
+  volume =	 41,
+  pages =	 "526--531",
+  keywords =	 {optimistic checkpointing},
+  heldby =	 {gernot}
+}
+
+@MastersThesis{Elphinstone:be,
+  author = 	 "Kevin Elphinstone",
+  title = 	 "Distributed Systems and Global Naming",
+  school = 	 eecs,
+  year = 	 1990,
+  type = 	 "{BE} ({Hons}) Thesis",
+  address = 	 unswadr,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Elphinstone_RHL_96,
+  author = 	 "Kevin Elphinstone and Stephen Russell and Gernot
+		  Heiser and Jochen Liedtke",
+  title = 	 "Supporting Persistent Object Systems in a Single
+		  Address Space",
+  pages =	 {111--119},
+  booktitle =	 pos96,
+  year =	 1996,
+  publisher =	 {Morgan Kaufmann},
+  address =	 "Cape May, NJ, USA",
+  month =	 may,
+  heldby =	 "gernot"
+}
+
+@TechReport{Elphinstone_RHL_96:tr,
+  author = 	 "Kevin Elphinstone and Stephen Russell and Gernot
+		  Heiser and Jochen Liedtke",
+  title = 	 "Supporting Persistent Object Systems in a Single
+		  Address Space",
+  institution =  unsw,
+  year = 	 1996,
+  type =	 "Technical Report",
+  number =	 {UNSW-CSE-TR-9601},
+  address =	 unswadr,
+  month =	 feb,
+  heldby = 	 "gernot"
+}
+
+@TechReport{Fairbairns_93,
+  author = 	 {Robin Fairbairns},
+  title = 	 {Esprit {BRA} 6865---{Pegasus} Summary Report, Kernel
+                  Work Package},
+  institution =  {University of Cambridge Computer Laboratory},
+  year = 	 1993,
+  address =	 {Cambridge, UK, CB2 3QG},
+  month =	 nov,
+  keywords =	 {nemesis, SASOS},
+  heldby =	 {gernot},
+  annote =	 {Unimplemented}
+}
+
+@Article{Feeley_BCL_91,
+  author = 	 "Michael J. Feeley and Brian N. Bershad and Jeffrey S.
+		  Chase and Hank M. Levy",
+  title = 	 "Dynamic Node Reconfiguration in a
+		  Parallel-Distributed Environment",
+  journal = 	 sigplan,
+  year = 	 1991,
+  volume = 	 26,
+  pages = 	 "114--21",
+  keywords = 	 "Amber",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Feeley_CNL_94,
+  author = 	 "Michael J. Feeley and Jeffrey S. Chase and Vivek
+		  R. Narasayya and Henry M. Levy",
+  title = 	 "Integrating Coherency and Recoverability in
+		  Distributed Systems",
+  pages =	 {215--227},
+  booktitle =	 osdi94,
+  year =	 1994,
+  organization = usenix#"/"#acm#"/"#ieee,
+  month =	 nov,
+  heldby =	 "gernot"
+}
+
+@TechReport{Feeley_Levy_92,
+  author = 	 "Michael J. Feeley and Hank M. Levy",
+  title = 	 "Distributed Shared Memory with Versioned Objects",
+  institution =  "Dept. of Comp. Sci., University of Washington",
+  year = 	 1992,
+  type =	 "Technical Report",
+  number =	 "92-03-01",
+  address =	 "Seattle, WA 98195, USA",
+  note =	 "To appear in OOPLSA-92",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Feeley_MPKLT_95,
+  author = 	 "Michael J. Feeley and William E. Morgan and Frederic
+		  H. Pighin and Anna R. Karlin Henry M. Levy and
+		  Chandramohan A. Thekkath",
+  title = 	 "Implementing Global Memory Management in a
+		  Workstation Cluster",
+  pages =	 "201--212",
+  booktitle =	 sosp95,
+  year =	 1995,
+  organization = acm,
+  address =	 "Copper Mountain Resort, Co, USA",
+  month =	 dec,
+  heldby =	 "gernot"
+}
+
+@Article{Fekete_90,
+  author = 	 "Alan D. Fekete",
+  title = 	 "Asymptotically Optimal Algorithms for Approximate
+		  Agreement",
+  journal =	 dico,
+  year =	 1990,
+  volume =	 4,
+  pages =	 "9--29",
+  heldby =	 "gernot"
+}
+
+@Unpublished{Fekete_LMS_92,
+  author = 	"Alan Fekete and Nancy Lynch and Yishay Mansour and
+		 John Spinelli",
+  title = 	"The Impossibility of Implementing Reliable
+		 Communication in the Face of Crashes",
+  note = 	"Working paper",
+  year = 	1992,
+  month = 	jan,
+  keywords = 	"shows need for stable status information",
+  abstract = 	"An important function of communication networks is to
+		 implement reliable data transfer over an unreliable
+		 underlying network. Formal specifications are given
+		 for reliable and unreliable communication layers, in
+		 terms of I/O automata. Based on therse
+		 specifications, it is provided that no reliable
+		 communication protocol can tolerate crashes of the
+		 processors on which the protocol runs.",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Ferreira_Shapiro_94,
+  author = 	 {Paolo Ferreira and Marc Shapiro},
+  title = 	 {Garbage Collection of Persistent Objects in
+                  Distributed Shared Memory},
+  booktitle = 	 pos94,
+  year =	 1994,
+  publisher =	 {Springer-Verlag},
+  address =	 {Tarascon, France},
+  month =	 sep,
+  pages =	 {176--191},
+  heldby =	 {gernot},
+  annote =	 {\url{http://www-sor.inria.fr/publi/GC-PERS-DSM\_POS94.html}}
+}
+
+@InProceedings{Ferreira_Shapiro_96,
+  author = 	 {Paolo Ferreira and Marc Shapiro},
+  title = 	 {Larchant: Persistence by Reachability in Distributed
+                  Shared Memory through Garbage Collection},
+  pages =	 {394--401},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  heldby =	 "gernot",
+  annote =	 {\url{http://www-sor.inria.fr/publi/GCLPDSS\_ftdcs95.html}}
+}
+
+@InProceedings{Fidge_88,
+  author = 	 {J. Fidge},
+  title = 	 {Timestamps in Message-Passing Systems that Preserve
+                  the Partial Ordering},
+  booktitle = 	 acsc88,
+  pages =	 {56--66},
+  year =	 1988,
+  month =	 {feb},
+  keywords =	 {logical time, virtual time, vector time},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Finlayson_HG_93,
+  author = 	 {Ross S. Finlayson and Mark D. Hennecke and Steven
+                  L. Goldberg},
+  title = 	 {From {V} to {Vanguard}: The Evolution of a
+                  Distributed, Object-Oriented Microkernel Interface},
+  booktitle = 	 usenixmk93,
+  year =	 1993,
+  address =	 {San Diego, CA, USA},
+  month =	 sep,
+  heldby =	 {gernot},
+  pages =	 {27--30}
+}
+
+@InProceedings{Flanagan_FHR_96,
+  author = 	 {Michael Flanagan and Alan Fekete and Frans Henskens
+                  and John Rosenberg},
+  title = 	 {Dynamically Configurable Concurrency Control for a
+                  Persistent Store},
+  booktitle =	 pos96,
+  year =	 1996,
+  publisher =	 {Morgan Kaufmann},
+  address =	 "Cape May, NJ, USA",
+  month =	 may,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Fleisch_Popek_89,
+  author = 	 "Brett D. Fleisch and Gerald J. Popek",
+  title = 	 "Mirage: A Coherent Distributed Shared Memory Design",
+  booktitle = 	 sosp89,
+  year = 	 1989,
+  pages = 	 "211--223",
+  keywords = 	 "paged segmentation, DSM",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Forin_BS_89,
+  author = 	"Alessandro Forin and Joseph Barrera and Richard Sanzi",
+  title = 	"The Shared Memory Server",
+  booktitle = 	usenix89w,
+  year = 	1989,
+  pages = 	"229--43",
+  month = 	jan,
+  keywords = 	 "Mach, DSM, heterogeneous, multiple page sizes",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Fu_Tzeng_97,
+  author = 	 {Shiwa S. Fu and Nian-Feng Tzeng},
+  title = 	 {Aggressive Release Consistency for Software
+                  Distributed Shared Memory},
+  booktitle = 	 icdcs97,
+  pages =	 {288--295},
+  year =	 1997,
+  address =	 {Baltimore, MD, USA},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {checkpointing, DSM, fault tolerance, rollback-recovery},
+  heldby =	 {gernot}
+}
+
+@Misc{GPS:url,
+  key =		 {GPS},
+  author =	 {{USCG Navigation Center}},
+  title =	 {{GPS} page},
+  howpublished = {\url{http://www.navcen.uscg.mil/gps/default.html}},
+  heldby =	 {gernot}
+}
+
+@Article{Garcia_Spauster_91,
+  author = 	"Hector Garcia-Molina and Annemarie Spauster",
+  title = 	"Ordered and Reliable Multicast Communication",
+  journal = 	tocs,
+  year = 	1991,
+  volume = 	9,
+  number = 	"242--71",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Garrett_SBKMTEL_93,
+  author = 	 "W.E. Garrett and M.L. Scott and R. Bianchini and
+		  L.I. Kontothanassis and L. McCallum and J.A. Thomas
+		  and R. Wisniewski and S. Luk",
+  title = 	 "Linking Shared Segments",
+  pages =	 xyz,
+  booktitle =	 usenix93w,
+  year =	 1993,
+  address =	 xyz,
+  month =	 jan,
+  keywords =	 {Hemlock},
+  heldby =	 {???}
+}
+
+
+@InProceedings{Gharachorloo_GH_92,
+  author = 	 {Kourosh Gharachorloo and Anoop Gupta and John Hennessy},
+  title = 	 {Hiding Memory Latency using Dynamic Scheduling in
+                  Shared-Memory Multiprocessors},
+  booktitle = 	 isca92,
+  year =	 1992,
+  organization = acm,
+  pages =	 {22--33},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Gharachorloo_LLGGH_90,
+  author = 	 "K. Gharachorloo and D. Lenoski and J. Laudon and
+		  P. Gibbons and A. Gupta and J. Hennessey",
+  title = 	 "Memory Consistency and Event Ordering in Scalable
+		  Shared-Memory Multiprocessors",
+  pages =	 "15--26",
+  booktitle =	 sca90,
+  year =	 1990,
+  organization = ieee#"/"#acm,
+  heldby =	 "gernot"
+}
+
+@Article{Gligor_Lindsay_79,
+  author = 	 {V.D. Gligor and B.G. Lindsay},
+  title = 	 {Object Migration and Authentication},
+  journal = 	 ieeetose,
+  year = 	 1979,
+  volume =	 5,
+  pages =	 {607--611},
+  keywords =	 {capabilities},
+  annote =	 {LLL first and second migration scheme}
+}
+
+@Article{Gong_95,
+  author = 	 "Li Gong",
+  title = 	 "Efficient Network Authentication Protocols: Lower
+		  Bounds and Optimal Implementations",
+  journal =	 dico,
+  year =	 1995,
+  volume =	 9,
+  pages =	 "131--145",
+  heldby =	 "gernot"
+}
+
+@Book{Goscinski:DOS,
+  author = 	"Andrzej Goscinski",
+  title = 	"Distributed Operating Systems --- The Logical Design",
+  publisher = 	"Addison-Wesley",
+  year = 	1991,
+  annote = 	"913p, A\$ 54.95!",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Gourhant_Makpangou_90,
+  author = 	 "Yvon Gourhant and Mesaac Mounchili Makpangou",
+  title = 	 "Fragmented Object: A Building Block for Distributed
+		  Object-Support Operating Systems",
+  pages =	 xyz,
+  booktitle =	 iwooos90,
+  year =	 1990,
+  address =	 "Ottawa, Ont, Canada",
+  month =	 oct,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Gourhant_Shapiro_90,
+  author = 	 "Yvon Gourhant and Marc Shapiro",
+  title = 	 "{FOG/C++}: a Fragmented-Object Generator",
+  booktitle = 	 "C++ Conference",
+  year = 	 1990,
+  pages = 	 "63--74",
+  organization = usenix,
+  address = 	 "San Francisco, CA (USA)",
+  month = 	 apr
+}
+
+@InCollection{Gray_78,
+  author = 	 {J.N. Gray},
+  title = 	 {Notes on Database Operating Systems},
+  booktitle = 	 {Operating Systems: An Advanced Course},
+  publisher =	 {Springer-Verlag},
+  year =	 1978,
+  editor =	 {G. Goos and J. Hartmanis},
+  pages =	 {393--481},
+  keywords =	 {2 phase commit protocol reference},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Gray_Cheriton_89,
+  author = 	 "Cary G. Gray and David R. Cheriton",
+  title = 	 "Leases: An Efficient Fault-Tolerant Mechanism for
+		  Distributed File Cache Consistency",
+  pages =	 "202--10",
+  booktitle =	 sosp89,
+  year =	 1989,
+  keywords = 	 "caching, fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Gronvall_WP_99,
+  author = 	 {Bj{\"o}rn Gr{\"o}nvall and Assar Westerlund and
+                  Stephen Pink},
+  title = 	 {The Design of a Multicast-based Distributed File System},
+  booktitle = 	 {osdi99},
+  pages =	 {251--264},
+  year =	 1999,
+  address =	 {New Orleans, LA, USA},
+  month =	 feb,
+  organization = usenix,
+  keywords =	 {peer-to-peer, optimistic update, callback, file
+                  versioning},
+  heldby =	 {gernot},
+  annote =	 {}
+}
+
+@InProceedings{Gupta_HGW_91,
+  author = 	 {Anoop Gupta and John Hennessy and Koroush
+                  Gharachorloo and Todd Mowry and Wolf-Dietrich Weber},
+  title = 	 {Comparative Evaluation of Latency Reducing and
+                  Tolerating Techniques},
+  booktitle = 	 isca91,
+  year =	 1991,
+  organization = acm,
+  pages =	 {254--263}
+}
+
+@InProceedings{Hagimont_94,
+  author = 	 {D. Hagimont},
+  title = 	 {Protection in the {Guide} Object-Oriented
+                  Distributed System},
+  booktitle = 	 ecoop94,
+  year =	 1994,
+  publisher =	 {Springer Verlag, Berlin},
+  address =	 {Bologna, Italy},
+  month =	 jul,
+  pages =	 {280-298},
+  heldby =	 {gernot},
+  annote = 	 {contains good survey of protection models in Hydra,
+                  Multics, and Melampus}
+}
+
+@InProceedings{Hagimont_MPS_96,
+  author = 	 {D. Hagimont and J. Mossi{\`e}re and Rousset de Pina,
+                  X. and F. Saunier},
+  title =	{Hidden Software Capabilities},
+  key = 	 {HMRS96},
+  pages =	 {282--289},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  keywords = 	 "SASOS, DSM",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Hagmann_86,
+  author =	"Hagmann, Robert",
+  title =	"Process Server: Sharing Processing Power in a
+		 Workstation Environment",
+  year =	1986,
+  booktitle =	icdcs86,
+  institution =	ieee,
+  pages =	"260-267",
+  keywords =	"Process server"
+}
+
+@InProceedings{Hagsand_HBC_92,
+  author = 	 "O. Hagsand and H. Herzog and K. Birman and R. Cooper",
+  title = 	 "Object-oriented Reliable Distributed Programming",
+  pages =	 "180--188",
+  booktitle =	 iwooos92,
+  year =	 1992,
+  organization = ieee,
+  address =	 "Dourdan, France",
+  month =	 sep,
+  heldby =	 "gernot"
+}
+
+@Article{Halpern_Moses_90,
+  author = 	 "Joseph Y. Halpern and Yoram Moses",
+  title = 	 "Knowledge and Common Knowledge in a Distributed
+		  Environment",
+  journal =	 jacm,
+  year =	 1990,
+  volume =	 37,
+  pages =	 "549--587",
+  heldby =	 "gernot"
+}
+
+@Article{Halpern_Suzuki_91,
+  author = 	"Joseph Y., Halpern and Ichiro Suzuki",
+  title = 	"Clock Synchronization and the Power of Broadcasting",
+  journal = 	dico,
+  year = 	1991,
+  volume = 	5,
+  pages = 	"73--82",
+  heldby = 	 "gernot"
+}
+
+@TechReport{Hamilton_Kougiouris_93,
+  author = 	 "Graham Hamilton and Panos Kougiouris",
+  title = 	 "The {Spring} Nucleus: A Microkernel for Objects",
+  institution =  "Sun Microsystems Labs",
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 "93-14",
+  month =	 apr,
+  heldby =	 "gernot"
+}
+
+@TechReport{Heiser_ERH_93:tr,
+  author = 	 "Gernot Heiser and Kevin Elphinstone and Stephen
+		  Russell and Graham R. Hellestrand",
+  title = 	 "A Distributed Single Address Space System Supporting
+		  Persistence",
+  institution =  unsw,
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 {UNSW-CSE-TR-9302},
+  address =	 unswadr,
+  month =	 mar,
+  heldby = 	 "gernot"
+}
+
+@TechReport{Heiser_ERV_93:tr,
+  author = 	 "Gernot Heiser and Kevin Elphinstone and Stephen
+		  Russell and Jerry Vochteloo",
+  title = 	 "Mungi: A Distributed Single Address-Space Operating System",
+  institution =  cse,
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 {UNSW-CSE-TR-9314},
+  address =	 unswadr,
+  month =	 nov,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Heiser_ERV_94,
+  author = 	 "Gernot Heiser and Kevin Elphinstone and Stephen
+		  Russell and Jerry Vochteloo",
+  title = 	 "Mungi: A Distributed Single-Address-Space Operating System",
+  pages =	 "271--80",
+  booktitle =	 acsc94,
+  year =	 1994,
+  address =	 "Christchurch, New Zealand",
+  month =	 jan,
+  heldby = 	 "gernot"
+}
+
+@TechReport{Heiser_VER_97:tr,
+  author = 	 {Gernot Heiser and Jerry Vochteloo and Kevin
+                  Elphinstone and Stephen Russell},
+  title = 	 {The {Mungi} Kernel {API}/{R}elease 1.0},
+  institution =  cse,
+  year = 	 1997,
+  type =	 {Technical Report},
+  number =	 {UNSW-CSE-TR-9701},
+  address =	 unswadr,
+  month =	 mar,
+  keywords =	 {SASOS, PDX},
+  note =	 {Latest version available from
+                  \url{http://www.cse.unsw.edu.au/~disy/}},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Hellestrand_86,
+  author =	"Hellestrand, G.R.",
+  title =	"Interprocess Communication and Process Recovery in a
+		 Distributed Processor System",
+  year =	1986,
+  booktitle =	"Proceedings of the 1st Australian Workshop on
+		 Parallel Computer Architectures",
+  publisher =	"Telecom Research Laboratories",
+  address =	"Clayton, Australia",
+  heldby = 	 "gernot"
+}
+
+@PhdThesis{Henskens:phd,
+  author = 	 "Frans Henskens",
+  title = 	 "A Capability-Based Persistent Distributed Shared
+		  Virtual Memory",
+  school = 	 "University of Newcastle",
+  year = 	 1991,
+  address =	 "NSW, Australia",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Henskens_RH_90,
+  author = 	 "Frans A. Henskens and John Rosenberg and Michael R.
+		  Hannaford",
+  title = 	 "Stability in a Network of {MONADS-PC} Computers",
+  year = 	 1990,
+  booktitle = 	 iwcasspi,
+  editor =	 "John Rosenberg and J. Leslie Keedy",
+  publisher =	 "Springer-Verlag",
+  address =	 "Bremen, Germany",
+  pages =	 "246--56",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Henskens_RK_91,
+  author = 	 "Frans A. Henskens and John Rosenberg and J. Leslie Keedy",
+  title = 	 "A Capability-based Distributed Shared Memory",
+  pages =	 "29.1--12",
+  booktitle =	 acsc91,
+  year =	 1991,
+  heldby = 	 "gernot"
+}
+
+@Article{Henskens_Rosenberg_93,
+  author = 	 "Frans A. Henskens and John Rosenberg",
+  title = 	 "Distributed Persistent Stores",
+  journal =	 mpms,
+  year =	 1993,
+  volume =	 17,
+  pages =	 "147--59",
+  keywords =	 "Monads, NAPIER, shared memory, stability"
+}
+
+@InProceedings{Hildebrand_92,
+  author = 	 {Dan Hildebrand},
+  title = 	 {An Architectural Overview of {QNX}},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {113--126},
+  heldby =	 {gernot}
+}
+
+@TechReport{Hitchens_Rosenberg_92,
+  author = 	 "Michael Hitchens and John Rosenberg",
+  title = 	 "Bindings Between Names and Objects in a Persistent System",
+  institution =  "Department of Computing, University of Western
+		  Sydney, Nepean",
+  year = 	 1992,
+  type =	 "Technical Report",
+  number =	 "001/92",
+  address =	 "Australia",
+  heldby =	 "gernot"
+}
+
+@MastersThesis{Ho:msc,
+  author = 	 "Kwok On Ho",
+  title = 	 "Network Interface for a Global Virtual Memory System",
+  school = 	 cse,
+  year = 	 1993,
+  type =	 "Master's Thesis",
+  address = 	 unswadr,
+  heldby = 	 "gernot"
+}
+
+@Article{Hoffman_85,
+  author = 	 "Daniel Hoffman",
+  title = 	 "The Trace Specification of Communications Protocols",
+  journal = 	 ieeetc,
+  year = 	 1985,
+  volume = 	 "C-34",
+  pages = 	 "1102--113",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Hohmuth_Haertig_01,
+  author = 	 {Michael Hohmuth and Hermann H{\"a}rtig},
+  title = 	 {Pragmatic Nonblocking Synchronization for Real-Time Systems},
+  booktitle =	 usenix01,
+  pages =	 xyz,
+  year =	 2001,
+  address =	 {Boston, MA, USA},
+  heldby =	 {gernot}
+}
+
+@Book{Holzmann:Protocols,
+  author = 	 "Gerard J. Holzmann",
+  title = 	 "Design and Validation of Computer Protocols",
+  publisher =  	 "Prentice Hall",
+  year = 	 1991,
+  heldby = 	 "gernot"
+}
+
+@Article{Holzmann_82,
+  author = 	"Gerard J. Holzmann",
+  title = 	"A Theory for Protocol Validation",
+  journal = 	ieeetc,
+  year = 	1982,
+  volume = 	"C-31",
+  pages = 	"730--8",
+  keywords = 	"process algebra, validation",
+  heldby = 	 "gernot"
+}
+
+@Article{Howard_KMNSSW_88,
+  author = 	 {John H. Howard and Micha{}el L. Kazar and Sherri G.
+		 Menees and David A. Nichols and M. Satyanarayanan and
+		 Robert N. Sidebotham and Micha{}el J. West},
+  title = 	 {Scale and Performance in a Distributed File System},
+  journal = 	 tocs,
+  year = 	 1988,
+  volume =	 6,
+  pages =	 {51--81},
+  keywords =	 {Andrew benchmark},
+  heldby =	 {gernot}
+}
+
+@Article{Huang_KW_95,
+  author = 	 "Y. Huang and C. Kintala and Y. M. Wang",
+  title = 	 "Software tools and libraries for fault tolerance",
+  journal =	 ieeetcos,
+  year =	 1995,
+  volume =	 7,
+  number =	 4,
+  pages =	 "5--9",
+  heldby =	 "jinsong"
+}
+
+@InProceedings{Huang_Kedem_96,
+  author = 	 {Shih-Chen Huang and Zvi M. Kedem},
+  title = 	 {Supporting a Flexible Parallel Programming Model on
+                  a Network of Workstations},
+  pages =	 {75--82},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Huang_Yu_98,
+  author = 	 {Yun-Wu Huang and Phili[ S. Yu},
+  title = 	 {A Bandwidth-Sensitive Update Scheduling Method for
+                  Internet Push},
+  booktitle = 	 icdcs98,
+  pages =	 {303--310},
+  year =	 1998,
+  address =	 {Amsterdam, The Netherlands},
+  month =	 may,
+  organization = ieee,
+  heldby =	 {gernot}
+}
+
+@Article{Hurley_Yeap_96,
+  author = 	 {Richard T. Hurley and Soon Aun Yeap},
+  title = 	 {File Migration and File Replication: A Symbiotic
+                  Relationship },
+  journal = 	 ieeetpds,
+  year = 	 1996,
+  volume =	 7,
+  pages =	 {578--586},
+  heldby =	 {gernot}
+}
+
+@Book{IEEE:802.11,
+  author =	 {{IEEE Computer Society LAN MAN Standards Committee}},
+  title = 	 {Wireless {LAN} Medium Access Control ({MAC}) and
+                  Physical Layer ({PHY}) Specifications},
+  key =		 {IEEE/802.11},
+  address =	 {New York, NY, USA},
+  note =	 {IEEE Std.\ 802.11-1997},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Ioannidis_DM_91,
+  author = 	 {John Ioannidis and Dan Duchamp and Gerald Maguire},
+  title = 	 {{IP}-Based Protocols for Mobile Internetworking},
+  booktitle = 	 sigcomm91,
+  pages =	 {235--245},
+  year =	 1991,
+  address =	 xyz,
+  month =	 sep,
+  keywords =	 {Mobile IP},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Islam_Campbell_95,
+  author = 	 "Nayeem Islam and Roy H. Campbell",
+  title = 	 "Techniques for Global Optimization of Message
+		  Passing Communication on Unreliable Networks",
+  pages =	 "246--53",
+  booktitle =	 icdcs95,
+  year =	 1995,
+  organization = ieee,
+  address =	 "Vancouver, BC, Canada",
+  month =	 may
+}
+
+@InProceedings{Islam_PSFG_97,
+  author = 	 {Nayeem Islam and Andreas L. Prodomidis and Mark
+                  S. Squillante and Liana L. Fong and Ajei S. Gopal},
+  title = 	 {Extensible Resource Management for Cluster Computing},
+  booktitle = 	 icdcs97,
+  pages =	 {561--568},
+  year =	 1997,
+  address =	 {Baltimore, MD, USA},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {checkpointing, DSM, fault tolerance, rollback-recovery},
+  heldby =	 {gernot}
+}
+}
+
+@InProceedings{Istavrinos_92,
+  author = 	 "Petro Istavrinos",
+  title = 	 "Experiences with an Object-Oriented Mapper for
+		  Coherent Distributed Shared Memory",
+  pages =	 "257--261",
+  booktitle =	 iwooos92,
+  year =	 1992,
+  organization = ieee,
+  address =	 "Dourdan, France",
+  month =	 sep,
+  heldby =	 gernot
+}
+
+@Article{Itzkovitz_SS_98,
+  author = 	 {Ayal Itzkovitz and Assaf Schuster and Lea Shalev},
+  title = 	 {Thread Migration and its Applications in Distributed
+                  Shared Memory Systems},
+  journal = 	 jss,
+  year = 	 1998,
+  volume =	 42,
+  pages =	 {71--87},
+  heldby =	 {gernot},
+  annote = 	 {Millipede, use parallel language, allocate stacks in
+                  global address space}
+}
+
+@InProceedings{Itzkovitz_Schuster_99,
+  author = 	 {Ayal Itzkovitz and Assaf Schuster},
+  title = 	 {{MultiView} and {Millipage} --- Fine-Grain Sharing
+                  in Page-Based {DSM}s},
+  booktitle = 	 osdi99,
+  pages =	 {215--228},
+  year =	 1999,
+  address =	 {New Orleans, LA, USA},
+  month =	 feb,
+  organization = usenix,
+  keywords =	 {sequential consistency},
+  heldby =	 {gernot},
+  annote =	 {user-level; support for fine-grained protection by
+                  SW merging of updates to data mapped at different
+                  addresses}
+}
+
+@InProceedings{Iyengar_Dias_98,
+  author = 	 {Arun Iyengar and Daniel Dias},
+  title = 	 {Distributed Virtual Malls on the World Wide Web},
+  booktitle = 	 icdcs98,
+  pages =	 {58--65},
+  year =	 1998,
+  address =	 {Amsterdam, The Netherlands},
+  month =	 may,
+  organization = ieee,
+  heldby =	 {gernot}
+}
+
+@Article{Johnson_Zwaenepoel_90,
+  author = 	 "David B. Johnson and Willy Zwaenepoel",
+  title = 	 "Recovery in Distributed Systems Using Optimistic
+		  Message Logging and Checkpointing",
+  journal =	 jal,
+  year =	 1990,
+  volume =	 11,
+  pages =	 "462--491",
+  heldby =	 {gernot},
+  keywords =	 {domino effect, outside world}
+}
+
+@InProceedings{Johnston_Campbell_89,
+  author = 	 {Gary M. Johnston and Roy H. Campbell},
+  title = 	 {An Object-Oriented Implementation of Distributed
+                  Virtual Memory},
+  booktitle = 	 usenixdms,
+  year =	 1989,
+  address =	 {Fort Lauderdale, FL, USA},
+  month =	 oct,
+  pages =	 {39--57},
+  heldby =	 {gernot},
+  keywords =	 {DSM}
+}
+
+@TechReport{Joyce_DGHW_95,
+  author = 	 {Phil Joyce and D. DePaoli and Andrzej Goscinski and
+                  M. Hobbs and G Wickham},
+  title = 	 {Performance Analysis of the {RHODOS} Local {IPC} Facility},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1995,
+  number =	 {TR C95/06},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 jan,
+  heldby =	 {gernot}
+}
+
+@TechReport{Joyce_DGH_95,
+  author = 	 {Phil Joyce and D. DePaoli and Andrzej Goscinski and
+                  M. Hobbs},
+  title = 	 {Implementation and Performance of the Interprocess
+                  Communications Facility in {RHODOS}},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1995,
+  number =	 {TR C95/09},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 feb,
+  heldby =	 {gernot}
+}
+
+@TechReport{Joyce_Goscinski_95,
+  author = 	 {Phil Joyce and Andrzej Goscinski},
+  title = 	 {Towards a Transport Protocol of a Communication
+                  Facility for Factory Integrated Control and
+                  Management System},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1995,
+  number =	 {TR C95/25},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 jul,
+  keywords =	 {RHODOS},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Juang_Venkatesan_91,
+  author = 	 {T. Juang and S. Venkatesan},
+  title = 	 {Crash Recovery with Little Overhead},
+  booktitle = 	 icdcs91,
+  pages =	 {454--461},
+  year =	 1991,
+  month =	 may,
+  organization = ieee,
+  keywords =	 {optimistic checkpointing},
+  heldby =	 {gernot}
+}
+
+@Article{Kaashoek_THB_89,
+  author = 	 {M. Frans  Kaashoek and Andrew S. Tanenbaum and Susan
+                  Flynn Hummel and Henri E. Bal},
+  title = 	 {An Efficient Reliable Broadcast Protocol},
+  journal = 	 osr,
+  year = 	 1989,
+  volume =	 23,
+  number =	 4,
+  pages =	 {5--19},
+  heldby =	 {gernot}
+}
+
+@Article{Kaashoek_Tanenbaum_91,
+  author = 	 {M. Frans  Kaashoek and Andrew S. Tanenbaum},
+  title = 	 {Fault Tolerance Using Group Communication},
+  journal = 	 osr,
+  year = 	 1991,
+  volume =	 25,
+  number =	 2,
+  pages =	 {71--74},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Kanthadai_Welch_96,
+  author = 	 {Sundar Kanthadai and Jennifer L. Welch},
+  title = 	 {Implementation of Recoverable Distributed Shared
+                  Memory by Logging Writes},
+  pages =	 {116--123},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  heldby =	 "gernot",
+  keywords =	 {DSM, optimistic}
+}
+
+@InProceedings{Keleher_96,
+  author = 	 {Peter J. Keleher},
+  title = 	 {The Relative Importance of Concurrent Writers and
+                  Weak Consistency Models},
+  pages =	 {91--98},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  keywords =	 {DSM},
+  heldby =	 {gernot},
+  annote =	 {CVM}
+}
+
+@InProceedings{Keleher_99,
+  author = 	 {Peter J. Keleher},
+  title = 	 {Tapeworm: High-Level Abstraction of Shared Accesses},
+  booktitle = 	 osdi99,
+  pages =	 {201--214},
+  year =	 1999,
+  address =	 {New Orleans, LA, USA},
+  month =	 feb,
+  organization = usenix,
+  keywords =	 {DSM, consistency},
+  heldby =	 {gernot},
+  annote =	 {based on CSM, user-level}
+}
+
+@Article{Keleher_CDZ_95,
+  author = 	 "Pete Keleher and Alan L. Cox and Sandhya Dwarkadas
+		  and Willy Zwaenepoel",
+  title = 	 "An Evaluation of Software-Based Release Conistent
+		  Protocols",
+  journal =	 jpdc,
+  year =	 1995,
+  volume =	 29,
+  pages =	 "126--141",
+  heldby =	 "gernot",
+  annote =	 "eager, lazy invalidate, lazy hybrid, TreadMarks"
+}
+
+@InProceedings{Keleher_CZ_92,
+  author = 	 "Peter Keleher and Alan L. Cox and Willie Zwanepoel",
+  title = 	 "Lazy Consistency for Software Distributed Shared Memory",
+  pages =	 "13--21",
+  booktitle =	 isca92,
+  year =	 1992,
+  organization = acm#"/"#ieee,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Kermarrec_CGMP_95,
+  author = 	 {Anne-Marie Kermarrec and Gilbert Cabillic and Alain
+                  Gefflaut and Christine Morin and Isabelle Puaut},
+  title = 	 {A Recoverable Distributed Shared Memory Integrating
+                  Coherence and Recoverability},
+  pages =	 {289--298},
+  booktitle = 	 sftc95,
+  year =	 1995,
+  organization = ieee,
+  address =	 xyz,
+  month =	 xyz,
+  heldby =	 {gernot},
+  annote =	 {hope it is really SFTC}
+}
+
+@InProceedings{Kermarrec_KST_98,
+  author = 	 {A.M. Kermarrec and I. Kuz and van Steen, M. and Andy
+                  S. Tanenbaum},
+  title = 	 {A Framework for Consistent, Replicated Web Objects},
+  booktitle = 	 icdcs98,
+  pages =	 {276--284},
+  year =	 1998,
+  address =	 {Amsterdam, The Netherlands},
+  month =	 may,
+  organization = ieee,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Kessler_Linvy_89,
+  author = 	 "R.E. Kessler and Miron Linvy",
+  title = 	 "An Analysis of Distributed Shared Memory Algorithms",
+  booktitle = 	 icdcs89,
+  year = 	 1989,
+  pages = 	 "498--505",
+  organization = ieee,
+  keywords = 	 "DSM",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Khalidi_BMST_96,
+  author = 	 {Yousef A. Khalidi and Jose M. Bernabeu and Vlada
+                  Matena and Ken Shirriff and and Moti Thadani},
+  title = 	 {Solaris {MC}: A Multi Computer {OS}},
+  booktitle = 	 usenix96,
+  pages =	 xyz,
+  year =	 1996,
+  address =	 {San Diego, CA, USA},
+  month =	 {jan},
+  organization = usenix,
+  heldby =	 {gernot}
+}
+
+@TechReport{Khalidi_Nelson_92,
+  author = 	 "Yousef A. Khalidi and Michael N. Nelson",
+  title = 	 "An Implementation of {UNIX} on an Object-oriented
+		  Operating System",
+  institution =  "Sun",
+  year = 	 1992,
+  type =	 "Technical Report",
+  number =	 "TR-92-03",
+  month =	 dec,
+  keywords = 	 "Spring",
+  heldby =	 "gernot"
+}
+
+@TechReport{Khalidi_Nelson_93:tr,
+  author = 	 "Yousef A. Khalidi and Michael N. Nelson",
+  title = 	 "Extensible File Systems in {Spring}",
+  institution =  "Sun",
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 "TR-93-18",
+  month =	 sep,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Knaff_Dechamboux_97,
+  author = 	 {A. Knaff and P. D\'{e}chamboux},
+  title = 	 {Reliable Support for a Persistent Distributed Shared
+                  Memory},
+  booktitle = 	 icdcs97,
+  pages =	 {68--77},
+  year =	 1987,
+  address =	 {Baltimore, MD, USA},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {SASOS, Arias, DSM, logging, fault tolerance, transactions},
+  heldby =	 {gernot}
+}
+
+@TechReport{Koch_SDVMFB_90,
+  author = 	 "Bett Koch and Tracy Schunke and Alan Dearle and
+		  Francis Vaughan and Chris Marlin and Ruth Fazakerley
+		  and Chris Barter",
+  title = 	 "Cache Coherency and Storage Management in a
+		  Persistent Object System",
+  institution =  "Department of Computer Science, University of Adelaide",
+  year = 	 1990,
+  type =	 "Technical Report",
+  number =	 "PS-02",
+  address =	 "Australia",
+  heldby =	 "gernot"
+}
+
+@MastersThesis{Kong:bsc,
+  author = 	 "Elaine Kong",
+  title = 	 "Name Management and Page Table Organisation for a
+		  Distributed Global Virtual Memory System",
+  school = 	 cse,
+  year = 	 1992,
+  address =	 unswadr,
+  type =	 "{BSc} ({Hons}) Thesis",
+  heldby = 	 "gernot"
+}
+
+@Article{Koo_Toueg_87,
+  author = 	 "R. Koo and S. Toueg",
+  title = 	 "Checkpointing and Rollback-Recovery for Distributed
+		  Systems",
+  journal =	 ieeetose,
+  year =	 1987,
+  volume =	 13,
+  pages =	 "23--31",
+  month =        jan,
+  heldby =	 {gernot},
+  keywords =	 {consistent, domino effect, livelock}
+}
+
+@InProceedings{Kotz_Crow_94,
+  author = 	 "David Kotz and Preston Crow",
+  title = 	 "The Expected Lifetime of ``Single-Address-Space''
+		  Operating Systems",
+  pages =	 "161--70",
+  booktitle =	 sigmetrics94,
+  year =	 1994,
+  organization = acm,
+  address =	 "Santa Clara, CA, USA",
+  heldby = 	 "gernot"
+}
+
+@Article{Kotz_Crow_96,
+  author = 	 {David Kotz and Preston Crow},
+  title = 	 {The Expected Lifetime of Single-Address-Space
+                  Operating Systems},
+  journal = 	 compsys,
+  year = 	 1996,
+  volume =	 9,
+  pages =	 {155--178},
+  heldby =	 {???}
+}
+
+@Article{Kotz_Nieuwejaar_95,
+  author = 	 {David Kotz and Nils Nieuwejaar},
+  title = 	 {File-System Workload on a Scientific Mutliprocessor},
+  journal = 	 ieeepdt,
+  year = 	 1995,
+  volume =	 3,
+  number =	 1,
+  pages =	 {51--60},
+  keywords =	 {Charisma, live traces, parallel applications}
+}
+
+@InProceedings{Krueger_Chawla_91,
+  author = 	 {Phillip Krueger and Rohit Chawla},
+  title = 	 {The {Stealth} Distributed Scheduler},
+  booktitle = 	 icdcs91,
+  pages =	 {336--343},
+  year =	 1991,
+  address =	 {Los Alamitos, CA, USA}
+}
+
+@InProceedings{LaRowe_WE_91,
+  author = 	"LaRowe, Jr., Richard P. and James T. Wilkes and Carla
+		 Schlatter Ellis",
+  title = 	"Exploiting Operating System Support for Dynamic Page
+		 Placement on a {NUMA} Shared Memory Multiprocessor",
+  booktitle = 	ppopp91,
+  year = 	1991,
+  pages = 	"122--132",
+  keywords = 	 "shared memory, DUnX",
+  heldby =	 "gernot"
+}
+
+@TechReport{Lacourte_90,
+  author = 	 "Lacourte, Serge",
+  title = 	 "Exceptions in {G}uide, an Object-Oriented Language
+		  for Distributed Applications",
+  institution =  "Bull-IMAG",
+  year = 	 1990,
+  number = 	 "5-90",
+  address = 	 "Grenoble (France)",
+  month = 	 dec
+}
+
+@Article{Lamport_78,
+  author = 	 {Leslie Lamport},
+  title = 	 {Time, Clocks, and the Ordering of Events in a
+                  Distributed System},
+  journal = 	 cacm,
+  year = 	 1978,
+  volume =	 21,
+  pages =	 {558--565},
+  heldby =	 {gernot},
+  annote =	 {Logical clocks}
+}
+
+@Article{Lamport_79,
+  author = 	"Leslie Lamport",
+  title = 	"How to Make a Multiprocessor Computer That Correctly
+		 Executes Multiprocess Programs",
+  journal = 	ieeetc,
+  year = 	1979,
+  volume = 	"C-28",
+  pages = 	"690--1",
+  heldby = 	 "gernot"
+}
+
+@Article{Lamport_90,
+  author = 	"Leslie Lamport",
+  title = 	"Concurrent Reading and Writing of Clocks",
+  journal = 	tocs,
+  year = 	1990,
+  volume = 	8,
+  pages = 	"305--10",
+  abstract = 	"As an exercise in synchronization without
+		 mutual excusion, algorithms are developed to
+		 implement both a monotonic and a cyclic multiple-word
+		 clock that is updated by one process and read by one
+		 or more other processes.",
+  heldby =	 "gernot"
+}
+
+@Article{Lamport_90a,
+  author = 	 "Leslie Lamport",
+  title = 	 "A Theorem on Atomicity in Distributed Algorithms",
+  journal =	 dico,
+  year =	 1990,
+  volume =	 4,
+  pages =	 "59--68",
+  heldby =	 "gernot"
+}
+
+@Article{Lamport_SP_82,
+  author = 	 "Leslie Lamport and Robert Shostak and Marshall Pease",
+  title = 	 "The Byzantine Generals Problem",
+  journal = 	 topls,
+  year = 	 1982,
+  volume = 	 4,
+  pages = 	 "382--401",
+  keywords = 	 "distributed agreement, fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@InCollection{Lampson_81,
+  author = 	 {Butler Lampson},
+  title = 	 {Atomic Transactions},
+  booktitle = 	 {Distributed Systems---Architecture and Implementation},
+  publisher =	 {Springer Verlag},
+  series =	 {LICS 105},
+  year =	 1981,
+  editor =	 {Butler Lampson and M. Paul and H. Siegert},
+  address =	 {New York, NY},
+  pages =	 {246--264},
+  keywords =	 {2 phase commit protocol for distributed transactions},
+  heldby =	 {gernot}
+}
+
+
+@TechReport{Lampson_Sturgis_76a,
+  author = 	 "Butler Lampson and H. Sturgis",
+  title = 	 "Crash Recovery in a Distributed System",
+  institution =  "Xerox PARC, Ca, USA",
+  year = 	 1976,
+  type =	 "Working Paper",
+  address =	 "Ca, USA",
+  heldby =	 "gernot",
+  annote = 	 "The first paper to present the now popular two-phase
+		  commit protocol. Also, and interesting model of
+		  computer system crashes is discussed and the notion
+		  of ``safe'' storage
+		  suggested. [From~\cite{Stonebraker_81}.]"
+}
+
+@Article{Lann_Goff_78,
+  author = 	 "Le Lann, G{\'e}rard and Le Goff, Hev{\'e}",
+  title = 	 "Verification and Evaluation of Communication Protocols",
+  journal = 	 cnet,
+  year = 	 1978,
+  volume = 	 2,
+  pages = 	 "50--69",
+  keywords = 	 "fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Lau_LL_98,
+  author = 	 {Sau-Ming Lau and Quin Lu and Kwong-Sak Leung},
+  title = 	 {Dynamic Load Distribution Using Anti-Tasks and Load
+                  State Vectors},
+  booktitle = 	 icdcs98,
+  pages =	 {212--221},
+  year =	 1998,
+  address =	 {Amsterdam, The Netherlands},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {load balancing, process migration},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Lazowska_LAFFV_81,
+  author = 	 "Edward D. Lazowska and Henry M. Levy and Guy
+		  T. Almes and Michael J. Fisher and Robert J. Fowler
+		  and Stephen C. Vestal",
+  title = 	 "The Architecture of the {Eden} System",
+  pages =	 "148--159",
+  booktitle =	 sosp81,
+  year =	 1981,
+  organization = acm,
+  heldby =	 "gernot",
+  OPTkeywords =  {Capabilities, iAPX 432}
+}
+
+@InProceedings{LeFessant_PS_98,
+  author = 	 {Le Fessant, Fabrice and Ian Piumarta and Marc Shapiro},
+  title = 	 {An Implementation of Complete, Asynchronous,
+                  Distributed Garbage Collection},
+  booktitle = 	 pldi98,
+  year =	 1998,
+  address =	 {Montreal, Canada},
+  month =	 jun,
+  pages =	 xyz,
+  heldby =	 {not yet},
+  annote =	 {\url{http://www-sor.inria.fr/publi/ICADGC\_pldi98.html}}
+}
+
+@InProceedings{Leach_LHS_85,
+  author =	"Leach, P.J. and Levine, P.H. and Hamilton, J.A.
+		and Stumpf, B.L.",
+  title =	"The File System of an Integrated Local Network",
+  booktitle = 	csc,
+  address =	"New Orleans, LA, USA",
+  year =	1985,
+  keywords = 	"Aegis"
+}
+
+@Article{Leff_WY_96,
+  author = 	 {Acraham Leff and Joel L. Wolf and Philip S. Yu},
+  title = 	 {Efficient {LRU}-Based Buffering in a {LAN} Remote
+                  Caching Architecture},
+  journal = 	 ieeetpds,
+  year = 	 1996,
+  volume =	 7,
+  pages =	 {191--206},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Lenoski_LGGH_90,
+  author = 	 "Daniel Lenoski and James Laudon and Kourosh
+		  Gharachorloo and Anoop Gupta and John Hennessy",
+  title = 	 "The Directory-Based Cache Coherence Protocol for the
+		  {DASH} Multiprocessor",
+  booktitle = 	 isca,
+  year = 	 1990,
+  pages = 	 "148--59",
+  organization = ieee,
+  keywords = 	 "shared memory, coherence, release consistecy",
+  annote = 	 "nodes are SM multiprocessors, general topology, no
+		  broadcast, no fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@Article{Leslie_MBRBEFH_96,
+  author = 	 {Ian Leslie and Derek McAuley and Richard Black and
+                  Timothy Roscoe and Paul Barham and David Evers and
+                  Robin Fairbairns and Eoin Hyden},
+  title = 	 {The Design and Implementation of an Operating System
+                  to Support Distributed Multimedia Applications},
+  journal = 	 ieeesac,
+  year = 	 1996,
+  volume =	 14,
+  pages =	 {1280-1297},
+  keywords =	 {Nemesis, SASOS},
+  heldby =	 {gernot}
+}
+
+@Article{Levy_Silberschatz_90,
+  author = 	 "Eliezer Levy and Abraham Silberschatz",
+  title = 	 "Distributed File Systems: Concepts and Examples",
+  journal = 	 acmcs,
+  year = 	 1990,
+  volume = 	 22,
+  pages = 	 "321--74",
+  keywords = 	 "network operating systems; storage hierarchies; fault
+		  tolerance; reliability; caching; client-server
+		  communication; network transparency; scalability,
+                  UNIX United, Locus, Sprite, NFS , Andrew",
+  heldby = 	 "gernot"
+}
+
+@PhdThesis{Li:phd,
+  author = 	"Kai Li",
+  title = 	"Shared Virtual Memory on Loosely Coupled Multiprocessors",
+  school = 	"Yale Univ.",
+  year = 	1986,
+  type = 	"PhD thesis",
+  address = 	"Dept. of Computer Science",
+  note = 	"RR-492",
+  heldby = 	{UNSW Library PMFL/3820}
+}
+
+@Article{Li_Hudak_89,
+  author = 	 "Kai Li and Paul Hudak",
+  title = 	 "Memory Coherence in Shared Virtual Memory Systems",
+  journal = 	 tocs,
+  year = 	 1989,
+  volume = 	 7,
+  pages = 	 "321--59",
+  keywords = 	 "DSM",
+  annote = 	 "parallel computing, not fault tolerance, application
+		  level, on Apollos, strict coherence, read sharing",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Li_NP_91,
+  author = 	 "K. Li and J. F. Naughton and J. S. Plank",
+  title = 	 "Checkpointing Multicomputer Applications",
+  pages =	 "66--75",
+  booktitle =	 rds91,
+  year =	 1991,
+  month =	 sep,
+  heldby = 	 {gernot},
+  keywords =	 {consistent, blocking}
+}
+
+@Article{Li_NP_94,
+  author = 	 "Kai Li and Jeffrey F. Naughton and James S. Plank",
+  title = 	 "Low-latency, Concurrent Checkpointing for Parallel
+		  Programs",
+  journal =	 ieeetpds,
+  year =	 1994,
+  volume =	 5,
+  number =	 8,
+  pages =	 "874--879",
+  month =        aug,
+  heldby =	 {gernot},
+  keywords =	 {consistent, blocking}
+}
+
+@TechReport{Li_SWZ_88,
+  author = 	 "Kai Li and Michael Stumm and David Wortmann and
+		  Songnian Zhou",
+  title = 	 "Shared Virtual Memory Accomodating Heterogeneity",
+  institution =  "Computer Systems Research Institute",
+  year = 	 1988,
+  type = 	 "technical report",
+  number = 	 "CSRI-220",
+  address = 	 "University of Toronto, Canada",
+  keywords = 	 "DSM, Mermaid",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Li_Schaefer_89,
+  author = 	 "Kai Li and Richard Schaefer",
+  title = 	 "A Hypercube Shared Virtual Memory System",
+  booktitle = 	 icpp,
+  year = 	 1989,
+  pages = 	 "125--32",
+  organization = ieee,
+  keywords = 	 "DSM",
+  annote = 	 "based on IVY, no fault tolerance, strong coherence;
+                  fixed manager, variable owner",
+  heldby = 	 "missing"
+}
+
+@InProceedings{Liedtke_IJ_97,
+  author = 	 {Jochen Liedtke and Nayeem Islam and Trent Jaeger},
+  title = 	 {Preventing Denial-of-Service Attacks on a
+                  {$\mu$}-Kernel for {WebOS}es},
+  booktitle = 	 hotos97,
+  year =	 1997,
+  organization = ieee,
+  address =	 {Cape Cod, MA, USA},
+  month =	 may,
+  pages =	 {73--79},
+  heldby =	 {gernot}
+}
+
+@Article{Liskov_93,
+  author = 	 {Barbara Liskov},
+  title = 	 {Practical Uses of Synchronized Clocks in Distributed
+                  Systems},
+  journal = 	 dico,
+  year = 	 1993,
+  volume =	 6,
+  pages =	 {211--219},
+  heldby =	 {gernot}
+}
+
+@Article{Liskov_SW_91,
+  author = 	"Barbara Liskov and Liuba Shrira and John Wroclawski",
+  title = 	"Efficient At-Most-Once Messages Based on Synchronized
+		 Clocks",
+  journal = 	tocs,
+  year = 	1991,
+  volume = 	9,
+  pages = 	"125--42",
+  heldby = 	 "gernot"
+}
+
+@TechReport{Liu_91,
+  author = 	 "Yusheng Liu",
+  title = 	 "A Survey of Issues in Remote Procedure Calls",
+  institution =  "Department of Compuer Science, Sydney University",
+  year = 	 1991,
+  type =	 "Technical Report",
+  number =	 422
+}
+
+@TechReport{LoBasso_VDMB_91,
+  author = 	 "Lo Basso, Tracy and Francis Vaughan and Alan Dearle
+		  and Chris Marlin and Chris Barter",
+  title = 	 "A Persistent Object System Shared by Multiple
+		  Concurrent Clients",
+  institution =  "Dept of Computer Science, University of Adelaide",
+  year = 	 1991,
+  type =	 "Technical Report",
+  number =	 "PS-04",
+  address =	 "Australia",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Maisonneuve_SC_92,
+  author = 	 "Julien Maisonneuve and Marc Shapiro and Pierre Collet",
+  title = 	 "Implementing References as Chains of Links",
+  pages =	 "236--243",
+  booktitle =	 iwooos92,
+  year =	 1992,
+  organization = ieee,
+  address =	 "Dourdan, France",
+  month =	 sep,
+  heldby =	 gernot
+}
+
+@TechReport{Makpangou_GLS_91,
+  author = 	 "Mesaac Makpangou and Yvon Gourhant and Le Narzul,
+		  Jean-Pierre and Marc Shapiro",
+  title = 	 "Structuring Distributed Applications as Fragmented Objects",
+  institution =  "INRIA",
+  year = 	 1991,
+  type = 	 "Rapport de recherche",
+  number = 	 1404,
+  address = 	 "Rocquencourt, France",
+  month = 	 mar
+}
+
+@InProceedings{Makpangou_GS_91,
+  author = 	 "Makpangou, Mesaac and Gourhant, Yvon and Shapiro, Marc",
+  title = 	 "{BOAR}: A Library of Fragmented Object Types for
+		  Distributed Abstractions",
+  booktitle = "Proc.\ of the International Workshop on Object-Orientation in
+		  Operating Systems",
+  year = 	 1991,
+  pages =	 "164--168",
+  address = 	 "Palo Alto, CA {(USA)}",
+  month = 	 oct
+}
+
+@InProceedings{Manivannan_Singhal_96,
+  author = 	 {D. Manivannan and Mukesh Singhal},
+  title = 	 {A Low-Overhead Recovery Technique Using
+                  Quasi-Synchronous Checkpointing},
+  booktitle = 	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  pages =	 {100--108},
+  heldby =	 {gernot},
+  keywords =	 {pessimistic}
+}
+
+@InProceedings{Marsh_SLM_91,
+  author = 	 {Brian D. Marsh and Michael L. Scott and Thomas
+                  J. LeBlanc and Evangelos P. Markatos},
+  title = 	 {First-Class User-Level Threads},
+  booktitle = 	 sosp91,
+  year =	 1991,
+  organization = acm,
+  address =	 {Pacific Grove, CA, USA},
+  month =	 oct,
+  pages =	 {110--121},
+  keywords =	 {Psyche},
+  heldby =	 {gernot},
+  annote =	 {they have address spaces}
+}
+
+@InCollection{Mattern_89,
+  author = 	 {Friedemann Mattern},
+  title = 	 {Virtual Time and Global States of Distributed Systems},
+  booktitle = 	 {Parallel and Distributed Algorithms},
+  pages =	 {215--226},
+  publisher =	 {Elsevier},
+  year =	 1989,
+  editor =	 {M. Cosnard and others},
+  keywords =	 {logical time, vector time},
+  heldby =	 {gernot}
+}
+
+@Article{Mattern_93,
+  author = 	 "Friedemann Mattern",
+  title = 	 "Efficient algorithms for distributed snapshots and
+		  global virtual time approximation",
+  journal =	 jpdc,
+  year =	 1993,
+  volume =	 18,
+  pages =	 "423--434",
+  keywords =	 {consistent checkpoints, non-FIFO},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Maxemchuk_Low_95,
+  author = 	 "N.F. Maxemchuk and S. Low",
+  title = 	 "The Use of Communications Networks to Increase
+		  Personal Privacy",
+  volume =	 2,
+  booktitle =	 infocom95,
+  year =	 1995,
+  organization = ieee,
+  heldby =       jinsong
+}
+
+@Article{McDowell_Helmbold_89,
+  author = 	 "McDowell, Charles E. and Helmbold, David P.",
+  title = 	 "Debugging Concurrent Programs",
+  journal = 	 acmcs,
+  year = 	 1989,
+  volume = 	 21,
+  number = 	 4,
+  pages = 	 "593--622",
+  month = 	 dec
+}
+
+@MastersThesis{McPherson:bsc,
+  author = 	"Andrew McPherson",
+  title = 	"The Design of a Communications Protocol and Network
+		 Interface for a Distributed Computing System",
+  school = 	eecs,
+  year = 	1990,
+  type = 	 "{BSc} ({Hons}) Thesis",
+  address = 	unswadr,
+  heldby = 	 "gernot"
+}
+
+@Article{Melliar_MA_90,
+  author = 	 "P. M. Melliar-Smith and Louise E. Moser and Vivek Agrawala",
+  title = 	 "Broadcast Protocols for Distributed Systems",
+  journal = 	 ieeetpds,
+  year = 	 1990,
+  volume = 	 1,
+  pages = 	 "17--25",
+  keywords = 	 "fault-tolerance, consensus, Trans, Total",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Michael_Scott_96,
+  author = 	 {Maged M. Michael and Michael L. Scott},
+  title = 	 {Simple, Fast, and Practical Non-blocking and
+                  Blocking Concurrent Queue Algorithms},
+  booktitle =	 podc,
+  pages =	 {267--275},
+  year =	 1996,
+  address =	 {Philadelphia, PA, USA},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Minnich_Farber_89,
+  author = 	 "Ronald G. Minnich and David J. Farber",
+  title = 	 "The {Mether} System: Distributed Shared Memory for
+		  {SunOS} 4.0",
+  booktitle = 	 usenix89s,
+  year = 	 1989,
+  pages = 	 "51--60",
+  keywords = 	 "DSM, MemNet",
+  heldby = 	 "gernot"
+}
+
+@Unpublished{Mitchell_GHKKKMNPR_94,
+  author = 	 "James G. Mitchell and Jonathan J. Gibbons and Graham
+		  Hamilton and Peter B. Kessler and Yousef A. Khalidi
+		  and Panos Kougiouris and Peter W. Madany and Michael
+		  N. Nelson and Michael L. Powell and Sanjay R. Radia",
+  title = 	 "An Overview of the {S}pring System",
+  note = 	 "Working paper, Sun Microsystems Inc., 2550 Garcia
+		  Avenue, Mauntain View, CA 94303, USA",
+  year =	 1994,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Mockapetris_Dunlap_88,
+  author = 	 {Paul V. Mockapetris and Keven J Dunlap},
+  title = 	 {Development of the Domain Name System},
+  booktitle = 	 sigcomm88,
+  pages =	 {123--133},
+  year =	 1988,
+  address =	 xyz,
+  month =	 aug,
+  keywords =	 {DNS},
+  heldby =	 {gernot}
+}
+
+@Article{Morris_SCHRS_86,
+  author = 	 {J. Morris and M. Satyanarayanan and M.H. Conner and
+                  J.H. Howard and D.S. Rosenthal and F.D. Smith},
+  title = 	 {Andrew: A Distributed Personal Computing Environment},
+  journal = 	 cacm,
+  year = 	 1986,
+  volume =	 29,
+  number =	 3,
+  pages =	 {184--201},
+  keywords =	 {AFS},
+  heldby =	 {xyz}
+}
+
+@Article{Mull_Maginnis_91,
+  author = 	 "Allison J. Mull and Tobin Maginnis",
+  title = 	 "Evolutionary Steps Toward a Distributed Operating
+		  System: Theory and Implementation",
+  journal = 	 osr,
+  year = 	 1991,
+  volume = 	 25,
+  pages = 	 "4--13",
+  month = 	 oct,
+  annote = 	 "Parallel processing; contains a discussion of factors
+		  limiting linear speedup",
+  keywords = 	 "speedup, MINIX",
+  heldby = 	 "missing"
+}
+
+@Book{Mullender:DS,
+  editor = 	"Sape Mullender",
+  title = 	"Distributed Systems",
+  publisher = 	"ACM Press",
+  year = 	1993,
+  edition =	"2nd",
+  series = 	"Frontier Series",
+  heldby = 	 "gernot"
+}
+
+@Book{Mullender:DS:1,
+  crossref =  "_Mullender:DS:1"
+}
+
+@InCollection{Mullender:Mullender:DS:1:8,
+  author = 	 "Sape Mullender",
+  title = 	 "Accounting and Resource Control",
+  crossref =	 "_Mullender:DS:1",
+  chapter =	 8,
+  heldby =	 "gernot",
+  annote =	 "bank accounts etc"
+}
+
+@Article{Mullender_Tanenbaum_86,
+  author = 	 "Sape J. Mullender and Andrew S. Tanenbaum",
+  title = 	 "The Design of a Capability-Based Distributed
+		  Operating System",
+  journal =	 compj,
+  year =	 1986,
+  volume =	 29,
+  pages =	 "289--299",
+  keywords =	 "Amoeba, bank accounts",
+  heldby = 	 "gernot"
+}
+
+@Manual{Mungi:api:1.2,
+  title = 	 {The {Mungi} Kernel {API}, Version 1.2},
+  key =		 {Mungi},
+  organization = cse,
+  address =	 unswadr,
+  month =	 aug,
+  year =	 2002,
+  note =	 {\url{http://mungi.org/src/}},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Murray_SWK_94,
+  author = 	 {Kevin Murray and Tom Stiemerling and Tim Wilkinson
+                  and Paul Kelly},
+  title = 	 {Angel: Resource Unification in a 64-bit Micro-Kernel},
+  booktitle = 	 {hicss94},
+  year =	 1994,
+  pages =	 xyz,
+  keywords =	 {SASOS},
+  heldby =	 {gernot}
+}
+
+@TechReport{Nelson_HK_93,
+  author = 	 "Michael N. Nelson and Graham Hamilton and Yousef
+		  A. Khalidi",
+  title = 	 "A Framework for Caching in an Object-Oriented System",
+  institution =  "Sun",
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 "TR-93-19",
+  month =	 oct,
+  heldby =	 "gernot"
+}
+
+@TechReport{Nelson_KM_93,
+  author = 	 "Michael N. Nelson and Yousef A. Khalidi and Peter
+		  W. Madany",
+  title = 	 "The {Spring} File System",
+  institution =  "Sun",
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 "TR-93-10",
+  month =	 feb,
+  heldby =	 "gernot"
+}
+
+@Article{Nelson_WO_87,
+  author = 	 "Michael N. Nelson and Brent B. Welch and John K. Ousterhout",
+  title = 	 "Caching in the {Sprite} Network File System",
+  journal =	 tocs,
+  year =	 1987,
+  volume =	 6,
+  pages =	 "134--54",
+  heldby = 	 "gernot"
+}
+
+@Article{Nesbit_87,
+  author = 	 {Nesbit, Dan M.},
+  title = 	 {Factors Affecting Distributed System Security},
+  journal = 	 ieeetose,
+  year = 	 1987,
+  volume =	 {13},
+  pages =	 {233--248},
+  heldby =	 jerry
+}
+
+@InProceedings{Neuman_93,
+  author = 	 {B. Clifford Neuman},
+  title = 	 {Proxy-Based Authorisation and Accounting for
+                  Distributed Systems},
+  booktitle = 	 icdcs93,
+  year =	 1993,
+  organization = ieee,
+  address =	 {Pittsburgh, Penn, USA},
+  month =	 may,
+  pages =	 {283--291},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Nimmagadda_VZ_99,
+  author = 	 {Srinivas Nimmagadda and Le Vasseur, Joshua and Rumi Zahir},
+  title = 	 {High-End Workstation Compute Farms Using Windows {NT}},
+  booktitle = 	 {usenixnt99},
+  OPTcrossref =  {},
+  OPTkey = 	 {},
+  OPTpages = 	 xyz,
+  OPTyear = 	 {1999},
+  OPTeditor = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTaddress = 	 xyz,
+  OPTmonth = 	 jul,
+  OPTorganization = {},
+  OPTpublisher = {},
+  OPTnote = 	 {},
+  OPTkeywords =  {cluster; Windows-NT},
+  OPTheldby = 	 {gernot},
+  OPTannote = 	 {NT "POSIX Support" is a joke, unavailable in Win32
+                  API: no fork(); no setuid() equivalent, no process
+                  suspension; brain-dead shell; no proper load figure;
+		  lack of a "#!" feature for scripting;
+                  Samba not salabe to many clients, SMB not scalable
+                  and unreliable; client crashes on NW timeouts due to
+                  loaded server when paging in code}
+}
+
+@Article{Nitzberg_Lo_91,
+  author = 	"Bill Nitzberg and Virginia Lo",
+  title = 	"Distributed Shared Memory: A Survey of Issues and
+		 Algorithms",
+  journal = 	comp,
+  year = 	1991,
+  volume = 	24,
+  number = 	8,
+  pages = 	"52--60",
+  month = 	aug,
+  annote =      "More issues than algorithms; mainly centered on
+		 parallel programming support; no fault tolerance;
+		 references",
+  heldby = 	 "gernot"
+}
+
+@Article{Norman_Thanisch_93,
+  author = 	 "Michael G. Norman and Peter Thanisch",
+  title = 	 "Models of Machines and Computation for Mapping in
+		  Multicomputers",
+  journal =	 acmcs,
+  year =	 1993,
+  volume =	 25,
+  pages =	 "263--302",
+  heldby =	 "gernot"
+}
+
+@TechReport{Normand_90,
+  author = 	 "Normand, V{\'e}ronique",
+  title = 	 "A Practical Framework for Interactive Applications
+		  in {Guide}, an Object-Oriented Distributed System",
+  institution =  "Bull-IMAG",
+  year = 	 1990,
+  number = 	 "6-90",
+  address = 	 "Grenoble (France)",
+  month = 	 dec
+}
+
+@Book{Northcutt:DTROS,
+  author =	"Northcutt, J.D.",
+  title =	"Mechanisms for Reliable Distributed Real-Time
+		 Operating Systems: the {Alpha} Kernel",
+  year =	1987,
+  publisher =	"Academic Press",
+  heldby = 	 "gernot"
+}
+
+@Book{Nutt:OS,
+  author = 	 "Gary J. Nutt",
+  title = 	 "Centralised and Distributed Operating Systems",
+  publisher = 	 "Prentice Hall",
+  year = 	 1992,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Oey_LB_95,
+  author = 	 "Marco Oey and Koen Langendoen and Henri E. Bal",
+  title = 	 "Comparing Kernel-Space and User-Space Communication
+		  Protocols on {Amoeba}",
+  pages =	 "238--45",
+  booktitle =	 icdcs95,
+  year =	 1995,
+  organization = ieee,
+  address =	 "Vancouver, BC, Canada",
+  month =	 may
+}
+
+@InProceedings{Okamoto_SSNMS_83,
+  author = 	 {Toshio Okamoto and Hideo Segawa and Sung Ho Shin and
+                  Hiroshi Nozue and Ken-ichi Maeda and Mitsuo Saito},
+  title = 	 {A Micro Kernel Architecture for Next Generation Processors},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {83--94},
+  heldby =	 {gernot},
+  annote =	 {SASOS, use special MMU, seems to be dead}
+}
+
+@InProceedings{Ouyang_Heiser_95,
+  author = 	 "Jinsong Ouyang and Gernot Heiser",
+  title = 	 "Checkpointing and Recovery for Distributed Shared
+		  Memory Applications",
+  pages =	 "191--9",
+  booktitle =	 iwooos95,
+  year =	 1995,
+  address =	 "Lund, Sweden",
+  month =	 aug,
+  heldby = 	 {gernot},
+  keywords =	 {consistent}
+}
+
+@TechReport{Ouyang_Heiser_95:tr,
+  author = 	 "Jinsong Ouyang and Gernot Heiser",
+  title = 	 "Checkpointing and Recovery for Distributed Shared
+		  Memory Applications",
+  institution =  unsw,
+  year = 	 1995,
+  type =	 "Technical Report",
+  number =	 {UNSW-CSE-TR-9502},
+  address =	 unswadr,
+  month =	 sep,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Ouyang_Heiser_96,
+  author = 	 "Jinsong Ouyang and Gernot Heiser",
+  title = 	 "{\sf Libra}: A Library for Reliable Distributed Applications",
+  booktitle = 	 pdpta96,
+  pages =	 "801--810",
+  year =	 1996,
+  address =	 "Sunnyvale, CA, USA",
+  month =	 aug,
+  heldby =	 {gernot},
+  keywords =	 {consistent checkpointing}
+}
+
+@InProceedings{Ouyang_Maheshwari_96,
+  author = 	 "Jinsong Ouyang and Piyush Maheshwari",
+  title = 	 "Architecture and Implementation of \textsf{libra} ---
+		  a Library for Reliable Distributed Applications",
+  pages =	 {263--270},
+  booktitle =	 ica3pp96,
+  year = 	 1996,
+  address =	 "Singapore",
+  month =	 jun,
+  heldby =	 {gernot},
+  keywords =	 {consistent checkpointing}
+}
+
+@InProceedings{Pai_DZ_99,
+  author = 	 {Viveka. Pai and Peter Druschel and Willy Zwanepoel},
+  title = 	 {Flash: An Efficient and Poertable Web Server},
+  pages =	 {199--212},
+  booktitle = 	 usenix99,
+  year =	 1999,
+  address =	 {Monterey, CA, USA},
+  month =	 jun,
+  keywords =	 {Caching, concurrency},
+  heldby =	 {gernot},
+  annote =	 {Good argument for a SASOS, uses hacks because has no
+                  fast threads. Very thorough analysis. Should get
+                  source as soon as available.}
+}
+
+@InProceedings{Park_CY_97,
+  author = 	 {Taesoon Park and Sungbok Cho and Heon Y. Yeom},
+  title = 	 {An Efficient Logging Scheme for Recoverable
+                  Distributed Shared Memory Systems},
+  booktitle = 	 icdcs97,
+  pages =	 {305--313},
+  year =	 1997,
+  address =	 {Baltimore, MD, USA},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {checkpointing, DSM, fault tolerance, rollback-recovery},
+  heldby =	 {gernot}
+}
+
+@Article{Pease_SL_80,
+  author = 	"M. Pease and R. Shostak and L. Lamport",
+  title = 	 "Reaching Agreement in the Presence of Faults",
+  journal = 	 jacm,
+  year = 	 1980,
+  volume = 	 27,
+  pages = 	 "228--34",
+  heldby = 	 "gernot"
+}
+
+@Article{Peleska_91,
+  author = 	 "Jan Peleska",
+  title = 	 "Design and Verification of Fault Tolerant Systems
+		  with {CSP}",
+  journal = 	 dico,
+  year = 	 1991,
+  volume = 	 5,
+  pages = 	 "95--106",
+  keywords = 	 "formal specification; invent and verify
+		  paradigm; top-down design",
+  heldby = 	 "gernot"
+}
+
+@Article{Peng_Puroshothaman_91,
+  author = 	 "Wuxu Peng S. Puroshothaman",
+  title = 	 "Data Flow Analysis of Communicating Finite State Machines",
+  journal =	 toplas,
+  year =	 1991,
+  volume =	 13,
+  pages =	 "399--442",
+  heldby =	 "gernot"
+}
+
+@Article{Perlman_83,
+  author = 	 "Radia Perlman",
+  title = 	 "Fault-Tolerant Broadcast of Routing Information",
+  journal = 	 cnet,
+  year = 	 1983,
+  volume = 	 7,
+  pages = 	 "395--405",
+  annote = 	 "``lollipop'' sequence numbers",
+  keywords = 	 "synchronization, reliable broadcast, fault tolerance",
+  heldby = 	 "gernot"
+}
+
+@Article{Petersen_Li_95,
+  author = 	 "Karin Petersen and Kai Li",
+  title = 	 "Multiprocessor Cache Coherence Based on Virtual
+		  Memory Support",
+  journal =	 jpdc,
+  year =	 1995,
+  volume =	 29,
+  pages =	 "158--178",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Pike_91,
+  author = 	"Rob Pike",
+  title = 	"$8\frac{1}{2}$, the {Plan} 9 Window System",
+  booktitle = 	usenix91s,
+  year = 	1991,
+  pages = 	"257--65",
+  address = 	"Nashville, TN, USA",
+  heldby = 	 "gernot"
+}
+
+@Manual{Pike_93a,
+  title = 	 "A Manual for the {Plan} 9 Assembler",
+  author =	 "Rob Pike",
+  organization = "AT{\&}T Bell Laboratories",
+  address =	 "Murray Hill, NJ, USA",
+  year =	 1993
+}
+
+@Manual{Pike_93b,
+  title = 	 "How To Use the {Plan} 9 {C} Compiler",
+  author =	 "Rob Pike",
+  organization = "AT{\&}T Bell Laboratories",
+  address =	 "Murray Hill, NJ, USA",
+  year =	 1993
+}
+
+@Manual{Pike_93c,
+  title = 	 "The Various Ports",
+  author =	 "Rob Pike",
+  organization = "AT{\&}T Bell Laboratories",
+  address =	 "Murray Hill, NJ, USA",
+  year =	 1993
+}
+
+@InProceedings{Pike_PTH_91,
+  author = 	"Rob Pike and Dave Presotto and Ken Thompson and
+		 Gerhard Holzmann",
+  title = 	"Process Sleep and Wakeup on a Shared-memory
+		 Multiprocessor",
+  booktitle = 	europen,
+  year = 	1991,
+  pages = 	"161--6",
+  address = 	"Troms\o, Norway",
+  month = 	may,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Pike_PTT_90,
+  author = 	"Rob Pike and Dave Presotto and Ken Thompson and
+		 Howard Trickey",
+  title = 	"{Plan} 9 from {Bell} {Labs}",
+  booktitle = 	ukuug,
+  year = 	1990,
+  pages = 	"1--9",
+  address = 	"London, UK",
+  month = 	jul,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Pitts_Dasgupta_88,
+  author = 	 {David V. Pitts and Partha Dasgupta},
+  title = 	 {Object Memory and Storage Management in the {Clouds}
+                  Kernel},
+  booktitle =	 icdcs88,
+  year =	 1988,
+  pages = 	 "10--17",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Plainfosse_Shapiro_92,
+  author = 	 "David Plainfoss\'{e} and Marc Shapiro",
+  title = 	 "A Distributed {GC} for Object Oriented Systems",
+  pages =	 xyz,
+  booktitle =	 iwooos92,
+  year =	 1992,
+  organization = ieee,
+  address =	 "Dourdan, France",
+  month =	 sep,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Plainfosse_Shapiro_92a,
+  author = 	 "David Plainfoss\'{e} and Marc Shapiro",
+  title = 	 "Experience with a Fault-Tolerant Garbage Collector
+		  in a Distributed {Lisp} System",
+  pages =	 xyz,
+  booktitle =	 iwmm92,
+  year =	 1992,
+  publisher =	 "Springer Verlag",
+  address =	 "Saint-Malo, France",
+  month =	 sep,
+  heldby =	 gernot
+}
+
+@InProceedings{Plainfosse_Shapiro_95,
+  author = 	 {David Plainfoss\'{e} and Marc Shapiro},
+  title = 	 {A Survey of Distributed Garbage Collection Techniques},
+  booktitle = 	 iwmm95,
+  year =	 1995,
+  publisher =	 {Springer Verlag},
+  address =	 {Kinross, Scotland, UK},
+  month =	 sep,
+  pages =	 xyz,
+  heldby =	 {gernot},
+  annote =	 {\url{http://www-sor.inria.fr/publi/SDGC\_iwmm95.html}}
+}
+
+@InProceedings{Plank_BKL_95,
+  author = 	 "J. S. Plank and M. Beck and G. Kingsley and K. Li",
+  title = 	 "{Libckpt}: Transparent checkpointing under {UNIX}",
+  pages =	 "213--223",
+  booktitle =	 usenix95,
+  year =	 1995,
+  month =	 jan,
+  heldby = 	 "jinsong"
+}
+
+@Article{Plank_BK_95,
+  author = 	 "J. S. Plank and M. Beck and G. Kingsley",
+  title = 	 "Compiler-assisted memory exclusion for fast
+		  checkpointing",
+  journal =	 ieeetcos,
+  year =	 1995,
+  volume =	 7,
+  number =	 4,
+  pages =	 "10--14",
+  heldby =	 {gernot},
+  keywords =	 {single process, implementation technique}
+}
+
+@Article{Plank_Li_94,
+  author = 	 "J. S. Plank and K. Li",
+  title = 	 "{ickp}---A Consistent Checkpointer for Multicomputers",
+  journal =	 ieeepdt,
+  year =	 1994,
+  volume =	 2,
+  number =	 2,
+  pages =	 "62--67",
+  heldby =	 {jinsong},
+  keywords =	 {blocking}
+}
+
+@InProceedings{Popek_WCEKRT_91,
+  author = 	 "Popek, G. and Walker, B. and Chow, J. and Edwards, D.
+		 and Kline, C. and Rudisin, G. and Thiel, G.",
+  title = 	 "{LOCUS}: a Network Transparent, High Reliability
+		 Distributed System",
+  pages =	 "169--77",
+  booktitle =	 sosp81,
+  year =	 1981,
+  keywords =	 "LOCUS, UNIX, replication, FS",
+  heldby = 	 "missing"
+}
+
+@InProceedings{Powell_Presotto_83,
+  author = 	 {M.L. Powell and Dave Presotto},
+  title = 	 {Publishing: A Reliable Broadcast Communications Mechanism},
+  booktitle = 	 sosp83,
+  pages =	 {110-118},
+  year =	 1983,
+  month =	 oct,
+  keywords =	 {checkpointing, pressimistic},
+  heldby =	 {gernot},
+  annote =	 {original reference?}
+}
+
+@InProceedings{Presotto_90,
+  author = 	"David Leo Presotto",
+  title = 	"Multiprocessor Streams for {Plan} 9",
+  booktitle = 	ukuug,
+  year = 	1990,
+  pages = 	"11--9",
+  address = 	"London, UK",
+  month = 	jul,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Presotto_PTT_91,
+  author = 	"Dave Presotto and Rob Pike and Ken Thompson and
+		 Howard Trickey",
+  title = 	"{Plan} 9, A Distributed System",
+  booktitle = 	europen,
+  year = 	1991,
+  pages = 	"43--50",
+  address = 	"Troms\o, Norway",
+  month = 	may,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Presotto_PTT_92,
+  author = 	 {Dave Presotto and Rob Pike and Ken Thompson and
+                  Howard Trickey},
+  title = 	 {Plan~9, A Distributed System},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {31--37},
+  heldby =	 {gernot},
+  annote = 	 "Good overview"
+}
+
+@Article{Prete_PR_95,
+  author = 	 "C.A. Prete and G. Prina and L. Ricciardi",
+  title = 	 "A Trace-Driven Simulator for Performance Evaluation
+		  of Cache-Based Multiprocessor Systems",
+  journal =	 ieeetpds,
+  year =	 1995,
+  volume =	 6,
+  number =	 9,
+  pages =	 "915--929",
+  month =	 sep,
+  heldby = 	 "jinsong"
+}
+
+@Article{Protic_TM_96,
+  author = 	 {Jelica Proti{\'c} and Milo Toma{\v{s}}evi{\'c} and
+                  Veljko Milutinovi{\'c}},
+  title = 	 {Distributed Shared Memory: Concepts and Systems},
+  journal = 	 ieeepdt,
+  year = 	 1996,
+  volume =	 4,
+  number =	 2,
+  pages =	 {63--79},
+  keywords =	 {DSM},
+  heldby =	 {gernot},
+  annote =	 {survey}
+}
+
+@TechReport{Radia_Nelson_Powell_93,
+  author = 	 "Sanjay Radia and Michael N. Nelson and Michael L. Powell",
+  title = 	 "The {Spring} Name Service",
+  institution =  "Sun",
+  year = 	 1993,
+  type =	 "Technical Report",
+  number =	 "93-16",
+  month =	 nov,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Ramachandran_Khalidi_89,
+  author = 	 {U. Ramachandran and M.Y.A. Khalidi},
+  title = 	 {An Implementation of Distributed Shared Memory},
+  booktitle = 	 usenixdms,
+  year = 	 1989,
+  pages = 	 {21--38},
+  month =	 oct,
+  address =	 {Fort Lauderdale, FL, USA},
+  heldby =	 {gernot},
+  keywords =	 {DSM}
+}
+
+@Article{Randell_75,
+  author = 	 "Brian Randell",
+  title = 	 "System Structure for Software Fault Tolerance",
+  journal =	 ieeetose,
+  year =	 1975,
+  volume =	 1,
+  pages =	 "220--232",
+  heldby =	 "gernot"
+}
+
+@Article{Rao_Ramakrishnan_93,
+  author = 	 "B. Madhu Rao and Sub Ramakrishnan",
+  title = 	 "Models for Performance Evaluation of a Local Area
+		  Network With a File Server",
+  journal =	 cnis,
+  year =	 1993,
+  volume =	 xyz,
+  pages =	 xyz,
+  heldby =	 "gernot"
+}
+
+@InCollection{Rashid_88,
+  author = 	 "Richard F. Rashid",
+  title = 	 "From {RIG} to {Accent} to {Mach}: The Evolution of a
+		  Network Operating System",
+  crossref =	 "Huberman:ecology",
+  pages =	 "207--230",
+  keywords =	 {},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Reihardt_LW_94,
+  author = 	 {Steven K. Reihardt and James R. Larus and David A. Wood},
+  title = 	 {Tempest and {Typhoon}: User-Level Shared Memory},
+  booktitle = 	 isca94,
+  year =	 1994,
+  organization = acm,
+  pages =	 {325--336},
+  keywords =	 {network processor},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Reinhardt_LW_94,
+  author = 	 {Steven K. Reinhardt and Lames R. Larus David A. Wood},
+  title = 	 {Tempest and {Typhoon}: User-Level Shared Memory},
+  booktitle = 	 {isca94},
+  year =	 1994,
+  organization = ieee,
+  pages =	 {325--336},
+  heldby =	 {gernot}
+}
+
+@Article{Reiter_Birman_94,
+  author = 	 {Michael K. Reiter and Kenneth P. Birman},
+  title = 	 {How to Securely Replicate Services},
+  journal = 	 toplas,
+  year = 	 1994,
+  volume =	 16,
+  pages =	 {986--1009},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Renesse_Tanenbaum_92,
+  author = 	 {van Renesse, Robert and Andrew S. Tanenbaum},
+  title = 	 {Short Overview of {Amoeba}},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {1--10},
+  heldby =	 {gernot},
+  annote = 	 "Good overview"
+}
+
+@Article{Rosenberg_KA_92,
+  author = 	 "John Rosenberg and J. Leslie Keedy and David Abramson",
+  title = 	 "Addressing Mechanisms for Large Virtual Memories",
+  journal =	 compj,
+  year =	 1992,
+  volume =	 35,
+  pages =	 "369--75",
+  keywords = 	 "persistence, SASOS, capabilities, MONADS-PC",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Rosenberg_KK_89,
+  author = 	 "John Rosenberg and David M. Koch and J. Leslie Keedy",
+  title = 	 "A Massive Memory Supercomputer",
+  booktitle = 	 hicss89,
+  year = 	 1989,
+  organization = ieee,
+  pages =	 "338--345",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Rosenberg_Keedy_87,
+  author =	"Rosenberg, John and Keedy, J. Leslie",
+  title =	"Object Management and Addressing in the {MONADS} Architecture",
+  booktitle =	 pos87,
+  year = 	 1987,
+  publisher =	 "University of Glasgow and St. Andrew's",
+  address =	 "Appin, UK",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Rosenberg_Keedy_87a,
+  author =	"Rosenberg, John and Keedy, J. Leslie",
+  title =	"Support for Objects and Persistence in the {MONADS}
+		  Architecture",
+  booktitle =	 pos87,
+  year = 	 1987,
+  publisher =	 "University of Glasgow and St. Andrew's",
+  address =	 "Appin, UK",
+  heldby = 	 "gernot"
+}
+
+@Article{Rozier_AABGGHKLLN_88,
+  author = 	 {M. Rozier and V. Abrossimov and F. Armand and I.
+		  Boule and M. Gien and M. Guillemont and F. Herrmann
+		  and C. Kaiser and S. Langlois and P. L\'{e}onard and
+		  W. Neuhauser},
+  title = 	 {CHORUS Distributed Operating Systems},
+  journal = 	 compsys,
+  year = 	 1988,
+  volume =	 1,
+  number =	 4,
+  pages =	 {305--367},
+  heldby =	 {antonye}
+}
+
+@TechReport{Rozier_AABGGHKLLN_90,
+  author = 	"M. Rozier and V. Abrossimov and F. Armand and I.
+		 Boule and M. Gien and M. Guillemont and F. Herrmann
+		 and C. Kaiser and S. Langlois and P. L{\'e}onard and
+		 W. Neuhauser",
+  title = 	"Overview of the {\sc Chorus} Distributed Operating System",
+  institution =  "Chorus syste{\`e}mes",
+  year = 	 1990,
+  type =	 "Technical report",
+  number =	 "CS/TR-90-25",
+  address = 	"Montigny-le-Bretonneux (France)",
+  month = 	apr,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Rozier_AABGGHKLLN_92,
+  author = 	 {M. Rozier and V. Abrossimov and F. Armand and
+                  L. Boule and M. Gien and M. Guillemont and
+                  F. Herrman and C. Kaiser and S. Langlois and
+                  P. L{\'e}onard and W. Neuhauser},
+  title = 	 {Overview of the {Chorus} Distributed Operating System},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {39--69},
+  heldby =	 {gernot}
+}
+
+@Article{Ruddock_Dasarathy_96,
+  author = 	 {David E. Ruddock and Balakrishnan Dasarathy},
+  title = 	 {Multithreading Programs: Guidelines for {DCE} Applications},
+  journal = 	 ieeesw,
+  year = 	 1996,
+  volume =	 xyz,
+  number =	 1,
+  month =	 {jan},
+  pages =	 {80--90},
+  heldby =	 {gernot}
+}
+
+@Article{Russell_80,
+  author = 	 "David L. Russell",
+  title = 	 "State Restoration in Systems of Communicating Processes",
+  journal =	 ieeetose,
+  year =	 1980,
+  volume =	 6,
+  pages =	 "183--194",
+  keywords =	 "domino rollbacks",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Russell_SEHBGH_92,
+  author = 	"Stephen Russell and Alan Skea and Kevin Elphinstone
+		 and Gernot Heiser and Keith Burston and Ian Gorton
+		 and Graham Hellestrand",
+  title = 	"Distribution + Persistence = Global Virtual Memory",
+  booktitle =	 iwooos92,
+  year = 	 1992,
+  NOeditor =	 "Luis-Felipe Cabrera and Eric Jul",
+  address =	 "Dourdan, France",
+  pages = 	"96--99",
+  month = 	 sep,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Russinovich_Segall_95,
+  author = 	 {Mark Russinovich and Zary Segall},
+  title = 	 {Fault-Tolerance for Off-The-Shelf Applications and
+                  Hardware},
+  pages =	 {67--71},
+  booktitle = 	 sftc95,
+  year =	 1995,
+  organization = ieee,
+  address =	 xyz,
+  month =	 xyz,
+  heldby =	 {gernot}
+}
+
+@TechReport{Russo_JC_88,
+  author = 	 "Vincent Russo and Gary Johnston and Roy Campbell",
+  title = 	 "Process Management and Exception Handling in
+		  Multiprocessor Operating Systems Using
+		  Object-Oriented Design Techniques",
+  institution =  "Department of Computer Science",
+  year = 	 1988,
+  number = 	 "R-88-1415",
+  address = 	 "Urbana, Il, USA",
+  month = 	 sep
+}
+
+@InProceedings{Sandberg_GKWL_85,
+  author = 	 {R. Sandberg and D. Goldberg and S. Kleiman and
+                  D. Walsh and B. Lyon},
+  title = 	 {The Design and Implementation of the {Sun} {Network}
+                  {File} {System}},
+  booktitle = 	 usenix85,
+  year =	 1985,
+  address =	 {Portland, OR, USA},
+  pages =	 xyz,
+  keywords =	 {NFS},
+  heldby =	 {xyz}
+}
+
+@Article{Satyanarayanan_89,
+  author = 	 "Satyanarayanan, M.",
+  title = 	 "Intergrating Security in a Large Distributed Operating",
+  journal = 	 tocs,
+  year = 	 1989,
+  volume =	 7,
+  pages =        "247--280",
+  heldby =	 jerry
+}
+
+@Article{Satyanarayanan_KKOSS_90,
+  author = 	 {M. Satyanarayanan and J.J. Kistler and P. Kumar and
+                  M.R. Okasaki and E.H. Siegel and D.C. Steere},
+  title = 	 {Coda: A Highly Available File System for a
+                  Distributed Workstation Environment},
+  journal = 	 ieeetc,
+  year = 	 1990,
+  volume =	 39,
+  pages =	 {447--459},
+  heldby =	 {xyz}
+}
+
+@InProceedings{Savva_Nanya_95,
+  author = 	 {Andreas Savva and Takashi Nanya},
+  title = 	 {Gracefully Degrading Systems Using the
+                  Bulk-Synchronous Parallel Model with Randomised
+                  Shared-Memory},
+  pages =	 {299--308},
+  year =	 1995,
+  booktitle = 	 sftc95,
+  organization = ieee,
+  address =	 xyz,
+  month =	 xyz,
+  heldby =	 {gernot},
+  annote =	 {hope it is really SFTC}
+}
+
+@Article{Schiller_94,
+  author = 	 {Jeffrey I. Schiller},
+  title = 	 {Secure Distributed Computing},
+  journal = 	 sa,
+  year = 	 1994,
+  volume = 	 xyz,
+  month = 	 nov,
+  pages = 	 "54--58",
+  keywords =	 {Athena, Kerberos, key distribution, authentication,
+                  encryption}
+}
+
+@InProceedings{Schiper_ES_89,
+  author = 	 {Andr{\'e} Schiper and J. Eggli and A. Sandoz},
+  title = 	 {A New Algorithm to Implement Causal Ordering},
+  booktitle = 	 {Proc. International Workshop on Distributed
+                  Algorithms},
+  pages =	 {219--232},
+  year =	 1989,
+  volume =	 392,
+  series =	 {LNICS},
+  publisher =	 {Springer Verlag},
+  heldby =	 {gernot}
+}
+
+@Article{Schlichting_Schneider_83,
+  author = 	"Richard D. Schlichting and Fred B. Schneider",
+  title = 	"Fail-Stop Processors: An Approach to Designing
+		 Fault-Tolerant Computing Systems",
+  journal = 	tocs,
+  year = 	1983,
+  volume = 	1,
+  pages = 	"222-238",
+  heldby = 	 "gernot"
+}
+
+@Article{Schlichting_Thomas_95,
+  author = 	 "Richard D. Schlichting and Vicraj T. Thomas",
+  title = 	 "Programming Language Support for Writing
+		  Fault-Tolerant Distributed Software",
+  journal =	 ieeetc,
+  year =	 1995,
+  volume =	 44,
+  pages =	 "203--12",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Schoinas_FLRLW_94,
+  author = 	 {Ioannis Schoinas and Babak Falsafi and Alvin
+                  R. Lebeck and Steven K. Reinhardt and Lames R. Larus
+                  and David A. Wood},
+  title = 	 {Fine-grain Access Control for Distributed Shared Memory},
+  booktitle = 	 {asplos94},
+  year =	 1994,
+  organization = acm,
+  address =	 {San Jose, CA, USA},
+  pages =	 {297--306},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Schueller_HKS_92,
+  author = 	 {P. Sch{\"u}ller and H. H{\"a}rtig and
+                  W.E. K{\"u}hnhauser and H. Streich},
+  title = 	 {Performance of the {BirliX} Operating System},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {147--160},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Scott_Garrett_92,
+  author = 	 "Michael L. Scott and William Garrett",
+  title = 	 "Shared Memory Ought to be Commonplace",
+  booktitle =	 wwos92,
+  year = 	 1992,
+  organization = ieee,
+  address =	 "Key Biscayne, FL, USA",
+  pages =	 "86--90",
+  heldby = 	 "gernot",
+  annote = 	 "Psyche successor, SASOS"
+}
+
+@Article{Scott_LMBDM_90,
+  author = 	 {Michael L. Scott and T.J. LeBlanc and B.D. Marsh and
+                  T.G. Becker and C. Dubnicki and E.P  Markatos and
+                  N.G. Smithline},
+  title = 	 {Implementation Issues for the {Psyche}
+                  Multiprocessor Operating System},
+  journal = 	 compsys,
+  year = 	 1990,
+  volume =	 3,
+  number =	 1,
+  month =	 {Winter},
+  pages =	 {101--137},
+  keywords =	 {xyz},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Scott_LM_89,
+  author = 	 {Michael Scott and Thomas LeBlanc and Brian Marsh},
+  title = 	 {Implementation Issues for the {Psyche}
+                  Multiprocessor Operating System},
+  booktitle = 	 usenixdms,
+  year =	 1989,
+  address =	 {Fort Lauderdale, FL, USA},
+  month =	 oct,
+  pages =	 {227--236},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Scott_LM_90,
+  author = 	 {Michael Scott and Thomas LeBlanc and Brian D. Marsh},
+  title = 	 {Multi-Model Parallel Programming in {Psyche}},
+  booktitle = 	 ppopp90,
+  year =	 1990,
+  organization = acm,
+  month =	 mar,
+  pages =	 {70--78},
+  heldby =	 {gernot},
+  keywords = 	 {Psyche}
+}
+
+@InProceedings{Shapiro_86,
+  author = 	 "Marc Shapiro",
+  title = 	 "Structure and Encapsulation in Distributed Systems:
+		  the {Proxy} {Principle}",
+  pages =	 "198--204",
+  booktitle =	 icdcs86,
+  year =	 1986,
+  organization = ieee,
+  annote =	 "Not in UNSW Library",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Shapiro_89,
+  author = 	 {Marc Shapiro},
+  title = 	 {Prototyping a Distributed Object-Oriented Operating
+                  System on {Unix}},
+  booktitle = 	 usenixdms,
+  year =	 1989,
+  address =	 {Fort Lauderdale, FL, USA},
+  month =	 oct,
+  pages =	 {311--331},
+  keywords =	 {SOS},
+  heldby =	 {gernot}
+}
+
+@TechReport{Shapiro_Ferreira_94,
+  author = 	 "Marc Shapiro and Paulo Ferreira",
+  title = 	 "Larchant-{RDOSS}: a Distributed Shared Persistent
+		  Memory and Its Garbage Collector",
+  institution =  "INRIA",
+  year = 	 1994,
+  type =	 "Rapport de Recherche",
+  number =	 2399,
+  address =	 "Rocquencourt, Cedex, France",
+  month =	 nov,
+  note =	 1994,
+  heldby =	 "gernot"
+}
+
+@Article{Shieh_Yang_96,
+  author = 	 "Shiuh-Pyng Shieh and Wen-Her Yang",
+  title = 	 "An Authentication and Key Distribution System for
+		  Open Network Systems",
+  journal =	 osr,
+  year =	 1996,
+  volume =	 30,
+  number =	 2,
+  pages =	 "32--41",
+  month =	 apr,
+  heldby =	 "gernot"
+}
+
+@Article{Shilling_94,
+  author = 	 "John J. Shilling",
+  title = 	 "How to Roll Your Own Persistent Objects in {C++}",
+  journal =	 joop,
+  year =	 1994,
+  volume =	 xyz,
+  number =	 4,
+  pages =	 "25--32",
+  heldby =	 "gernot"
+}
+
+@TechReport{Silcock_GG_97,
+  author = 	 {Jackie Silcock and Andrzej Goscinski and J. Goldberg},
+  title = 	 {Performance Studies of {RHODOS}' Operating System
+                  Embedded Distributed Shared Memory},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1997,
+  number =	 {TR C97/08},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 may,
+  heldby =	 {gernot}
+}
+
+@TechReport{Silcock_Goscinski_95,
+  author = 	 {Jackie Silcock and Andrzej Goscinski},
+  title = 	 {Message Passing, Remote Procedure Calls and
+                  Distributed Shared Memory as Communication Paradigms
+                  for Distributed Systems},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1995,
+  number =	 {TR C95/20},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 jun,
+  heldby =	 {gernot}
+}
+
+@TechReport{Silcock_Goscinski_97,
+  author = 	 {Jackie Silcock and Andrzej Goscinski},
+  title = 	 {Update-based Distributed Shared Memory Integrated
+                  into {RHODOS}' Memory Management},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1997,
+  number =	 {TR C97/03},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 mar,
+  heldby =	 {gernot}
+}
+
+@TechReport{Silcock_Goscinski_97a,
+  author = 	 {Jackie Silcock and Andrzej Goscinski},
+  title = 	 {Programming and Performance Studies of Parallel
+                  Applications in a {DSM} Environment},
+  institution =  {Department of Computing and Mathematics},
+  year = 	 1997,
+  number =	 {TR C97/09},
+  address =	 {Deakin University Geelong Victoria 3217, Australia},
+  month =	 may,
+  heldby =	 {gernot}
+}
+
+@Article{Sinderen_FV_92,
+  author = 	 "{van} Sinderen, M. and Ferreira Pires, L. and
+		  Vissers, C.A.",
+  title = 	 "Protocol Design and Implementation Using Formal Methods",
+  journal =	 compj,
+  year =	 1992,
+  volume =	 35,
+  pages =	 "478--91",
+  heldby = 	 "gernot"
+}
+
+@Book{Singhal_Shivaratri:ACOS,
+  author =	 {Mukesh Singhal and Niranjan G. Shivaratri},
+  title = 	 {Advanced Concepts in Operating Systems},
+  publisher = 	 {McGraw-Hill},
+  year = 	 1994,
+  heldby =	 {gernot}
+}
+
+@Book{Sinha:distos,
+  author = 	 {Pradeep K. Sinha},
+  title = 	 {Distributed Operating Systems: Concepts and Design},
+  publisher = 	 ieeecs # { Press},
+  year = 	 1997,
+  heldby =	 {gernot}
+}
+
+@Unpublished{Skea_90,
+  author = 	"Skea, A.D.",
+  title = 	"A Memory and Network Interface for a Processor in a
+		 Distributed System",
+  note = 	"Working Paper " # eecs,
+  year = 	1990,
+  month = 	feb,
+  address =	unswadr,
+  heldby = 	 "gernot"
+}
+
+@TechReport{Skea_92,
+  author = 	 "Alan Skea",
+  title = 	 "A Memory and Network Interface for a Processor in a
+		  Distributed System",
+  institution =  cse,
+  year = 	 1992,
+  number = 	 {UNSW-CSE-TR-9202},
+  address = 	 unsw,
+  keywords = 	 "SASOS, DSM, hardware",
+  heldby = 	 "gernot"
+}
+
+@Unpublished{Skea_EHRH_91,
+  author = 	 "Alan Skea and Kevin Elphinstone and Gernot Heiser and
+		  Stephen Russell and Graham Hellestrand",
+  title = 	 "Global Virtual Memory for a Workstation Based
+		  Distributed System",
+  note = 	 "Working paper",
+  year = 	 1991,
+  month = 	 nov,
+  keywords = 	 "global virtual memory, DSM, SASOS",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Skeppstedt_Stenstrom_94,
+  author = 	 {Jonas Skeppstedt and Per Stenstr{\"o}m},
+  title = 	 {Simple Compiler Algorithms to Reduce Ownership
+                  Overhead in Cache Coherency Protocols},
+  booktitle = 	 {asplos94},
+  year =	 1994,
+  organization = acm,
+  address =	 {San Jose, CA, USA},
+  pages =	 {286--295},
+  heldby =	 {gernot}
+}
+
+@TechReport{Skousen_MF_96,
+  author = 	 {Alan C. Skousen and Donald S. Miller and Ronald G. Feigen},
+  title = 	 {The {Sombrero} Operating System: An Operating
+                  System for a Distributed Single Very Large Address
+                  Space --- General Introduction},
+  institution =  {Computer Science and Engineering Department},
+  year = 	 1996,
+  type =	 {Technical Report},
+  number =	 {TR-96-005},
+  address =	 {Arizona State University, Tempe, AZ 85287-5406},
+  month =	 apr,
+  keywords =	 {SASOS},
+  heldby =	 {gernot},
+  annote =	 {\url{http://www.eas.asu.edu/~sasos}}
+}
+
+@InProceedings{Smith_JT_95,
+  author = 	 "S. W. Smith and D. B. Johnson and J. D. Tygar",
+  title = 	 "Completely asynchronous optimistic recovery with
+		  minimal rollbacks",
+  pages =	 "361--370",
+  booktitle =	 sftc95,
+  year =	 1995,
+  month =	 jun,
+  heldby = 	 "gernot",
+  annote =	 "formal, no performance"
+}
+
+@InProceedings{Sonntag_92,
+  author = 	 "Susann Sontag",
+  title = 	 "Closing the Gap Between Different Object Models",
+  pages =	 "378--383",
+  booktitle =	 iwooos92,
+  year =	 1992,
+  organization = ieee,
+  address =	 "Dourdan, France",
+  month =	 sep,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Soulard_Makpangou_92,
+  author = 	 "Herv{\'e} Soulard and Mesaac Makpangou",
+  title = 	 "A Generic Fragmented Object Strucutred Framework for
+		  Distributed Storage Support",
+  pages =	 "57--65",
+  booktitle =	 iwooos92,
+  year =	 1992,
+  organization = ieee,
+  address =	 "Dourdan, France",
+  month =	 sep,
+  heldby =	 "gernot"
+}
+
+@MastersThesis{Spyridopoulos:bsc,
+  author = 	 "Dimitri Spyridopoulos",
+  title = 	 "File systems in a Global Virtual Memory",
+  school = 	 cse,
+  year = 	 1993,
+  type =	 "{BSc} ({Hons}) Thesis",
+  address = 	 unswadr,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Steiner_NS_88,
+  author = 	 "J. Steiner and C. Neuman and J. Schiller",
+  title = 	 "Kerberos: An Authentication Service for Open Network
+		  Systems",
+  pages =	 xyz,
+  booktitle =	 usenix88w,
+  year =	 1988,
+  address =	 "Berkeley, CA, USA",
+  keywords =	 {Secret key},
+  heldby =	 {gernot}
+}
+
+@InCollection{Stonebraker:Stonebraker:ingres,
+  key = 	 "Stonebraker86",
+  author = 	 "Michael Stonebraker",
+  title = 	 "Operating System Support for Database Management",
+  crossref =	 "_Stonebraker:ingres",
+  chapter =	 8,
+  heldby =	 "gernot"
+}
+
+@Book{Stonebraker:ingres,
+  crossref =	 "_Stonebraker:ingres"
+}
+
+@Article{Strom_Yemini_85,
+  author = 	 "R. Strom and S. Yemini",
+  title = 	 "Optimistic recovery in distributed systems",
+  journal =	 tocs,
+  year =	 1985,
+  volume =	 3,
+  number =	 3,
+  pages =	 "204--226",
+  heldby =	 "jinsong"
+}
+
+@Article{Stumm_Zhou_90,
+  author = 	"Michael Stumm and Songnian Zhou",
+  title = 	"Algorithms Implementing Distributed Shared Memory",
+  journal = 	comp,
+  year = 	1990,
+  volume = 	23,
+  number = 	5,
+  pages = 	"54--60",
+  month = 	may,
+  annote = 	"Quantitative comparison of central server, migration,
+		 read-replication and full replication algorithms;
+		 mainly interested in parallel programming; no fault
+		 tolerance; references",
+  heldby = 	 "gernot"
+}
+
+@Misc{Sun:Jini:url,
+  key =		 {Jini},
+  author =	 {{Sun Microsystems}},
+  title =	 {Jini Connection Technology},
+  howpublished = {URL \url{http://www.sun.com/jini/}},
+  month =	 jan,
+  year =	 1999,
+  heldby =	 {gernot}
+}
+
+@TechReport{Sun:Jini_AO,
+  author = 	 {{Sun Microsystems}},
+  title = 	 {Jini Architectural Overview},
+  year = 	 1999,
+  type =	 {Technical White Paper},
+  month =	 jan,
+  note =	 {URL \url{http://www.sun.com/jini/whitepapers/}},
+  heldby =	 {gernot}
+}
+
+@Article{Sunshine_Dalal_78,
+  author = 	 "Carl A. Sunshine and Yogen K. Dalal",
+  title = 	 "Connection Management in Transport Protocols",
+  journal = 	 cnet,
+  year = 	 1978,
+  volume = 	 2,
+  pages = 	 "454--73",
+  keywords = 	 "fault tolerance, TCP",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Suri_JF_95,
+  author = 	 {Gaurav Suri and Bob Janssens and W. Kent Fuchs},
+  title = 	 {Reduced Overhead Logging for Rollback Recovery in
+                  Distributed Shared Memory},
+  booktitle = 	 sftc95,
+  year =	 1995,
+  organization = ieee,
+  address =	 xyz,
+  month =	 xyz,
+  pages =	 {279--288},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Takahashi_KM_99,
+  author = 	 {Masahiko Takahashi and Kenji Kono and Takashi Masuda},
+  title = 	 {Efficient Kernel Support of Fine-Grained Protection
+                  Domains for Mobile Code},
+  booktitle = 	 icdcs99,
+  pages =	 {64--73},
+  year =	 1999,
+  address =	 {Austin, TX, USA},
+  month =	 may,
+  heldby =	 {gernot}
+}
+
+@Book{Tanenbaum:DOS,
+  author =	 {Andrew S. Tanenbaum},
+  title = 	 {Distributed Operating Systems},
+  publisher = 	 {Prentice Hall},
+  year = 	 1995,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Tanenbaum_MR_86,
+  author = 	 {Andrew S. Tanenbaum and Sape J. Mullender and van
+                  Renesse, Robert},
+  title = 	 {Using Sparse Capabilities in a Distributed Operating
+                  System},
+  booktitle = 	 icdcs86,
+  year =	 1986,
+  organization = ieee,
+  address =	 xyz,
+  month =	 may,
+  pages =	 {558--563},
+  heldby =	 {gernot}
+}
+
+@Article{Tanenbaum_Mullender_81,
+  author =	"Tanenbaum, Andrew S. and Mullender, Sape J.",
+  title =	"An Overview of the {Amoeba} Distributed Operating
+		 System",
+  year =	1981,
+  journal =	osr,
+  volume =	15,
+  number =	3,
+  pages =	"51--64",
+  keywords =	"Amoeba, overview",
+  heldby = 	 "missing"
+}
+
+@Techreport{Tanenbaum_Mullender_84,
+  author =	"Andrew S. Tanenbaum and Sape Mullender",
+  title =	"The Design of a Capability-Based Distributed
+		 Operating System",
+  year =	1984,
+  month =	nov,
+  number =	"IR-88",
+  institution =	"Vrije Universiteit",
+  keywords =	"Amoeba, security",
+  heldby = 	 "missing"
+}
+
+@Article{Tanenbaum_RSSMJR_90,
+  author = 	 "Tanenbaum, A.S. and van Renesse, R. and van Staveren,
+		 H. and Sharp, G.J. and Mullender, S.J. and Jansen, J.
+		 and van Rossum, G.",
+  title = 	 "Experiences with the {Amoeba} Distributed Operating System",
+  journal =	 cacm,
+  year =	 1990,
+  volume =	 33,
+  pages =	 "46--63",
+  heldby = 	 "missing"
+}
+
+@InProceedings{Thekkath_LL_94,
+  author = 	 {Chandramohan Thekkath and Henry M. Levy and Edward
+                  D. Lazowska},
+  title = 	 {Separating Data and Control Transfer in Distributed
+                  Operating Systems},
+  booktitle = 	 {asplos94},
+  year =	 1994,
+  organization = acm,
+  address =	 {San Jose, CA, USA},
+  pages =	 {2--11},
+  heldby =	 {gernot}
+}
+
+@Article{Thekkath_WL_94,
+  author = 	 "Chandramohan A. Thekkath and John Wilkes and Edward
+		  D. Lazowska",
+  title = 	 "Techniques for File System Simulation",
+  journal =	 spe,
+  year =	 1994,
+  pages =	 "981--999",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Thitikamol_Keleher_97,
+  author = 	 {Krtichalach Thitikamol and Pete Keleher},
+  title = 	 {Multi-treading and Remote Latency in Software {DSM}s},
+  booktitle = 	 icdcs97,
+  pages =	 {296--304},
+  year =	 1997,
+  address =	 {Baltimore, MD, USA},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {CVM},
+  heldby =	 {gernot},
+  annote =	 {hides latency by scheduling another thread}
+}
+
+@MastersThesis{Tong:bce,
+  author = 	 "Eric Wing Him Tong",
+  title = 	 "Paging behaviour in a Global Virtual Memory",
+  school = 	 cse,
+  year = 	 1993,
+  address =	 unswadr,
+  type =	 "{BE} Thesis",
+  heldby = 	 "gernot"
+}
+
+@Article{Tong_Kain_91,
+  author = 	"Zhijun Tong and Richard Y. Kain",
+  title = 	"Vote Assignments in Weighted Voting Mechanisms",
+  journal = 	ieeetc,
+  year = 	1991,
+  volume = 	"C-40",
+  pages = 	"664--7",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Uehara_IMY_96,
+  author = 	 {Keitaro Uehara and Shigekazu Inohara and Majime
+                  Miyazawa and Kouhei Yamamoto},
+  title = 	 {A Framework for Customizing Coherence Protocols of
+                  Distributed File Caches},
+  pages =	 {83--90},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Vasudevan_84,
+  author = 	 "R. Vasudevan",
+  title = 	 "Designing Name Servers for Distributed Systems",
+  pages =	 "28--35",
+  booktitle =	 rtss84,
+  year =	 1984,
+  organization = ieee,
+  heldby =	 "gernot"
+}
+
+@InProceedings{Vaswani_Zahorjan_91,
+  author = 	 {Raj Vaswani and John Zahorjan},
+  title = 	 {The Implications of Cache Affinity on Processor
+                  Scheduling for Multiprogrammed, Shared Memory
+                  Multiprocessors},
+  booktitle = 	 sosp91,
+  pages =	 {26--40},
+  year =	 1991,
+  address =	 {Pacific Grove, CA},
+  month =	 oct,
+  organization = acm,
+  heldby =	 {gernot}
+}
+
+@TechReport{Vaughan_SKDMB_90,
+  author = 	 "Francis Vaughan and Tracy Schunke and Bett Koch and
+		  Alan Dearle and Chris Marlin and Chris Barter",
+  title = 	 "A Persistent Distributed Architecture Supported by
+		  the {Mach} Operating System",
+  institution =  "Department of Computer Science, University of Adelaide",
+  year = 	 1990,
+  type =	 "Technical Report",
+  number =	 "PS-1",
+  heldby =	 "gernot"
+}
+
+@InProceedings{Verghese_GR_98,
+  author = 	 {Ben Verghese and Anoop Gupta and Mendel Rosenblum},
+  title = 	 {Performance Isolation: Sharing and Isolation in
+                  Shared-Memory Multiprocessors},
+  booktitle = 	 asplos98,
+  pages =	 {181--192},
+  year =	 1998,
+  address =	 {San Jose, Ca, USA},
+  month =	 oct,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Vingralek_BSS_99,
+  author = 	 {Radek Vingralek and Yuri Breitbart and Mehmet Sayal
+                  and Peter Scheuermann},
+  title = 	 {Web++: A System for Fast and Reliable Web Service},
+  pages =	 {171-184},
+  booktitle = 	 usenix99,
+  year =	 1999,
+  address =	 {Monterey, CA, USA},
+  month =	 jun,
+  keywords =	 {replication, downloadable clients},
+  heldby =	 {gernot}
+}
+
+@MastersThesis{Vochteloo:bsc,
+  author = 	 "Jerry Vochteloo",
+  title = 	 "Security in Global Virtual Memory",
+  school = 	 cse,
+  year = 	 1992,
+  address =	 unswadr,
+  type =	 "{BSc} ({Hons}) Thesis",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Walpole_IK_92,
+  author = 	 {Jonathan Walpole and Jon Inouye and Ravindranath Konuru},
+  title = 	 {Modularity and Interfaces in Micro-Kernel Design and
+                  Implementation: A Case Study of {Chorus} on the {HP}
+                  {PA-RISC}},
+  booktitle = 	 usenixmk92,
+  year =	 1992,
+  address =	 {Seattle, WA, USA},
+  month =	 apr,
+  pages =	 {71--82},
+  heldby =	 {gernot},
+  annote =	 "Virtually addressed cache: copy may be faster than
+                  mapping. Implication (mine): Global address space
+                  wins. Ref for Mungi paper"
+}
+
+@InProceedings{Wang_95,
+  author = 	 {Yi-Min Wang},
+  title = 	 {Maximum and Minimum Consistent Global Checkpoints
+                  and Their Applications},
+  booktitle = 	 srds95,
+  year =	 1995,
+  organization = ieee,
+  pages =	 {86--95},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Wang_HVCK_95,
+  author = 	 {Yi-Min Wang and Yennun Huang and Kiem-Phong Vo and
+                  Pi-Yu Chung and Chandra Kintala},
+  title = 	 {Checkpointing and Its Applications},
+  booktitle = 	 xyz,
+  pages =	 {22--31},
+  year =	 1995,
+  organization = ieee,
+  address =	 xyz,
+  month =	 xyz,
+  heldby =	 {gernot},
+  keywords =	 {single node, consistent techniques for persistent data},
+  annote =	 "not SRDS, not ICDCS, SFTC?"
+}
+
+@InProceedings{Welch_Ousterhout_86,
+  author = 	 "Brent Welch and John Ousterhout",
+  title = 	 "Prefix Tables: A Simple Mechanism for Locating Files
+		  in a Distributed System",
+  pages =	 "184--9",
+  booktitle =	 "icdcs86",
+  year =	 1986,
+  organization = ieee,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Welsh_BE_96,
+  author = 	 {M. Welsh and Anindya Basu and von Eicken, Thorsten},
+  title = 	 {Low-Latency Communication over Fast Ethernet},
+  booktitle = 	 europar96,
+  pages =	 xyz,
+  year =	 1996,
+  address =	 {Lyon, France},
+  month =	 aug,
+  heldby =	 {gernot}
+}
+
+@InProceedings{West_STA_97,
+  author = 	 {Richard West and Karsten Schwan and Ivan Tacic and
+                  Mustaque Ahamad},
+  title = 	 {Exploiting Temporal and Spatial Constraints on
+                  Distributed Shared Memory},
+  booktitle = 	 icdcs97,
+  pages =	 {280--287},
+  year =	 1997,
+  address =	 {Baltimore, MD, USA},
+  month =	 may,
+  organization = ieee,
+  keywords =	 {DSM},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Wilkenloh_RMLKHDCBAA_89,
+  author = 	 {C.J. Wilkenloh and U. Ramachandran and S. Menon and
+                  R.J. LeBlanc and M.Y.A. Khalidi and P.W. Hutto and
+                  P. Dasgupta and R.C. Chen and J.M. Bernab{\'e}u and
+                  W.F. Appelbe and M. Ahamad},
+  title = 	 {The {Clouds} Experience: Building and Object-Based
+                  Distributed Operating System},
+  booktitle = 	 usenixdms,
+  year =	 1989,
+  address =	 {Fort Lauderdale, FL, USA},
+  month =	 oct,
+  pages =	 {333--347},
+  heldby =	 {gernot}
+}
+
+@PhdThesis{Wilkinson:phd,
+  author = 	 "Tim Wilkinson",
+  title = 	 "Implementing Fault Tolerance in a 64-Bit Distributed
+		  Operating System",
+  school = 	 "Systems Architecture Research Centre, City University",
+  year = 	 1993,
+  address =	 "London, UK",
+  month =	 jul,
+  type =	 "{PhD} thesis",
+  keywords =	 "SASOS, DSM, Arius, Angel, reliability, fault
+                  tolerance, checkpoint",
+  heldby = 	 "gernot"
+}
+
+@TechReport{Wilkinson_MRHL_95:tr,
+  author = 	 "Tim Wilkinson and Kevin Murray and Stephen Russell
+		  and Gernot Heiser and Jochen Liedtke",
+  title = 	 "Single Address Space Operating Systems",
+  institution =  unsw,
+  year = 	 1995,
+  type =	 "Technical Report",
+  number =	 {UNSW-CSE-TR-9504},
+  address =	 unswadr,
+  month =	 nov,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Wilkinson_Murray_95,
+  author = 	 {Tim Wilkinson and Kevin Murray},
+  title = 	 {Extensible, Flexible and Secure Services in {Angel}, a
+                  Single Address Space Operating System},
+  booktitle = 	 ica3pp,
+  year =	 1995,
+  publisher =	 ieee,
+  address =	 {Brisbane, Australia},
+  month =	 apr,
+  pages =	 {755--758},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Wilkinson_Murray_96,
+  author = 	 "Tim Wilkinson and Kevin Murray",
+  title = 	 "Evaluation of a Distributed Single Address Space
+		  Operating System",
+  pages =	 {494-501},
+  booktitle =	 icdcs96,
+  year =	 1996,
+  organization = ieee,
+  address =	 "Hong Kong",
+  month =	 may,
+  heldby =	 "gernot",
+  annote = 	 "Angel; no kernel threads; hierarchical system name space for
+                  system services; C++ ``late binding functions'' for
+                  marshalling RCP data; seem to have fixed home location
+                  for objects"
+}
+
+@InProceedings{Wilkinson_SGWOSK_92,
+  author = 	 {Tim Wilkinson and Tom Stiemerling and Peter E. Osmon
+                  and Ashley Saulsbury and Paul Kelly},
+  title = 	 {Angel: A Proposed Multiprocessor Operating System Kernel},
+  booktitle = 	 ewpc92,
+  year =	 1992,
+  address =	 {Barcelona, Spain},
+  pages =	 {316-319},
+  heldby =	 {gernot},
+  annote =	 "First modern SASOS paper"
+}
+
+@Article{Wobber_ABL_94,
+  author = 	 {Edward Wobber and Mart{\'i}n Abadi and Michael Burrows},
+  title = 	 {Authentication in the {Taos} Operating System},
+  journal = 	 tocs,
+  year = 	 1994,
+  volume =	 12,
+  pages =	 {3--32}
+}
+
+@InProceedings{Wong_95,
+  author = 	 "Kam-Fai Wong",
+  title = 	 "Performance Evaluation of Three Logging Schemes for
+		  a Shared-Nothing Database Server",
+  pages =	 "221--8",
+  booktitle =	 icdcs95,
+  year =	 1995,
+  organization = ieee,
+  address =	 "Vancouver, BC, Canada",
+  month =	 may
+}
+
+@Article{Wong_Franklin_96,
+  author = 	 {Kenneth Wong and Mark Franklin},
+  title = 	 {Checkpointing in Distributed Computing Systems},
+  journal = 	 jpdc,
+  year = 	 1996,
+  volume =	 35,
+  pages =	 {67-75},
+  keywords =	 {consistent, synchronous, performance, load balancing},
+  heldby =	 {gernot}
+}
+
+@Article{Woo_Lam_92,
+  author = 	"Thomas Y.C. Woo and Simon S. Lam",
+  title = 	"Authentication for Distributed Systems",
+  journal = 	comp,
+  year = 	1992,
+  volume = 	25,
+  number = 	1,
+  pages = 	"39--52",
+  month = 	jan,
+  abstract = 	"A distributed system is susceptible to a variety of
+		 security threats mounted by intruders. We describe a
+		 number of protocols to authenticate users, hosts, and
+		 processes.",
+  heldby = 	 "missing"
+}
+
+@InProceedings{Wood_CFHLLLMPR_93,
+  author = 	 {David A. Wood and Satish Chandra and Babak Falsafi
+                  and Mark D. Hill and James R. Larus and Alvin
+                  R. Lebeck and James C. Lewis and Shubhendu
+                  S. Mukherjee and Subbarao Palacharla and Steven
+                  K. Reinhardt},
+  title = 	 {Mechanisms for Cooperative Shared Memory},
+  booktitle = 	 isca93,
+  year =	 1993,
+  organization = acm,
+  pages =	 {156--167},
+  keywords =	 {cache coherence, shared memory},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Wu_Zwanepoel_94,
+  author = 	 {Michael Wu and Willy Zwanepoel},
+  title = 	 {{eNVy}: A Non-Volatile, Main Memory Storage System},
+  booktitle = 	 {asplos94},
+  year =	 1994,
+  organization = acm,
+  address =	 {San Jose, CA, USA},
+  pages =	 {86--97},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Xu_Netzer_93,
+  author = 	 {Jian Xu and Robert H. B. Netzer},
+  title = 	 {Adaptive Independent Checkpointing for Reducing
+                  Rollback Propagation},
+  booktitle = 	 spdp93,
+  year =	 1993,
+  pages =	 {754--761},
+  keywords =	 {optimistic},
+  heldby =	 {gernot}
+}
+
+@InProceedings{Yin_ADL_98,
+  author = 	 {Jian Yin and Lorenzo Alvisi and Michael Dahlin and
+                  Calvin Lin},
+  title = 	 {Using Leases to Support Server-Driven Consistency in
+                  Large-Scale Systems},
+  booktitle = 	 icdcs98,
+  pages =	 {285--289},
+  year =	 1998,
+  address =	 {Amsterdam, The Netherlands},
+  month =	 may,
+  organization = ieee,
+  heldby =	 {gernot}
+}
+
+@InProceedings{Yuan_Agrawala_88,
+  author = 	"Shyan-Ming Yuan and Ashok K. Agrawala",
+  title = 	"A Class of Optimal Decentralized Commit Protocols",
+  booktitle = 	icdcs,
+  year = 	1988,
+  pages = 	"234--41",
+  organization = 	ieee,
+  heldby = 	 "gernot"
+}
+
+@Article{Yuan_Agrawala_91,
+  author = 	 "Shyan-Ming Yuan and Ashok K. Agrawala",
+  title = 	 "Fault-Tolerant Decentralized Commit Protocols",
+  journal = 	 jpdc,
+  year = 	 1991,
+  volume = 	 13,
+  pages = 	 "299--311",
+  heldby = 	 "gernot"
+}
+
+@Article{Zhou_SLW_92,
+  author = 	 "Songnian Zhou and Michael Stumm and Kai Li and David
+		  Wortman",
+  title = 	 "Heterogeneous Distributed Shared Memory",
+  journal =	 ieeetpds,
+  year =	 1992,
+  volume =	 3,
+  pages =	 "540--54",
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Zhou_SM_90,
+  author = 	 "Songnian Zhou and Michael Stumm and Tim McInerney",
+  title = 	 "Extending Distributed Shared Memory to Heterogenous
+		  Environments",
+  booktitle = 	 icdcs,
+  year = 	 1990,
+  pages = 	 "30--7",
+  keywords = 	 "DSM",
+  organization = ieee,
+  heldby = 	 "gernot"
+}
+
+@InProceedings{Zucker_Baer_92,
+  author = 	 {Richard N. Zucker and Jean-Loup Baer},
+  title = 	 {A Performance Study of Memory Consistency Models},
+  booktitle = 	 isca92,
+  year =	 1992,
+  organization = {acm},
+  pages =	 {2--12},
+  heldby =	 {gernot}
+}
+
+@Book{_Mullender:DS:1,
+  editor = 	"Sape Mullender",
+  booktitle = 	"Distributed Systems",
+  title = 	"Distributed Systems",
+  publisher = 	"ACM Press",
+  year = 	1989,
+  edition =	"1st",
+  series = 	"Frontier Series",
+  heldby = 	 "gernot"
+}
+
+
+@Book{_Stonebraker:ingres,
+  author = 	 "Michael Stonebraker",
+  booktitle = 	 "The {INGRES} Papers: Anatonomy of a Relational
+		  Database System",
+  title = 	 "The {INGRES} Papers: Anatonomy of a Relational
+		  Database System",
+  publisher = 	 "Addison-Wesley",
+  year = 	 1986,
+  heldby =	 "gernot"
+}
+

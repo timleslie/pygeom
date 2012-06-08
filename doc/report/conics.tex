@@ -1,0 +1,730 @@
+\chapter{Conics}\label{chap:conics}
+
+\section{Introduction}
+
+Having developed a set of theorems for points and lines, the next most complex geometrical objects to consider are conics.
+In this chapter we will present the core theory of conics in planar universal geometry, drawing inspiration from previous work done on conics in chromogeometry\cite{wildberger:rel-conics}.
+Throughout this chapter we assume that all values used are taken from a given field $\mathbb{F}$ not of characteristic two.
+
+We begin by establishing some basic definitions and notation.
+
+\begin{definition} Given numbers $A, B, C, D, E, F$, a \emph{conic} is defined as the locus of points $[x,y]$ such that $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$.
+\end{definition}
+
+We note that a conic is defined independently of any geometry.
+When associated with a particular geometry, a conic may take on particular interesting properties, which will be discussed below.
+
+To assist in working with conics we introduce two notations for their representation.
+
+\begin{definition} The conic which satisfies $Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0$ is represented by the notations $\langle A\!:\!B\!:\!C\!:\!D\!:\!E\!:\!F \rangle$ or $\langle P\!:\!\vec{q}\!:\!r \rangle$ where
+\begin{eqnarray}
+P & = & \begin{pmatrix}A & B/2 \\ B/2 & C  \end{pmatrix} \nonumber\\
+\vec{q} & = & \begin{pmatrix} D \\ E  \end{pmatrix}\nonumber\\
+r & = & F.\nonumber
+\end{eqnarray}
+\end{definition}
+Throughout this chapter we will use the convention that the conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ corresponds to $\langle A\!:\!B\!:\!C\!:\!D\!:\!E\!:\!F \rangle$ without explicitly stating this relation.
+
+\begin{definition} Two conics, $\langle P\!:\!\vec{q}\!:\!r \rangle$ and $\langle P'\!:\!\vec{q}'\!:\!r' \rangle$ are defined to be equivalent if
+\begin{eqnarray}
+P & = & \lambda P'\\
+\vec{q} & = & \lambda\vec{q}'\\
+r & = & \lambda r'
+\end{eqnarray}
+for some $\lambda \neq 0$.
+\end{definition}
+
+We also introduce a function $M : \mathbb{F} \times \mathbb{F} \to M_2(\mathbb{F})$ defined by
+
+\begin{eqnarray}
+M(a, b) & \mapsto & \begin{pmatrix} a^2 & ab \\ ab & b^2 \end{pmatrix}.
+\end{eqnarray}
+
+This function arises naturally in a number of places and has some useful properties.
+\begin{itemize}
+\item $\det(M(a, b)) = 0$.
+\item $M(a, b) = 0$ iff $a = b = 0$.
+\item If exactly one of $a$ and $b$ are zero then $M(a, b)$ has one non-zero entry.
+\item If both $a$ and $b$ are non-zero then $M(a, b)$ has no zero entries.
+\end{itemize}
+
+\section{Tangents, Poles and Polars}
+
+Tangents, while being a geometrical construct, are often considered in the study of analysis, where they are defined in terms of infinitesimal limits.
+As has been shown for Euclidean geometry, it is possible to define tangents to conics in a purely algebraic manner\cite{thebook}.
+Indeed the definition of a tangent does not depend on a metric, and so the results below serve to express results known from Euclidean geometry in the notation of this thesis.
+
+\begin{definition} A line is a \emph{tangent} to a conic if it intersects that conic at exactly one point.
+\end{definition}
+
+\begin{theorem}[Tangent condition] The line $\langle a\!:\!b\!:\!c\rangle$ is tangent to the conic $\langle P\!:\!\vec{q}\!:\!r\rangle$ if and only if
+\begin{eqnarray}
+(Bc + Db + Ea)^2 -4(ACc^2 + AFb^2 + CFa^2) + & &\nonumber\\
+4\left((AE - BD)bc + (CD - BE)ac  + (BF- DE)ab\right) & = & 0.\label{eq:tang}
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+If the line is a tangent then we need to solve the simultaneous equations
+\begin{eqnarray*}
+Ax^2 + Bxy + Cy^2 + Dx + Ey + F & = & 0\\
+ax + by + c & = & 0
+\end{eqnarray*}
+to find the unique point $X = [x, y]$. From the equation of the line we get $x = -\frac{c + by}{a}$, which, when substituted into the conic equation, gives
+\begin{eqnarray*}
+0 & = & A\left(\frac{c + by}{a}\right)^2 - B\left(\frac{c + by}{a}\right)y + Cy^2 - D\left(\frac{c + by}{a}\right) + Ey + F\\
+  & = & A(c + by)^2 - Ba(c + by)y + Ca^2y^2 - Da(c + by)+ Ea^2y + Fa^2\\
+  & = & (Ab^2 - Bab + Ca^2)y^2 + (2Abc - Bac - Dab + Ea^2)y + (Ac^2 - Dac + Fa^2).
+\end{eqnarray*}
+This equation is quadratic in $y$, so for there to be a unique solution we require the determinant in the quadratic equation to be zero. This leads to the condition
+\begin{eqnarray*}
+(2Abc - Bac - Dab + Ea^2)^2 & = & 4(Ab^2 - Bab + Ca^2)(Ac^2 - Dac + Fa^2).
+\end{eqnarray*}
+Algebraic manipulation (omitted here for brevity) leads to the desired result.
+\end{proof}
+
+\begin{theorem}[Tangent through a point]\label{th:tangent} Given a point $X_0$ which lies on the conic $\langle P\!:\!\vec{q}\!:\!r \rangle$, the tangent to the conic through the point is $\langle a\!:\!b\!:\!c \rangle$ where
+\begin{eqnarray}
+\begin{pmatrix}a \\ b\end{pmatrix} & = & \vec{q} + 2P\vec{X_0}\\
+c & = & \vec{q}\cdot \vec{X_0} + 2r.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+The relations above can be shown to satisfy equation (\ref{eq:tang}). The algebraic manipulations required to verify this are best attempted in a computer algebra system since they result in up to 48 terms and as such are omitted here.
+\end{proof}
+
+Another metric-free notion which we can borrow from Euclidean geometry is that of poles and polars.
+
+\begin{definition} Given a point $X_0$ and a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$, we can generally construct two tangents to the conic which pass through $X_0$. If we denote the points where these tangents meet the conic as $X_1$ and $X_2$ then the line which passes through $X_1$ and $X_2$ is defined as the \emph{polar} of the point $X_0$, the \emph{pole}.
+\end{definition}
+
+\begin{theorem}[Polar from pole]\label{th:polar} Given a point $X_0$ and a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$, the polar of the pole $X_0$, with respect to the conic, is $\langle a\!:\!b\!:\!c \rangle$ where
+\begin{eqnarray}
+\begin{pmatrix}a \\ b\end{pmatrix} & = & \vec{q} + 2P\vec{X_0}\label{eq:polar:ab}\\
+c & = & \vec{q}\cdot\vec{X_0} + 2r.\label{eq:polar:c}
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+From Theorem \ref{th:tangent} we know that the tangent line which passes through through $X_0$ (the pole) and $X_1$, the tangent point on the conic, must satisfy the equation
+\begin{eqnarray*}
+(\vec{q} + 2P\vec{X_1})\cdot \vec{X_0} + \vec{q}\cdot \vec{X_1} + 2r & = & 0.
+\end{eqnarray*}
+Likewise, the tangent through $X_2$ and $X_0$ gives
+\begin{eqnarray*}
+(\vec{q} + 2P\vec{X_2})\cdot \vec{X_0} + \vec{q}\cdot \vec{X_2} + 2r & = & 0.
+\end{eqnarray*}
+Adding these two equations we get
+\begin{eqnarray*}
+2\vec{q}\cdot\vec{X_0} + 2(\vec{X_1} + \vec{X_2})P\vec{X_0} + \vec{q}\cdot(\vec{X_1} + \vec{X_2}) + 4r & = & 0\\
+(\vec{q} + 2P\vec{X_0})\cdot(\vec{X_1} + \vec{X_2}) + 2(\vec{q}\cdot\vec{X_0} + 2r) & = & 0.
+\end{eqnarray*}
+As such the line which passes through $X_1$ and $X_2$ is
+\begin{eqnarray*}
+(\vec{q} + 2P\vec{X_0})\cdot \vec{X} + \vec{q}\cdot \vec{X_0} + 2r & = & 0.
+\end{eqnarray*}
+\end{proof}
+
+\begin{corollary}
+The tangent through a point on a conic is also the polar of that point.
+\end{corollary}
+\begin{proof}
+This follows directly from the equations in Theorems \ref{th:tangent} and \ref{th:polar}.
+\end{proof}
+
+\begin{theorem}[Pole from polar]Given a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ and a polar $\langle a\!:\!b\!:\!c \rangle$, the corresponding pole is
+\begin{eqnarray}
+\vec{X_0} & = & \frac{1}{2}P^{-1}\begin{pmatrix} \lambda a -D\\ \lambda b-E \end{pmatrix}
+\end{eqnarray}
+where
+\begin{eqnarray}
+\lambda & = & \frac{D(CD - BE/2) + E(AE - BD/2) - 4\Delta_PF}{D(Ca - Bb/2) + E(Ab - Aa/2) - 2\Delta_Pc}.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+Equation (\ref{eq:polar:ab}) gives the vector form of the polar, up to a scale factor. Rearranging this equation we get
+\begin{eqnarray*}
+\vec{X_0} & = & \frac{P^{-1}}{2}\left(\lambda\begin{pmatrix} a \\ b \end{pmatrix} - \vec{q}\right)\\
+    & = & \frac{1}{2\Delta_P}\begin{pmatrix}C & -B/2 \\ -B/2 & A \end{pmatrix}\begin{pmatrix} \lambda a -D\\ \lambda b-E \end{pmatrix}.
+\end{eqnarray*}
+We can find the scale factor $\lambda$ by combining this result with equation (\ref{eq:polar:c}) to give
+\begin{eqnarray*}
+\lambda c & = & \vec{q}\cdot \vec{X_0} + 2r\\
+ & = & \frac{1}{2\Delta_P}D\left(C(\lambda a - D) - B(\lambda b - E)/2\right) + \\
+ &   & \frac{1}{2\Delta_P}E(-B(\lambda a - D)/2 + A(\lambda b -E)) + 2F\\
+\lambda & = & \frac{\frac{1}{2\Delta_P}(D(CD - BE/2) + E(AE - BD/2) - 2F}{\frac{1}{2\Delta_P}(D(Ca - Bb/2) + E(Ab - Aa/2)) - c}\\
+        & = & \frac{D(CD - BE/2) + E(AE - BD/2) - 4\Delta_PF}{D(Ca - Bb/2) + E(Ab - Aa/2) - 2\Delta_Pc}.
+\end{eqnarray*}
+\end{proof}
+
+
+\section{General Conics}
+
+Having established a notation and some metric-free results about conics, we now look at ways of constructing conics based on structures such as points and lines.
+These constructions will depend intrinsically on the metric of the geometry.
+The results found here will generalise certain definitions and results known from chromogeometry.
+We begin with the most general construction.
+
+\begin{definition} Given a point $X_0$ and a line $l_1$ a \emph{general conic} is defined as the locus of points which have a constant ratio of quadrance to $X_0$ and quadrance to $l_1$. 
+The ratio, $K$, cannot be zero. 
+The point $X_0$ is called the \emph{focus} and the line $l_1$ is the \emph{directrix}.
+
+The points on the conic satisfy the equation
+\begin{eqnarray}
+Q(X, X_0) & = & KQ(X, l_1).\label{conic_eq}
+\end{eqnarray}
+
+\end{definition}
+
+\begin{theorem}[General form of a conic]
+The general form of a conic with focus $X_0$, directrix $l_1$ and constant $K$ is $\langle P\!:\!\vec{q}\!:\!r \rangle$ where
+\begin{eqnarray}
+P & = & G - K\alpha M(a_1, b_1)\label{conic_P}\\
+\vec{q} & = & -2\left(G\vec{X_0} + c_1K\alpha\begin{pmatrix}a_1 \\ b_1\end{pmatrix}\right)\label{conic_q}\\
+r & = & \vec{X_0}^2 - K\alpha c_1^2\label{conic_r}
+\end{eqnarray}
+and $\alpha = \Delta_G/\|\vec{l_1}\|$.
+
+\end{theorem}
+\begin{proof}
+Expanding equation (\ref{conic_eq}) we get
+\begin{eqnarray}
+Q(X, X_0) & = & KQ(X, l_1)\nonumber\\
+\vec{X}\cdot\vec{X} -2\vec{X}\cdot\vec{X_0} + \vec{X_0}^2 & = & K\frac{l_1(X)^2}{\|\vec{l_1}\|}\Delta_G\nonumber\\
+ & = & K\alpha l_1(X)^2\nonumber\\
+ & = & K\alpha(a_1x + b_1y + c_1)^2\nonumber\\
+ & = & K\alpha((a_1^2x^2  + 2a_1b_1xy + b_1^2y^2) + 2c_1(a_1x + b_1y) + c_1^2).\nonumber
+\end{eqnarray}
+\end{proof}
+
+The quadratic term $P$ in any conic can tell us a lot about the nature of the conic, as we see here and below when we consider circles and parabolas.
+
+\begin{lemma}\label{lemma:lambda1}
+A general conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ satisfies $P \neq G$.
+\end{lemma}
+\begin{proof}
+If $P = G$ then from (\ref{conic_P}) we require $K\alpha M(a_1, b_1) = 0$ for some $l_1 = \langle a_1\!:\!b_1\!:\!c_1 \rangle$.
+From the definition of a line we must have either $a_1 \neq 0$ or $b_1 \neq 0$ so we require either $K = 0$ or $\alpha = 0$.
+We know that $\alpha \neq 0$ since $\Delta_G \neq 0$. 
+We also know that $K \neq 0$ by definition and therefore $P \neq G$.
+\end{proof}
+
+\begin{lemma}
+A general conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ satisfies $G \neq \lambda P$ for $\lambda \neq 0$.
+\end{lemma}
+\begin{proof}
+Assume that $G = \lambda P$. From Lemma \ref{lemma:lambda1} we can take $\lambda \neq 1$. From equation (\ref{conic_P}) we have
+\begin{eqnarray}
+P & = & G - K\alpha M(a_1, b_1)\nonumber\\
+\left(1 - \frac{1}{\lambda} \right)G & = & K\alpha M(a_1, b_1).\nonumber
+\end{eqnarray}
+Taking the determinant of each side we get
+\begin{eqnarray*}
+\left(1 - \frac{1}{\lambda} \right)\Delta_G & = & K\alpha \det(M(a_1, b_1))\\
+ & = & 0
+\end{eqnarray*}
+which is a contradiction, since by definition $\Delta_G \neq 0$.
+\end{proof}
+
+Some theorems below will require that the matrix $G - P$, for some conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ in a geometry $G$, has no zero entries.
+Pre-empting this, we present the following two results.
+
+\begin{lemma}
+For a general conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ the matrix $G - P$ has either 1 or 4 non-zero entries.
+\end{lemma}
+\begin{proof}
+Since $G - P = K\alpha M(a_1, b_1)$ and at least one of $a_1$, $b_1$ are non-zero the result follows directly from the properties of the function $M$.
+\end{proof}
+
+\begin{lemma}
+For a general conic $\langle P\!:\!\vec{q}\!:\!r \rangle$, if the matrix $G - P$ has 1 non-zero entry, there exists an equivalent conic $\langle P'\!:\!\vec{q}'\!:\!r' \rangle$ such that $G - P'$ has 4 non-zero entries.
+\end{lemma}
+\begin{proof}
+If we pick $\lambda \notin \{0, c/C, a/A\}$ and let $P' = \lambda P$ then
+\begin{eqnarray*}
+G - P' & = & \left(\begin{array}{cc} a - \lambda A & b - \lambda B/2 \\ b - \lambda B/2 & c - \lambda C \end{array}\right).
+\end{eqnarray*}
+From our choice of $\lambda$ we know that $a - \lambda A \neq 0$ and $c - \lambda C \neq 0$, which means $G - P'$ has at least two non-zero entries. Since $G-P'$ must have either one or four non-zero entries, it must have four non-zero entries.
+\end{proof}
+
+Having found a way to construct conics from a focus and a directrix, we would like to be able to, given a conic, recover the focus and directrix used to construct it.
+The remainder of this section addresses this problem.
+
+\begin{definition}If $l_1$ is a directrix of a conic then $\vec{l_1}$ is a \emph{directrix vector} of the conic.
+\end{definition}
+
+\begin{theorem}[Direction of directrices]\label{th:dirdir}
+The conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ has directrix vectors $\vec{l_1} = \begin{pmatrix}-b_1\\a_1\end{pmatrix}$ and $\vec{l_2} = \begin{pmatrix}-b_2\\a_2\end{pmatrix}$ where
+\begin{eqnarray}
+\left(\begin{array}{cc}a_1 & a_2\\b_1 & b_2 \end{array} \right) & = & G - P\\
+ & = & K\alpha M(a_1, b_1).
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+We wish to solve equation (\ref{conic_P}) for $a_1$ and $b_1$.
+Without loss of generality we can assume that $G - P$ has no zero entries, which means that $a_1$ are $b_1$ are both non-zero. This lets us find an expression for $K\alpha$ by considering the off-diagonal elements of our matrix equation.
+\begin{eqnarray}
+P & = & G - K\alpha M(a_1, b_1)\nonumber\\
+\left(\begin{array}{cc} a - A & b - B/2 \\ b - B/2 & c - C \end{array} \right) & = &  K\alpha\left(\begin{array}{cc}a_1^2 & a_1b_1 \\ a_1b_1 & b_1^2 \end{array} \right)\nonumber\\
+K\alpha & = & \frac{b - B/2}{a_1b_1}.\label{eq:K}
+\end{eqnarray}
+We can now use this value to equate the diagonal elements of the matrices above, giving
+\begin{eqnarray*}
+a_1(b - B/2) & = & b_1(a - A)\\
+b_1(b - B/2) & = & a_1(c - C).
+\end{eqnarray*}
+There are two possible solutions to these equations. $a_1 = a - A$, $b_1 = b - B/2$ or $a_1 = b - B/2$, $b_1 = c - C$.
+Putting these results into matrix form gives the desired result.
+\end{proof}
+
+\begin{lemma}
+The two directrix vectors of a conic are parallel.
+\end{lemma}
+\begin{proof}
+Since $G - P = K\alpha M(a_1, b_1)$ and $\det(M(a_1, b_1)) = 0$, we must have $\left|\begin{array}{cc} a_1 & a_2 \\ b_1 & b_2 \end{array}\right| = a_1b_2 - a_2b_1 = 0$ and therefore the directrix vectors are parallel.
+\end{proof}
+
+Although we have not yet found the focus and directrix, we are now in a position to determine the constant $K$.
+
+\begin{theorem}[Constant of focus/directrix pairs] 
+The constant $K$ associated with the focus/directrix pairs of $\langle P\!:\!\vec{q}\!:\!r \rangle$ is
+\begin{eqnarray}
+K & = & \frac{a(b - B/2)^2 -2b(a - A)(b - B/2) + c(a - A)^2}{(a - A)\Delta_G}.
+\end{eqnarray}
+
+\end{theorem}
+\begin{proof}From Theorem \ref{th:dirdir} and equation (\ref{eq:K}) we get
+\begin{eqnarray}
+K & = & \frac{b - B/2}{\alpha a_1b_1}\nonumber\\
+  & = & \frac{b - B/2}{\alpha(a - A)(b - B/2)}\nonumber\\
+  & = & \frac{\|\vec{l_1}\|}{\alpha(a - A)\Delta_G}\nonumber\\
+  & = & \frac{a(b - B/2)^2 -2b(a - A)(b - B/2) + c(a - A)^2}{(a - A)\Delta_G}.\nonumber
+\end{eqnarray}
+\end{proof}
+
+We have shown that the two directrix vectors are parallel, so in actual fact we only have a single direction for our directrices.
+Although in Euclidean geometry we expect a conic to have two focus and directrix pairs, to prove this in planar universal geometry we need the following result.
+\begin{theorem}
+Given a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ with directrix vector $\vec{l_1}$ and constant $K$, its two directrices are $l_1 = \langle a_1\!:\!b_1\!:\!c_{11} \rangle$ and $l_2 = \langle a_1\!:\!b_1\!:\!c_{12} \rangle$ where $c_{11}$ and $c_{12}$ are the roots of the equation
+\begin{eqnarray}
+0 & = & 4K\alpha(\|\vec{l_1}\|K\alpha - \Delta_G )c_1^2 + 4K\alpha(\vec{Q}\cdot\vec{l_1})c_1 + (\vec{Q}\cdot\vec{Q} - 4\Delta_GF)\label{eq:direc_c}
+\end{eqnarray}
+where
+\begin{eqnarray}
+\vec{Q} & = & \begin{pmatrix} -E \\ D \end{pmatrix}\\
+\alpha & = & \frac{\Delta_G}{\|\vec{l_1}\|}.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+We need to solve equations (\ref{conic_q}) and (\ref{conic_r}) for $c_1$. We begin by finding an expression for $X_0$.
+\begin{eqnarray}
+\vec{q} & = & -2\left(G\vec{X_0} + c_1K\alpha\begin{pmatrix}a_1 \\ b_1\end{pmatrix}\right)\nonumber\\
+2G\vec{X_0} & = & -\vec{q} -2c_1K\alpha\begin{pmatrix}a_1 \\ b_1\end{pmatrix}\nonumber\\
+2\vec{X_0} & = & -G^{-1}\left(\vec{q} + 2c_1K\alpha\begin{pmatrix}a_1 \\ b_1\end{pmatrix} \right).\label{eq:focus}
+\end{eqnarray}
+We need to find $\vec{X_0}^2$ so we take the metric dot product of each side of the above equation with itself and obtain
+\begin{eqnarray*}
+(2\vec{X_0})^T(2G\vec{X_0}) & = & \left(G^{-1}\left(\vec{q} + 2c_1K\alpha\begin{pmatrix} a_1 \\ b_1 \end{pmatrix} \right)\right)^T\left(\vec{q} + 2c_1K\alpha\begin{pmatrix} a_1 \\ b_1 \end{pmatrix} \right)\nonumber\\
+4\vec{X_0}^2 & = & \frac{1}{\Delta_G} \begin{pmatrix} c(D + 2a_1c_1K\alpha) - b(E + 2b_1c_1K\alpha) \\ -b(D + 2a_1c_1K\alpha) + a(E + 2b_1c_1K\alpha)  \end{pmatrix} \begin{pmatrix} D + 2a_1c_1K\alpha \\ E + 2b_1c_1K\alpha \end{pmatrix}\\
+4\Delta_G\vec{X_0}^2 & = & c(D + 2a_1c_1K\alpha)^2 -2b(D + 2a_1c_1K\alpha)(E + 2b_1c_1K\alpha) + \\
+ &  & a(E + 2b_1c_1K\alpha)^2.
+\end{eqnarray*}
+We are now able to solve equation (\ref{conic_r}) in terms of $c_1$.
+\begin{eqnarray*}
+r & = & \vec{X_0}^2 - K\alpha c_1^2\\
+4\Delta_G(F + c_1^2K\alpha) & = & c(D + 2a_1c_1K\alpha)^2 -2b(D + 2a_1c_1K\alpha)(E + 2b_1c_1K\alpha) + \\
+  &  & a(E + 2b_1c_1K\alpha)^2\\
+0 & = & (4ca_1^2K^2\alpha^2 - 8ba_1b_1K^2\alpha^2 + 4ab_1K^2\alpha^2 - 4\Delta_GK\alpha )c_1^2 \\
+  &   & + (4cDa_1K\alpha -2b(2Db_1K\alpha + 2Ea_1K\alpha) + 4aEb_1K\alpha)c_1 \\
+  &   & + (cD^2 -2bDE + aE^2 - 4\Delta_GF)\\
+  & = & 4K\alpha(\|\vec{l_1}\|K\alpha - \Delta_G )c_1^2 + 4K\alpha(\vec{Q}\cdot\vec{l_1})c_1 + (\vec{Q}\cdot\vec{Q} - 4\Delta_GF).
+\end{eqnarray*}
+\end{proof}
+
+Having found that there are indeed two directrices, finding their associated foci is relatively simple.
+
+\begin{theorem}[Focus of a directrix]\label{th:focus}
+Given a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ with directrix $l_1 = \langle a_1\!:\!b_1\!:\!c_1 \rangle$ and constant $K$, the associated focus is
+\begin{eqnarray}
+\vec{X_0} & = & -\frac{1}{2}G^{-1}\left(\vec{q} + 2c_1K\alpha\begin{pmatrix}a_1 \\ b_1\end{pmatrix} \right).
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+This result follows directly from (\ref{eq:focus}).
+\end{proof}
+
+
+\section{Circles}
+
+In the construction of conics from focus and directrix we found that we were unable to construct conics such that $G = \lambda P$. We now investigate another way of constructing conics which complements the focus/directrix construction.
+
+\begin{definition} Given a geometry, $G$, a \emph{circle} is defined as the locus of points which are quadrance $K$ from a fixed point $X_0$, i.e. those points which satisfy
+\begin{eqnarray}
+Q(X, X_0) & = & K.\label{circ_eq}
+\end{eqnarray}
+The point $X_0$ is the \emph{centre} of the circle and $K$ is its \emph{quadrance}.
+
+\end{definition}
+
+\begin{theorem}[General form of a circle]
+The general form of a circle with radius $K$ and centre $X_0$ is $\langle P\!:\!\vec{q}\!:\!r \rangle$ where
+\begin{eqnarray}
+P & = & G\\
+\vec{q} & = & -2G\vec{X_0}\label{circ_q}\\
+r & = & \vec{X_0}^2 - K.\label{circ_r}
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+Expanding (\ref{circ_eq}) we get
+\begin{eqnarray}
+Q(X, X_0) & = & K\nonumber\\
+(\vec{X} - \vec{X_0})\cdot(\vec{X} - \vec{X_0}) & = & K\nonumber\\
+\vec{X}\cdot\vec{X} - 2\vec{X}\cdot\vec{X_0} + \vec{X_0}^2 -K & = & 0.\nonumber
+\end{eqnarray}
+\end{proof}
+
+\begin{lemma}\label{lem:circ}
+A conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ is not a circle in the geometry $G$ if $G \neq \lambda P$ for some $\lambda \neq 0$.
+\end{lemma}
+\begin{proof}
+If $\langle P\!:\!\vec{q}\!:\!r \rangle$ is a circle, then from the general form given above there exists an equivalent conic $\langle P'\!:\!\vec{q}'\!:\!r' \rangle$ such that $P' = \lambda P = G$ for $\lambda \neq 0$. If no such $P'$ can be found then the conic is not a circle.
+\end{proof}
+
+\begin{theorem}\label{th:circ}
+If a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ in the geometry $G$ satisfies $\lambda P = G$ with $\lambda \neq 0$ then it is a circle in $G$ with centre and quadrance given by
+
+\begin{eqnarray}
+\vec{X_0} & = & -\frac{\lambda}{2}G^{-1}\vec{q}\\
+K & = & \vec{X_0}^2 - \lambda r.
+\end{eqnarray}
+
+\end{theorem}
+\begin{proof}
+These results follow directly from (\ref{circ_q}) and (\ref{circ_r}).
+\end{proof}
+
+\begin{corollary}
+A conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ is a circle in a geometry $G$ if and only if $G = \lambda P$ with $\lambda \neq 0$.
+\end{corollary}
+\begin{proof}
+This is essentially a restatement of Lemma \ref{lem:circ} and Theorem \ref{th:circ} combined.
+\end{proof}
+
+\begin{corollary}
+Every conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ where $\det(P) \neq 0$ is a circle in some geometry G.
+\end{corollary}
+\begin{proof}
+If we let $G = P$ then $G$ is a valid geometry, since $\det(G) \neq 0$ and $P$ is a circle in $G$.
+\end{proof}
+
+A result of Euclidean geometry which is taught to all high school students is that the radius of a circle to a point on the circle is perpendicular to the tangent at that point.
+In planar universal geometry we can obtain a more general result, which contains the equivalent of the radius-tangent rule as a special case.
+
+\begin{theorem}[Pole to a circle] Given a point $X_1$ and a circle with centre $X_0$, the polar of $X_1$ is $l_1$ where
+\begin{eqnarray}
+\begin{pmatrix}a_1 \\ b_1\end{pmatrix} & = & 2G(\vec{X_1} - \vec{X_0})\\
+c_1 & = & 2\vec{X_0}G(\vec{X_0} - \vec{X_1}) - 2K.
+\end{eqnarray}
+\end{theorem}
+\begin{proof} Combining the equations for the polar from Theorem \ref{th:polar} and the general form of a circle we get
+\begin{eqnarray*}
+\begin{pmatrix}a_1 \\ b_1\end{pmatrix} & = & \vec{q} + 2P\vec{X_1}\\
+ & = & -2G\vec{X_0} + 2G\vec{X_1}\\
+ & = & 2G(\vec{X_1} - \vec{X_0})\\
+c_1 & = & \vec{q}\cdot\vec{X_1} + 2r\\
+    & = & (-2G\vec{X_0})\cdot\vec{X_1} + 2(\vec{X_0}^2 - K)\\
+    & = & 2\vec{X_0}G(\vec{X_0} - \vec{X_1}) - 2K.
+\end{eqnarray*}
+\end{proof}
+
+\begin{theorem}\label{th:perp-polar}Given a point $X_1$ and a circle with centre $X_0$, the line which passes through the centre of the circle and $X_1$ is perpendicular to the polar of $X_1$.
+\end{theorem}
+\begin{proof}We let $r = \langle y_0 - y_1\!:\!x_1 - x_0 \!:\! x_0y_1 - x_1y_0 \rangle$ be the line through the centre, $X_0$ and the point $X_1$. If we denote the tangent vector as $\vec{t}$ then from the previous theorem we have
+\begin{eqnarray*}
+\vec{t}         & = & 2\begin{pmatrix}-b(x_0 - x_1) - c(y_0 - y_1) \\ a(x_0 - x_1) + b(y_0 - y_1)\end{pmatrix}\\
+\vec{r} & = & \begin{pmatrix}x_0 - x_1 \\ y_0 - y_1\end{pmatrix}\\
+\vec{t}\cdot\vec{r} & = & 2\begin{pmatrix}-b(x_0 - x_1) - c(y_0 - y_1) \\ a(x_0 - x_1) + b(y_0 - y_1)\end{pmatrix}  \begin{pmatrix}a & b \\ b & c\end{pmatrix} \begin{pmatrix}x_0 - x_1 \\ y_0 - y_1\end{pmatrix}\\
+                & = & 2\begin{pmatrix}-b(x_0 - x_1) - c(y_0 - y_1) \\ a(x_0 - x_1) + b(y_0 - y_1)\end{pmatrix}  \begin{pmatrix}a(x_0 - x_1) + b(y_0 - y_1) \\ b(x_0 - x_1) + c(y_0 - y_1)\end{pmatrix}\\
+                & = & 0.
+\end{eqnarray*}
+\end{proof}
+
+\begin{corollary} Given a point $X_1$ on a circle, the tangent passing through this point is perpendicular to the line through $X_1$ and the centre of the circle.
+\end{corollary}
+\begin{proof}
+Since the tangent through $X_1$ is also the polar of $X_1$ this follows directly from Theorem \ref{th:perp-polar}.
+\end{proof}
+
+\section{Parabola}
+
+Probably the first quadratic equation a maths student will meet is $y = x^2$, which describes a parabola in Euclidean geometry.
+As one might expect, we can construct such objects in planar universal geometry.
+
+\begin{definition}A \emph{parabola} is the locus of points whose quadrance to a point $X_0$ is equal to its quadrance to a line $l_1$. A parabola is essentially a general conic with $K = 1$.
+\end{definition}
+\begin{theorem}
+The general form of a parabola with focus $X_0$, directrix $l_1$ is $\langle P\!:\!\vec{q}\!:\!r \rangle$ where
+\begin{eqnarray}
+P & = & G - \alpha M(a_1, b_1)\label{eq:parab_P}\\
+\vec{q} & = & -2(GX_0 + c_1\alpha(a_1, b_2))\\
+r & = & X_0^2 - \alpha c_1^2.
+\end{eqnarray}
+\end{theorem}
+
+\begin{proof}
+This result follows directly from letting $K=1$ in equations (\ref{conic_P})-(\ref{conic_r}).
+\end{proof}
+
+\begin{theorem}\label{th:para}
+A conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ is a parabola if and only if $\det(P) = 0$.
+\end{theorem}
+\begin{proof}
+Taking determinants of each side in equation (\ref{eq:parab_P}) yields
+\begin{eqnarray}
+\left|P\right| & = & \left|G - \alpha M(a_1, b_1)\right|\nonumber\\
+ & = & (a - \alpha a_1^2)(c - \alpha b_1^2) - (b - \alpha a_1b_1)^2\nonumber\\
+ & = & ac - b^2 - \alpha(ca_1^2 - 2ba_1b_1 + ab_1^2) + \alpha^2(a_1^2b_1^2 - a_1^2b_1^2)\nonumber\\
+ & = & \Delta_G - \frac{\Delta_G}{\|\vec{l_1}\|}\|\vec{l_1}\|\nonumber\\
+ & = & 0.\nonumber
+\end{eqnarray}
+\end{proof}
+
+\begin{corollary}
+If a conic is a parabola in any geometry then it is a parabola in all geometries.
+\end{corollary}
+\begin{proof}
+This result follows direction from the fact that the conditions in Theorem \ref{th:para} are independent of the geometry.
+\end{proof}
+
+\begin{theorem}\label{th:single}A parabola has only a single directrix/focus pair.
+\end{theorem}
+\begin{proof}
+To find the directrices of a conic we need to solve equation (\ref{eq:direc_c}), which is
+\begin{eqnarray*}
+0 & = & 4K\alpha(\|\vec{l_1}\|K\alpha - \Delta_G )c_1^2 + 4K\alpha(\vec{Q}\cdot\vec{l_1})c_1 + (\vec{Q}\cdot\vec{Q} - 4\Delta_GF).
+\end{eqnarray*}
+For a parabola with $K=1$ we have $\|\vec{l_1}\|K\alpha - \Delta_G = \|\vec{l_1}\|\frac{\Delta_G}{\|\vec{l_1}\|} - \Delta_G = 0$, which reduces the quadratic equation to a linear equation, which will only have one root.
+\end{proof}
+
+\begin{theorem} The focus and directrix of a parabola $\langle P\!:\!\vec{q}\!:\!r\rangle$ are $l_1$ and $X_0$ where 
+\begin{eqnarray}
+a_1 & = & a - A\\
+b_1 & = & b - B/2\\
+c_1 & = & \frac{4\Delta_GF - \vec{Q}\cdot\vec{Q}}{4\alpha(\vec{Q}\cdot\vec{l_1})}\\
+\vec{X_0} & = &  -\frac{1}{2}G^{-1}\left(\vec{q} + 2c_1\alpha\begin{pmatrix}a_1 \\ b_1\end{pmatrix} \right)
+\end{eqnarray}
+and
+\begin{eqnarray}
+\vec{Q} & = & \begin{pmatrix} -E \\ D \end{pmatrix}\\
+\alpha & = & \frac{\Delta_G}{\|\vec{l_1}\|}.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+The results for $a_1$, $b_1$ and $X_0$ come directly from Theorems \ref{th:dirdir} and \ref{th:focus} for a general conic.
+From the proof of Theorem \ref{th:single} we have seen that $c_1$ is the solution of the equation
+\begin{eqnarray*}
+0 & = & 4K\alpha(\vec{Q}\cdot\vec{l_1})c_1 + (\vec{Q}\cdot\vec{Q} - 4\Delta_GF)
+\end{eqnarray*}
+from which the result directly follows.
+\end{proof}
+
+\section{Grammolas}
+
+Conic sections in Euclidean geometry are generally described as parabolas, hyperbolas and ellipses.
+While planar universal geometry has parabolas as a fundamental object, the notion of hyperbolas and ellipses do not manifest themselves as distinct objects.
+The simplest example to demonstrate this is the unit circle in the green geometry of chromogeometry.
+This object has the equation $xy - 1 = 0$, and is, by definition, a circle in the green geometry.
+The same equation considered in the blue geometry (i.e. regular Euclidean geometry) is not a circle, but a hyperbola.
+
+In place of hyperbolas and ellipses, we have objects known as grammolas and quadrolas.
+These objects have been studied in the context of chromogeometry\cite{wildberger:rel-conics}, and are presented here in the context of planar universal geometry.
+
+\begin{definition} A \emph{grammola} is defined as the locus of points such that the sum of quadrances from each point to two given lines is a constant. Given two lines $d_1$ and $d_2$, the \emph{diagonals}, and a constant $K$, the points on a grammola satisfy the equation
+\begin{eqnarray}
+Q(X, d_1) + Q(X, d_2) = K.
+\end{eqnarray}
+\end{definition}
+
+\begin{theorem} Given non-null diagonals $d_1 = \langle a_1\!:\!b_1\!:\!c_1 \rangle$, $d_2 = \langle a_2\!:\!b_2\!:\!c_2 \rangle$ and constant $K$, the general form of the grammola satisfying $Q(X, d_1) + Q(X, d_2) = K$ is $\langle P\!:\!\vec{q}\!:\!r \rangle$ where
+\begin{eqnarray}
+P & = & \|\vec{d_1}\|M(a_2, b_2) + \|\vec{d_2}\|M(a_1, b_1)\label{eq:gram-P}\\
+\vec{q} & = & 2\begin{pmatrix} a_1 & a_2 \\ b_1 & b_2 \end{pmatrix}\begin{pmatrix} \|\vec{d_2}\|c_1 \\ \|\vec{d_1}\|c_2  \end{pmatrix}\label{eq:gram-q}\\
+r & = & c_1^2\|\vec{d_2}\| + c_2^2\|\vec{d_1}\| - \frac{K\|\vec{d_1}\|\|\vec{d_2}\|}{\Delta_G}\label{eq:gram-r}
+\end{eqnarray}
+\end{theorem}
+\begin{proof} Starting from the definition and using equation (\ref{eq:point-line}) we find
+\begin{eqnarray*}
+0 & = & Q(X, d_1) + Q(X, d_2) - K\\
+  & = & \frac{d_1(X)^2}{\|\vec{d_1}\|}\Delta_G + \frac{d_2(X)^2}{\|\vec{d_2}\|}\Delta_G - K\\
+  & = & \|\vec{d_2}\|(a_1x + b_1y + c_1)^2 + \|\vec{d_1}\|(a_2x + b_2y + c_2)^2 - \frac{K\|\vec{d_1}\|\|\vec{d_2}\|}{\Delta_G}.
+\end{eqnarray*}
+From this expression the result follows immediately.
+\end{proof}
+
+As with the general conics before, we would like to be able to take a grammola and find its diagonals.
+
+\begin{definition}
+A vector $\vec{d_1} = \begin{pmatrix} -b_1 \\ a_1 \end{pmatrix}$ is a \emph{diagonal vector} of the conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ if and only if
+\begin{eqnarray}
+\frac{2A\|\vec{d_1}\| - a_1^2(Ac - Bb + Ca)}{2\|\vec{d_1}\|^2} & = & \lambda^2\\
+\frac{2C\|\vec{d_1}\| + b_1^2(Ac - Bb + Ca)}{2\|\vec{d_1}\|^2} & = & \mu^2
+\end{eqnarray}
+for some $\lambda, \mu \in \mathbb{F}$. The motivation for this definition will become clear below.
+\end{definition}
+\begin{definition}
+If $d_1$ and $d_2$ are the diagonals of a conic then $d_1$ is the \emph{co-diagonal} of $d_2$ and vice-versa. Likewise, $\vec{d_1}$ is the \emph{co-diagonal vector} of $\vec{d_2}$ and vice-versa.
+\end{definition}
+
+\begin{theorem}\label{th:gram-covec}
+If $\vec{d_1}$ is a diagonal vector of the conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ then its co-diagonal vector is $\vec{d_2}$ where
+\begin{eqnarray}
+a_2^2 & = & \frac{2A\|\vec{d_1}\| - a_1^2(Ac - Bb + Ca)}{2\|\vec{d_1}\|^2}\\
+b_2^2 & = & \frac{2C\|\vec{d_1}\| + b_1^2(Ac - Bb + Ca)}{2\|\vec{d_1}\|^2}\\
+\frac{a_2}{b_2} & = & \frac{2A\|\vec{d_1}\| - a_1^2(Ac - Bb + Ca)}{B\|\vec{d_1}\| - a_1b_1(Ac - Bb + Ca)}.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+To complete this proof we need to solve the system of equations represented in equation (\ref{eq:gram-P}). We start by finding expressions for $a_2^2$, $b_2^2$ and $a_2b_2$.
+\begin{eqnarray*}
+A & = & \|\vec{d_1}\|a_2^2 + \|\vec{d_2}\|a_1^2\\
+  & = & \|\vec{d_1}\|a_2^2 + (ab_2^2 - 2ba_2b_2 + ca_2^2)a_1^2\\
+B & = & 2(\|\vec{d_1}\|a_2b_2 + \|\vec{d_2}\|a_1b_1)\\
+  & = & 2\|\vec{d_1}\|a_2b_2 + 2(ab_2^2 - 2ba_2b_2 + ca_2^2)a_1b_1\\
+C & = & \|\vec{d_1}\|b_2^2 + \|\vec{d_2}\|b_1^2\\
+  & = & \|\vec{d_1}\|b_2^2 + (ab_2^2 - 2ba_2b_2 + ca_2^2)b_1^2\\
+a_2^2 & = & \frac{A - aa_1^2b_2^2 + 2ba_1^2a_2b_2}{\|\vec{d_1}\| + ca_1^2}\\
+a_2b_2 & = & \frac{B - 2aa_1b_1b_2^2 - 2ca_1a_2^2b_1}{2\|\vec{d_1}\| - 4ba_1b_1}\\
+b_2^2 & = & \frac{C - ca_2^2b_1^2 + 2ba_2b_1^2b_2}{\|\vec{d_1}\| + ab_1^2}.
+\end{eqnarray*}
+At this stage we introduce a new symbol, $w = \|\vec{d_1}\| + ab_1^2$ to ease the algebra. Eliminating $b_2^2$ we get
+\begin{eqnarray*}
+a_2^2 & = & \frac{A - aa_1^2\left(\frac{C - ca_2^2b_1^2 + 2ba_2b_1^2b_2}{\|\vec{d_1}\| + ab_1^2} \right) + 2ba_1^2a_2b_2}{\|\vec{d_1}\| + ca_1^2}\\
+(\|\vec{d_1}\| + ab_1^2)(\|\vec{d_1}\| + ca_1^2)a_2^2 & = & Aw - aa_1^2(C - ca_2^2b_1^2 + 2ba_2b_1^2b_2) + \\
+ &  & 2ba_1^2a_2b_2w\\
+((\|\vec{d_1}\| + ab_1^2)(\|\vec{d_1}\| + ca_1^2) - aca_1^2b_1^2)a_2^2 & = & Aw - Caa_1^2 + 2ba_1^2a_2b_2(w - ab_1^2)\\
+\|\vec{d_1}\|(w + ca_1^2)a_2^2 & = & Aw - Caa_1^2 + 2ba_1^2a_2b_2\|\vec{d_1}\|\\
+\end{eqnarray*}
+and
+\begin{eqnarray*}
+a_2b_2 & = & \frac{B - 2aa_1b_1\left(\frac{C - ca_2^2b_1^2 + 2ba_2b_1^2b_2}{\|\vec{d_1}\| + ab_1^2}\right) - 2ca_1a_2^2b_1}{2\|\vec{d_1}\| - 4ba_1b_1}\\
+(\|\vec{d_1}\| + ab_1^2)(2\|\vec{d_1}\| - 4ba_1b_1)a_2b_2 & = & Bw - 2aa_1b_1(C - ca_2^2b_1^2 + 2ba_2b_1^2b_2) - \\
+ &  & 2ca_1a_2^2b_1w\\
+((\|\vec{d_1}\| + ab_1^2)(2\|\vec{d_1}\| - 4ba_1b_1) + &  & \\
+4aba_1b_1^3 ) a_2b_2 & = & Bw - 2Caa_1b_1 - 2ca_1a_2^2b_1(w - ab_1^2)\\
+2\|\vec{d_1}\|(w - 2ba_1b_1) a_2b_2 & = & Bw - 2Caa_1b_1 - 2ca_1a_2^2b_1\|\vec{d_1}\|\\
+a_2b_2 & = & \frac{Bw - 2Caa_1b_1 - 2ca_1a_2^2b_1\|\vec{d_1}\|}{2\|\vec{d_1}\|(w - 2ba_1b_1)}.
+\end{eqnarray*}
+We introduce a new variable $z = Ac - Bb + Ca$ to further simplify the algebra. Substituting the previous expression into our equation for $a_2^2$ we get
+\begin{eqnarray*}
+\|\vec{d_1}\|(w + ca_1^2)a_2^2 & = & (Aw - Caa_1^2) + ba_1^2\left(\frac{Bw - 2Caa_1b_1 - 2ca_1a_2^2b_1\|\vec{d_1}\|}{(w - 2ba_1b_1)} \right)\\
+\|\vec{d_1}\|(w - 2ba_1b_1)(w + ca_1^2)a_2^2 & = & (w - 2ba_1b_1)(Aw - Caa_1^2) + ba_1^2(Bw - 2Caa_1b_1)\\
+ &  &  - 2bca_1^3a_2^2b_1\|\vec{d_1}\|\\
+\|\vec{d_1}\|((w - 2ba_1b_1)(w + ca_1^2)  + &  & \\
+2bca_1^3b_1 )a_2^2 & = & Aw^2 - 2Aba_1b_1w - Caa_1^2w + ba_1^2Bw\\
+\|\vec{d_1}\|w(w - 2ba_1b_1 + ca_1^2)a_2^2 & = & Aw^2 - 2Aba_1b_1w - Caa_1^2w + ba_1^2Bw\\
+2\|\vec{d_1}\|^2a_2^2 & = & A(w - 2ba_1b_1) - Caa_1^2 + ba_1^2B\\
+2\|\vec{d_1}\|^2a_2^2 & = & 2A\|\vec{d_1}\| - Aca_1^2 - Caa_1^2 + ba_1^2B\\
+2\|\vec{d_1}\|^2a_2^2 & = & 2A\|\vec{d_1}\| - a_1^2z \\
+a_2^2 & = & \frac{2A\|\vec{d_1}\| - a_1^2z}{2\|\vec{d_1}\|^2}.
+\end{eqnarray*}
+We can now use this expression to find $a_2b_2$.
+\begin{eqnarray*}
+a_2b_2 & = & \frac{Bw - 2Caa_1b_1 - 2ca_1b_1\left(\frac{2A\|\vec{d_1}\| - a_1^2z}{2\|\vec{d_1}\|^2} \right)\|\vec{d_1}\|}{2\|\vec{d_1}\|(w - 2ba_1b_1)}\\
+       & = & \frac{\|\vec{d_1}\|(Bw - 2Caa_1b_1) - ca_1b_1(2A\|\vec{d_1}\| - a_1^2z)}{2\|\vec{d_1}\|^2(2\|\vec{d_1}\| - ca_1^2)}\\
+       & = & \frac{\|\vec{d_1}\|(B(2ab_1^2 - 2ba_1b_1 + ca_1^2) - 2Caa_1b_1 - 2Aca_1b_1) + ca_1^3b_1z}{2\|\vec{d_1}\|^2(2\|\vec{d_1}\| - ca_1^2)}\\
+       & = & \frac{\|\vec{d_1}\|(B(2ab_1^2 - 4ba_1b_1 + ca_1^2) - 2a_1b_1z) + ca_1^3b_1z}{2\|\vec{d_1}\|^2(2\|\vec{d_1}\| - ca_1^2)}\\
+       & = & \frac{\|\vec{d_1}\|B(2ab_1^2 - 4ba_1b_1 + 2ca_1^2 - ca_1^2) + a_1b_1(ca_1^2 - 2\|\vec{d_1}\|)z}{2\|\vec{d_1}\|^2(2\|\vec{d_1}\| - ca_1^2)}\\
+       & = & \frac{\|\vec{d_1}\|B(2\|\vec{d_1}\| - ca_1^2) + a_1b_1(ca_1^2 - 2\|\vec{d_1}\|)z}{2\|\vec{d_1}\|^2(2\|\vec{d_1}\| - ca_1^2)}\\
+       & = & \frac{\|\vec{d_1}\|B - a_1b_1z}{2\|\vec{d_1}\|^2}.
+\end{eqnarray*}
+We can now use the values of $a_2b_2$ and $a_2^2$ to find $b_2^2$.
+\begin{eqnarray*}
+b_2^2 & = & \frac{C - ca_2^2b_1^2 + 2ba_2b_1^2b_2}{\|\vec{d_1}\| + ab_1^2}\\
+      & = & \frac{C - cb_1^2\left(\frac{2A\|\vec{d_1}\| - a_1^2z}{2\|\vec{d_1}\|^2} \right) + 2bb_1^2\left(\frac{\|\vec{d_1}\|B - a_1b_1z}{2\|\vec{d_1}\|^2}\right)}{\|\vec{d_1}\| + ab_1^2}\\
+      & = & \frac{2\|\vec{d_1}\|^2C - cb_1^2(2A\|\vec{d_1}\| - a_1^2z) + 2bb_1^2(\|\vec{d_1}\|B - a_1b_1z)}{2\|\vec{d_1}\|^2(\|\vec{d_1}\| + ab_1^2)}\\
+      & = & \frac{\|\vec{d_1}\|(2\|\vec{d_1}\|C - 2Acb_1^2 + 2bb_1^2B) + a_1b_1^2(ca_1 - 2bb_1)z}{2\|\vec{d_1}\|^2(\|\vec{d_1}\| + ab_1^2)}\\
+      & = & \frac{\|\vec{d_1}\|(2Cab_1^2 - 4Cba_1b_1 + 2Cca_1^2 - 2Acb_1^2 + 2bb_1^2B) + a_1b_1^2(ca_1 - 2bb_1)z}{2\|\vec{d_1}\|^2(\|\vec{d_1}\| + ab_1^2)}\\
+      & = & \frac{\|\vec{d_1}\|(4Cab_1^2 - 4Cba_1b_1 + 2Cca_1^2) + b_1^2(ca_1^2 - 2ba_1b_1 - 2\|\vec{d_1}\|)z}{2\|\vec{d_1}\|^2(\|\vec{d_1}\| + ab_1^2)}\\
+      & = & \frac{2C\|\vec{d_1}\|(\|\vec{d_1}\| + ab_1^2) + b_1^2(\|\vec{d_1}\| + ab_1^2)z}{2\|\vec{d_1}\|^2(\|\vec{d_1}\| + ab_1^2)}\\
+      & = & \frac{2C\|\vec{d_1}\| + b_1^2z}{2\|\vec{d_1}\|^2}.
+\end{eqnarray*}
+We finally take the ratio of $a_2^2$ and $a_2b_2$ to establish the appropriate roots to take when calculating values of $a_2$ and $b_2$.
+\begin{eqnarray*}
+\frac{a_2}{b_2} & = & \frac{a_2^2}{a_2b_2}\\
+                & = & \frac{2A\|\vec{d_1}\| - a_1^2z}{B\|\vec{d_1}\| - a_1b_1z}.
+\end{eqnarray*}
+\end{proof}
+This result motivates our original definition of the the diagonal vectors as we have expressions for the squares of $a_2$ and $b_2$.
+
+\begin{theorem}\label{th:gram-diags}
+Given a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ with diagonal vectors $\vec{d_1}$ and $\vec{d_2}$, the diagonals are $d_1$ and $d_2$ where
+\begin{eqnarray}
+c_1 & = & \frac{b_2D - a_2E}{2\|\vec{d_2}\|(a_1b_2 - a_2b_1)}\\
+c_2 & = & \frac{a_1E - b_1D}{2\|\vec{d_1}\|(a_1b_2 - a_2b_1)}.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}Starting from equation (\ref{eq:gram-q}) we find
+\begin{eqnarray*}
+\vec{q} & = & 2\begin{pmatrix} a_1 & a_2 \\ b_1 & b_2 \end{pmatrix}\begin{pmatrix} \|\vec{d_2}\|c_1 \\ \|\vec{d_1}\|c_2  \end{pmatrix}\\
+\begin{pmatrix} \|\vec{d_2}\|c_1 \\ \|\vec{d_1}\|c_2  \end{pmatrix} & = & \frac{1}{2}\begin{pmatrix} a_1 & a_2 \\ b_1 & b_2 \end{pmatrix}^{-1}\vec{q}\\
+ & = & \frac{1}{2(a_1b_2 - a_2b_1)}\begin{pmatrix} -b_2 & -a_2 \\ -b_1 & a_1 \end{pmatrix} \begin{pmatrix} D \\ E\end{pmatrix}\\
+ & = & \frac{1}{2(a_1b_2 - a_2b_1)}\begin{pmatrix} b_2D - a_2E \\ a_1E - b_1D\end{pmatrix}.
+\end{eqnarray*}
+\end{proof}
+
+\begin{theorem}\label{th:gram-const}
+Given a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ with diagonals $d_1$ and $d_2$, the grammola constant $K$ is given by
+\begin{eqnarray}
+K & = & \Delta_G\left(\frac{c_1^2}{\|\vec{d_1}\|} + \frac{c_2^2}{\|\vec{d_2}\|} - \frac{F}{\|\vec{d_1}\|\|\vec{d_2}\|}\right).
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+This result follows directly from equation (\ref{eq:gram-r}).
+\end{proof}
+
+\begin{corollary}
+Given a conic $\langle P\!:\!\vec{q}\!:\!r \rangle$ and a single diagonal vector $\vec{d_1}$, we can calculate the diagonals $d_1$ and $d_2$ as well as the grammola constant $K$.
+\end{corollary}
+\begin{proof}
+From Theorem \ref{th:gram-covec} we can find the co-diagonal vector $\vec{d_2}$. Theorem \ref{th:gram-diags} then lets us find the diagonals $d_1$ and $d_2$ which in turn can be used in Theorem \ref{th:gram-const} to find the constant $K$.
+\end{proof}
+
+
+\section{Quadrolas}
+
+While grammolas are defined with respect to two lines, the diagonals, we define their counterpart, the quadrola, with respect to two points.
+
+\begin{definition}Given two points, $X_1$ and $X_2$, and a constant $K$, a \emph{quadrola} is defined as the locus of points satisfying the equation $A(Q(X, X_1), Q(X, X_2), K) = 0$. 
+\end{definition}
+\begin{theorem}  Given two points, $X_0 = [x_0, y_0]$ and $X_1 = [x_1, y_1]$, and a constant $K$, the general form of their quadrola is $\langle P\!:\!\vec{q}\!:\!r \rangle$ where
+\begin{eqnarray}
+P & = & 4M(a\Delta x + b\Delta y, b\Delta x + c\Delta y) - 4KG\\
+\vec{q} & = & 4(\vec{X_0}^2 - \vec{X_1}^2)G\Delta \vec{X} + 4KG(\vec{X_0} + \vec{X_1})\\
+r & = & \left(K - \vec{X_0}^2 - \vec{X_1}^2\right)^2 - 4\vec{X_0}^2\vec{X_1}^2
+\end{eqnarray}
+and $\Delta \vec{X} = \vec{X_1} - \vec{X_0}$, $\Delta x = x_1 - x_0$ and $\Delta y = y_1 - y_0$.
+\end{theorem}
+\begin{proof} 
+If we let $Q_1 = Q(X, X_1)$ and $Q_2 = Q(X, X_2)$, then from the definition and equation (\ref{eq:arch}) we have
+\begin{eqnarray*}
+0 & = & (Q_1 + Q_2 + K)^2 - 2(Q_1^2 + Q_2^2 + K^2)\nonumber\\
+  & = & Q_1^2 + Q_2^2 + K^2 - 2(Q_1Q_2 + KQ_1 + KQ_2)\nonumber\\
+  & = & (Q_1 - Q_2)^2 - 2K(Q_1 + Q_2) + K^2.\nonumber
+\end{eqnarray*}
+Expressing this in terms of $X$, and using metric dot products we have
+\begin{eqnarray}
+0  & = & \left(\left(\vec{X}^2 - 2(\vec{X}\cdot\vec{X_0}) + \vec{X_0}^2\right) - \left(\vec{X}^2 - 2(\vec{X}\cdot \vec{X_1}) + \vec{X_1}^2\right)\right)^2 \nonumber\\
+  &   & - 2K\left(\left(\vec{X}^2 - 2(\vec{X}\cdot \vec{X_0}) + \vec{X_0}^2\right) + \left(\vec{X}^2 - 2(\vec{X}\cdot \vec{X_1}) + \vec{X_1}^2\right)\right) + K^2\nonumber\\
+  & = & \left(2\vec{X}\cdot(\vec{X_1} - \vec{X_0}) + (\vec{X_0}^2 - \vec{X_1}^2)\right)^2 \nonumber\\
+  &   & - 2K\left(2\vec{X}^2 - 2\vec{X}\cdot (\vec{X_0} + \vec{X_1}) + \vec{X_0}^2 + \vec{X_1}^2\right) + K^2\nonumber\\
+  & = & \left(2\vec{X}\cdot(\vec{X_1} - \vec{X_0})\right)^2 + 4(\vec{X_0}^2 - \vec{X_1}^2)\vec{X}\cdot(\vec{X_1} - \vec{X_0}) + \left(\vec{X_0}^2 - \vec{X_1}^2\right)^2\nonumber\\
+  &   & - 2K\left(2\vec{X}^2 - 2\vec{X}\cdot (\vec{X_0} + \vec{X_1}) + \vec{X_0}^2 + \vec{X_1}^2\right) + K^2\nonumber\\
+  & = & 4\left(\vec{X}\cdot(\vec{X_1} - \vec{X_0})\right)^2 -4K\vec{X}^2\nonumber\\
+  &   &  + 4(\vec{X_0}^2 - \vec{X_1}^2)\vec{X}\cdot(\vec{X_1} - \vec{X_0}) + 4K\vec{X}\cdot (\vec{X_0} + \vec{X_1})\nonumber\\
+  &   &  - 2K(\vec{X_0}^2 + \vec{X_1}^2) + \left(\vec{X_0}^2 - \vec{X_1}^2\right)^2 + K^2\nonumber\\
+  & = & 4\left(\left(\vec{X}\cdot(\vec{X_1} - \vec{X_0})\right)^2 -K\vec{X}^2\right)\nonumber\\
+  &   &  + 4\left((\vec{X_0}^2 - \vec{X_1}^2)\vec{X}\cdot(\vec{X_1} - \vec{X_0}) + K\vec{X}\cdot (\vec{X_0} + \vec{X_1})\right)\nonumber\\
+  &   &  + \left(K - \vec{X_0}^2 - \vec{X_1}^2\right)^2 - 4\vec{X_0}^2\vec{X_1}^2.\nonumber
+\end{eqnarray}
+\end{proof}
+
+The inverse problem for a quadrola is significantly more difficult than for a grammola, since the equations we need to solve are quartic.
+As such, the inverse problem is not addressed here, but would be a natural progression in the development of the theory of quadrolas in planar universal geometry.

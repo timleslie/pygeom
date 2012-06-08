@@ -1,0 +1,212 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\title{Rational Geometry}
+\author{Tim Leslie (3020999)}
+
+\begin{document}
+
+\maketitle
+
+\section{}
+
+\subsection{Altitude}
+
+Given $l_1 = \langle a_1:b_1:c_1\rangle$ and $X = [x_0, y_0]$ find $l_2 = \langle a_2:b_2:c_2\rangle$ such that $X$ on $l_3$ and $l_2 \perp \l_3$.
+
+We begin with the vector $\vec{V}$ in the direction of $l_1$, where $\vec{V} = (-b_1, a_1)$. We wish to find $\vec{U} = (x, y)$ such that $\vec{V}\cdot\vec{U} = 0$.
+
+\begin{eqnarray}
+(ba_1 - ab_1)x + (ca_1 - bb_1)y & = & 0
+\end{eqnarray}
+
+so a solution is $\vec{U} = (bb_1 - ca_1, ba_1 - ab_1)$. A line through $X$ in the direction of $\vec{U}$ will be perpindicular to $l_1$ so we have
+
+\begin{eqnarray}
+l_2 & = & \langle ba_1 - ab_1:ca_1 - bb_1:-((ba_1 - ab_1)x_0 + (ca_1 - bb_1)y_0) \rangle
+\end{eqnarray}
+
+
+\subsection{Altitude Foot}
+
+For a given $l_1$ and $X$, we wish to find the foot of the altitude $[x_f, y_f]$, the point where $l_1$ intersects the altitude $l_2$. We find
+
+\begin{eqnarray}
+F_x & = & \frac{b_1c_2 - b_2c_1}{a_1b_2 - a_2b_1}\\
+    & = & \frac{-b_1((ba_1 - ab_1)x_0 + (ca_1 - bb_1)y_0) - (ca_1 - bb_1)c_1}{a_1(ca_1 - bb_1) - (ba_1 - ab_1)b_1}\\
+    & = & \frac{-b_1x_0(ba_1 - ab_1) - (ca_1 - bb_1)(c_1 + b_1y_0) }{ab_1^2 - 2ba_1b_1 + ca_1^2}\\
+F_y & = & \frac{c_1a_2 - a_1c_2}{ab_1^2 - 2ba_1b_1 + ca_1^2}\\
+    & = & \frac{c_1(ba_1 - ab_1) + a_1((ba_1 - ab_1)x_0 + (ca_1 - bb_1)y_0)}{ab_1^2 - 2ba_1b_1 + ca_1^2}\\
+    & = & \frac{(ba_1 - ab_1)(c_1 + a_1x_0) + (ca_1 - bb_1)a_1y_0}{ab_1^2 - 2ba_1b_1 + ca_1^2}\\
+F & = & \left[\frac{-b_1x_0(ba_1 - ab_1) - (ca_1 - bb_1)(c_1 + b_1y_0) }{ab_1^2 - 2ba_1b_1 + ca_1^2} , \frac{(ba_1 - ab_1)(c_1 + a_1x_0) + (ca_1 - bb_1)a_1y_0}{ab_1^2 - 2ba_1b_1 + ca_1^2}\right]\nonumber
+\end{eqnarray}
+
+\subsection{Altitude Quadrance}
+
+Find the distance from the point $X$ to the foot of the altitude to $l_1$.
+
+\begin{eqnarray}
+Q(X, l) & = & a(x_f - x_0)^2 + 2b(x_f - x_0)(y_f - y_0) + c(y_f - y_0)^2\\
+x_f - x_0 & = & \frac{-b_1x_0(ba_1 - ab_1) - (ca_1 - bb_1)(c_1 + b_1y_0) - (ab_1^2 - 2ba_1b_1 + ca_1^2)x_0}{ab_1^2 - 2ba_1b_1 + ca_1^2}\nonumber\\
+          & = & \frac{ba_1b_1x_0 - (ca_1 - bb_1)(c_1 + b_1y_0) - (ca_1^2)x_0}{ab_1^2 - 2ba_1b_1 + ca_1^2}\nonumber\\
+          & = & \frac{(bb_1 - ca_1)(a_1x_0 + b_1y_0 + c_1)}{ab_1^2 - 2ba_1b_1 + ca_1^2}\\
+          & = & \frac{l(X)}{\|\vec{l}\|}(bb_1 - ca_1)\\
+y_f - y_0 & = & \frac{(ba_1 - ab_1)(c_1 + a_1x_0) + (ca_1 - bb_1)a_1y_0 - (ab_1^2 - 2ba_1b_1 + ca_1^2)y_0 }{ab_1^2 - 2ba_1b_1 + ca_1^2}\nonumber\\
+          & = & \frac{(ba_1 - ab_1)(c_1 + a_1x_0) + (bb_1)a_1y_0 - (ab_1^2)y_0 }{ab_1^2 - 2ba_1b_1 + ca_1^2}\nonumber\\
+          & = & \frac{(ba_1 - ab_1)(a_1x_0 + b_1y_0 + c_1)}{ab_1^2 - 2ba_1b_1 + ca_1^2}\\
+          & = & \frac{l(X)}{\|\vec{l}\|}(ba_1 - ab_1)\\
+Q(X, l) & = & \left(\frac{l(X)}{\|\vec{l}\|}\right)^2\left( a(bb_1 - ca_1)^2 + 2b(bb_1 - ca_1)(ba_1 - ab_1) + c(ba_1 - ab_1)^2 \right)\nonumber\\
+        & = & \left(\frac{l(X)}{\|\vec{l}\|}\right)^2 Q([bb_1, ba_1], [ca_1, ab_1])\\
+        & = & \frac{l(X)^2}{\|\vec{l}\|}\Delta_g
+\end{eqnarray}
+
+\subsection{Grammola}
+
+\begin{eqnarray}
+Q(X, X_0)  & = & \frac{l(X)^2}{\|\vec{l}\|}k\Delta_g\\
+0 & = & \|\vec{l}\|Q(X, X_0) - l(X)^2k\Delta_g\\
+  & = & \|\vec{l}\|(a(x - x_0)^2 + 2b(x - x_0)(y - y_0) + c(y - y_0)^2) - (a_1x + b_1y + c_1)^2k\Delta_g\nonumber\\
+  & = & \|\vec{l}\|(ax^2 + 2bxy + cy^2  - 2(ax_0 + by_0)x - 2(cy_0 + bx_0)y + ax_0^2 + 2bx_0y_0 + cy_0^2) \nonumber\\
+  &   & - (a_1^2x^2 + 2a_1b_1xy + b_1^2y^2 + 2a_1c_1x + 2b_1c_1y + c_1^2)k\Delta_g\nonumber\\
+  & = & (a^2b_1^2 - 2aba_1b_1 + (ac(1 - k) + b^2k)a_1^2)x^2 + \nonumber\\
+  &   & 2(abb_1^2 - (b^2(2 - k) + ack)a_1b_1 + bca_1^2)xy + \nonumber\\
+  &   & ((ac(a-k) + b^2k)b_1^2 - 2bca_1b_1 + c^2a_1^2)y^2 - \nonumber\\
+  &   & 2((ax_0 + by_0)\|\vec{l}\| + a_1c_1k\Delta_g)x - 2((bx_0 + cy_0)\|\vec{l}\| + b_1c_1k\Delta_g)y + \nonumber\\
+  &   & (\|\vec{l}\|\|\vec{X_0}\| - c_1^2k\Delta_g)
+\end{eqnarray}
+
+\section{Quadratics}
+
+\subsection{Parabola}
+
+When $k = 1$ we get
+
+\begin{eqnarray}
+0 & = & (a^2b_1^2 - 2aba_1b_1 + (ac(1 - k) + b^2k)a_1^2)x^2 + \nonumber\\
+  &   & 2(abb_1^2 - (b^2(2 - k) + ack)a_1b_1 + bca_1^2)xy + \nonumber\\
+  &   & ((ac(1-k) + b^2k)b_1^2 - 2bca_1b_1 + c^2a_1^2)y^2 - \nonumber\\
+  &   & 2((ax_0 + by_0)\|\vec{l}\| + a_1c_1k\Delta_g)x - 2((bx_0 + cy_0)\|\vec{l}\| + b_1c_1k\Delta_g)y + \nonumber\\
+  &   & (\|\vec{l}\|\|\vec{X_0}\| - c_1^2k\Delta_g)\\
+  & = & (a^2b_1^2 - 2aba_1b_1 + b^2a_1^2)x^2 + \nonumber\\
+  &   & 2(abb_1^2 - (b^2 + ac)a_1b_1 + bca_1^2)xy + \nonumber\\
+  &   & (b^2b_1^2 - 2bca_1b_1 + c^2a_1^2)y^2 - \nonumber\\
+  &   & 2((ax_0 + by_0)\|\vec{l}\| + a_1c_1\Delta_g)x - 2((bx_0 + cy_0)\|\vec{l}\| + b_1c_1\Delta_g)y + \nonumber\\
+  &   & (\|\vec{l}\|\|\vec{X_0}\| - c_1^2\Delta_g)\\
+  & = & ((ab_1 - ba_1)x + (bb_1 - ca_1)y)^2 - \nonumber\\
+  &   & 2((ax_0 + by_0)\|\vec{l}\| + a_1c_1\Delta_g)x - 2((bx_0 + cy_0)\|\vec{l}\| + b_1c_1\Delta_g)y + \nonumber\\
+  &   & (\|\vec{l}\|\|\vec{X_0}\| - c_1^2\Delta_g)\\
+  & = & (\vec{l}\cdot X)^2 - 2(\|\vec{l}\|X_0\cdot X  + c_1\Delta_g(l(X) - c_1)) - c_1^2\Delta_g + \|\vec{l}\|\|\vec{X_0}\|
+\end{eqnarray}
+
+which is a parabola.
+
+\subsubsection{Solving parabola for focus/directrix}
+
+Given $(Ax + By)^2 + Cx + Dy + E = 0$, find the focus and directrix. We begin with some definitions.
+
+\begin{eqnarray}
+\vec{l_1} & = & [-B, A]\\
+\vec{l_2} & = & [-D, C]\\
+\Delta_{12} & = & AD - BC\\
+P & = & \left(\begin{array}{cc} 0 & -1 \\ 1 & 0 \end{array}\right)\\
+G^{-1} & = & \frac{1}{\Delta_g}\left(\begin{array}{cc} c & -b \\ -b & a \end{array}\right)\\
+M & = & \left(\begin{array}{cc} -b & -c  \\ a & b  \end{array}\right)\\
+  & = & -\Delta_gG^{-1}{P}\\
+M^{-1} & = & -\frac{M}{\Delta_g}\\
+       & = & G^{-1}P
+\end{eqnarray}
+
+We first find the direction of the directrix.
+
+\begin{eqnarray}
+(Ax + By)^2 & = & (\vec{l}\cdot X)^2\\
+Ax + By     & = & \pm(-ab_1x + ba_1x - bb_1y + ca_1y)\\
+            & = & \pm((ba_1 - ab_1)x + (ca_1 - bb_1)y)\\
+\vec{l_1}   & = & \pm\left(\begin{array}{c} bb_1 - ca_1 \\ ba_1 - ab_1\end{array}\right)\\
+P\vec{l_1} & = & \pm\left(\begin{array}{c}  ab_1 - ba_1 \\ bb_1 - ca_1  \end{array}\right)\\
+G^{-1}P\vec{l_1} & = & \pm\frac{1}{\Delta_g}\left(\begin{array}{c} c(ab_1 - ba_1) - b(bb_1 - ca_1)  \\ a(bb_1 - ca_1) - b(ab_1 - ba_1)  \end{array}\right)\\
+ & = & \pm\vec{l}\\
+\vec{l} & = & G^{-1}P\vec{l_1}\\
+        & = & M^{-1}\vec{l_1}
+\end{eqnarray}
+
+Note that:
+
+\begin{eqnarray}
+\|\vec{l}\| & = & \frac{\|\vec{l_1}\|}{\Delta_g}\\
+\vec{l_2}\cdot\vec{l} & = & \vec{l_2}GG^{-1}P\vec{l_1}\\
+ & = & \Delta_{12}
+\end{eqnarray}
+
+So that's the vector of the directrix. Next we look at the focus, $X_0$.
+
+\begin{eqnarray}
+Cx + Dy   & = & - 2(\|\vec{l}\|X_0\cdot X  + c_1\Delta_g(l(X) - c_1))\\
+          & = & - 2((ax_0 + by_0)\|\vec{l}\| + a_1c_1\Delta_g)x - 2((bx_0 + cy_0)\|\vec{l}\| + b_1c_1\Delta_g)y\nonumber\\
+          & = & -2\|\vec{l}\|((ax_0 + by_0)x + (bx_0 + cy_0)y) - 2c_1\Delta_g(a_1x + b_1y)\\
+\vec{l_2} & = & 2\|\vec{l}\|\left(\begin{array}{c} (bx_0 + cy_0)  \\ -(ax_0 + by_0)  \end{array}\right) - 2c_1\Delta_g\vec{l}\\
+          & = & \frac{2\|\vec{l_1}\|}{\Delta_g}\left(\begin{array}{cc} b & c  \\ -a & -b  \end{array}\right)\vec{X_0} - 2c_1\Delta_gM^{-1}\vec{l_1}\\
+          & = & -\frac{2\|\vec{l}\|}{\Delta_g}M\vec{X_0} - 2c_1\Delta_gM^{-1}\vec{l_1}\\
+\frac{2\|\vec{l}\|}{\Delta_g}M\vec{X_0} & = & -\vec{l_2} - 2c_1\Delta_gM^{-1}\vec{l_1}\\
+\frac{2\|\vec{l}\|}{\Delta_g}\vec{X_0} & = & -M^{-1}\vec{l_2} - 2c_1\Delta_gM^{-1}M^{-1}\vec{l_1}\\
+\frac{2\|\vec{l}\|}{\Delta_g}\vec{X_0} & = & \frac{M\vec{l_2}}{\Delta_g} + 2c_1\vec{l_1}\\
+\vec{X_0} & = & \frac{1}{2\|\vec{l_1}\|}\left( M\vec{l_2} + 2c_1\Delta_g\vec{l_1} \right)
+\end{eqnarray}
+
+So now we have the focus in terms of the parabola and $c_1$ we now use this to solve for $c_1$.
+
+\begin{eqnarray}
+E & = & \|\vec{l}\|\|\vec{X_0}\| - c_1^2\Delta_g\\
+  & = & \frac{\|\vec{l_1}\|\|\vec{X_0}\|}{\Delta_g} - c_1^2\Delta_g\\
+\|\vec{X_0}\| & = & \left\|\frac{1}{2\|\vec{l_1}\|}\left( M\vec{l_2} + 2c_1\Delta_g\vec{l_1} \right)\right\|\\
+              & = & \frac{1}{4\|\vec{l_1}\|^2}\left( \|M\vec{l_2}\| + 4c_1\Delta_g(M\vec{l_2}\cdot\vec{l_1})  + 4c_1^2\Delta_g^2\|\vec{l_1}\| \right)\\
+              & = & \frac{\Delta_g\|\vec{l_2}\|}{4\|\vec{l_1}\|^2} + \frac{c_1\Delta_g^2\Delta_{12}}{\|\vec{l_1}\|^2}  + \frac{c_1^2\Delta_g^2}{\|\vec{l_1}\|}\\
+E & = & \frac{\|\vec{l_2}\|}{4\|\vec{l_1}\|} + \frac{c_1\Delta_g\Delta_{12}}{\|\vec{l_1}\|}\\
+4\|\vec{l_1}\|E & = & \|\vec{l_2}\| + 4c_1\Delta_g\Delta_{12}\\
+c_1 & = & \frac{1}{4\Delta_g\Delta_{12}}\left(4\|\vec{l_1}\|E - \|\vec{l_2}\|\right)
+\end{eqnarray}
+
+Finally we go back and sub this in to find $X_0$.
+
+\begin{eqnarray}
+\vec{X_0} & = & \frac{1}{2\|\vec{l_1}\|}\left( M\vec{l_2} + 2c_1\Delta_g\vec{l_1} \right)\\
+          & = & \frac{1}{2\|\vec{l_1}\|}\left( M\vec{l_2} + \frac{1}{2\Delta_{12}}\left(4\|\vec{l_1}\|E - \|\vec{l_2}\|\right) \vec{l_1} \right)\\
+          & = & \frac{M\vec{l_2}}{2\|\vec{l_1}\|} + \frac{1}{4\Delta_{12}\|\vec{l_1}\|}\left(4\|\vec{l_1}\|E - \|\vec{l_2}\|\right) \vec{l_1}\\
+          & = & \frac{M\vec{l_2}}{2\|\vec{l_1}\|} + \left(\frac{E}{\Delta_{12}} - \frac{\|\vec{l_2}\|}{4\Delta_{12}\|\vec{l_1}\|}\right) \vec{l_1}
+\end{eqnarray}
+
+\subsubsection{Blue Parabola}
+
+\begin{eqnarray}
+0  & = & (b_1x - a_1y)^2 -  2(x_0\|\vec{l}\| + a_1c_1)x - 2(y_0\|\vec{l}\| + b_1c_1)y + \|\vec{l}\|\|\vec{X_0}\| - c_1^2\nonumber
+\end{eqnarray}
+
+\subsection{Quadrola}
+
+Defined by $A(Q_1, Q_2, K) = 0$.
+
+\begin{eqnarray}
+0 & = & (Q_1 + Q_2 + K)^2 - 2(Q_1^2 + Q_2^2 + K^2)\\
+  & = & Q_1^2 + Q_2^2 + K^2 - 2(Q_1Q_2 + KQ_1 + KQ_2)\\
+  & = & (Q_1 - Q_2)^2 - 2K(Q_1 + Q_2) + K^2\\
+  & = & ((X\cdot X - 2(X\cdot X_0) + X_0\cdot X_0) - (X\cdot X - 2(X\cdot X_1) + X_1\cdot X_1))^2 \nonumber\\
+  &   & - 2K((X\cdot X - 2(X\cdot X_0) + X_0\cdot X_0) + (X\cdot X - 2(X\cdot X_1) + X_1\cdot X_1))\nonumber\\
+  &   &  + K^2\\
+  & = & (2X \cdot (X_1  - X_0) + (X_0^2 - X_1^2))^2 \nonumber\\
+  &   & - 2K(2X\cdot X - 2(X\cdot (X_0 + X_1)) + X_0^2 + X_1^2) + K^2\\
+  & = & 4(X\cdot(X_1 - X_0))^2 + 4(X_0^2 - X_1^2)(X\cdot(X_1 - X_0)) + (X_0^2 - X_1^2)^2\nonumber\\
+  &   & - 2K(2X\cdot X - 2(X\cdot (X_0 + X_1)) + X_0^2 + X_1^2) + K^2\\
+  & = & 4(X\cdot(X_1 - X_0))^2 -4K(X \cdot X)\nonumber\\
+  &   &  + 4(X_0^2 - X_1^2)(X\cdot(X_1 - X_0)) + 4K(X\cdot (X_0 + X_1))\nonumber\\
+  &   &  - 2K(X_0^2 + X_1^2) +(X_0^2 - X_1^2)^2 + K^2\\
+  & = & 4((X\cdot(X_1 - X_0))^2 -K(X \cdot X))\nonumber\\
+  &   &  + 4((X_0^2 - X_1^2)(X\cdot(X_1 - X_0)) + K(X\cdot (X_0 + X_1)))\nonumber\\
+  &   &  - 2K(X_0^2 + X_1^2) +(X_0^2 - X_1^2)^2 + K^2\\
+  & = & 4((X\cdot(X_1 - X_0))^2 -K(X \cdot X))\nonumber\\
+  &   &  + 4((X_0^2 - X_1^2)(X\cdot(X_1 - X_0)) + K(X\cdot (X_0 + X_1)))\nonumber\\
+  &   &  (K - X_0^2 - X_0^2)^2 - 4KX_0^2X_1^2
+\end{eqnarray}
+
+\end{document}

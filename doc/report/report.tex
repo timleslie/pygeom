@@ -1,0 +1,137 @@
+\documentclass[a4paper,doublespacing,12pt,twoside]{unswthesis-benno}
+%\documentclass[a4paper,12pt,blerg,twoside]{unswthesis-benno}
+%\documentclass[a4paper,10pt,doublespacing,twoside]{aastex}
+
+% Packages
+%\usepackage{setspace}
+\usepackage{aas_macros}
+\usepackage{cite,tabularx,epsfig,url}
+\usepackage{titlesec,lgrind,textcomp}
+%\usepackage{program-gh}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{multirow}
+\usepackage{chngpage}
+\usepackage{rotating}
+\usepackage{epigraph}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+
+
+\theoremstyle{definition} \newtheorem{theorem}{Theorem} 
+\theoremstyle{definition} \newtheorem{definition}{Definition} 
+\theoremstyle{definition} \newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition} \newtheorem{corollary}[theorem]{Corollary}
+
+%\doublespacing
+
+
+\setlength{\epigraphwidth}{85mm}
+
+\usepackage{lscape, graphicx}
+\usepackage{float}
+
+\urlstyle{sf}
+
+% Mungi API defines
+\newcommand{\Fails}[1]{&\multicolumn{2}{@{} l |}{|\FAILS #1|}}
+\newcommand{\Ret}{\(\AR\)}			% ``returns'' for functions
+\newcommand{\Never}{&\multicolumn{2}{@{} l |}{\bf never fails}}
+
+
+
+% Dictum clag
+
+\newcommand{\dictum}[2][]{\par%
+  \raggeddictum\parbox{\dictumwidth}{%
+    {\dictumfont{\raggeddictumtext #2\strut\par}%
+      \edef\@tempa{#1}\ifx\@tempa\@empty\else%
+      {\raggeddictumtext\vskip-1ex\hrulefill\par}%
+      \raggeddictumauthor\dictumauthorfont\dictumauthorformat{#1}%
+      \strut\par%
+      \fi%
+      }%
+    }\par%
+  }
+\newcommand*{\dictumwidth}{.6666\textwidth}
+\newcommand*{\raggeddictum}{\raggedleft}
+\newcommand*{\dictumauthorformat}[1]{(#1)}
+\newcommand*{\raggeddictumtext}{\raggedleft}
+\newcommand*{\raggeddictumauthor}{\raggedleft}   
+\newcommand*{\dictumfont}{\normalfont\normalcolor\sffamily\small}
+\newcommand*{\dictumauthorfont}{\itshape}
+ 
+% Custom headings
+
+% \definecolor{CadetBlue}{named}{CadetBlue}
+
+\titleformat{\chapter}[display]
+%	{\normalfont\Large\sf}{\chaptertitlename\ \thechapter}{20pt}{\Huge\bfseries\flushright\textcolor{CadetBlue}}
+	{\normalfont\Large\sf}{\chaptertitlename\ \thechapter}{20pt}{\Huge\bfseries\flushright}
+\titleformat{\section}
+	{\normalfont\Large\sf\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+	{\normalfont\large\sf\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+	{\normalfont\large\sf}{\thesubsubsection}{1em}{}
+
+% MISC
+\psfigdriver{dvips}
+
+% MACROS
+\newcommand{\FIXME}[1]{FIXME: {\em #1} }
+\newcommand{\degrees}[1]{$#1^{\circ}$}
+\newcommand{\degmin}[2]{\degrees{#1}$#2'$}
+\newcommand{\pygeom}{\texttt{pygeom} }
+
+\bibliographystyle{hunsrt}
+
+%\thesistitle{Scientific Method? \\ UNSW says NO!}
+\thesistitle{Planar Universal Geometry}
+\thesisauthor{Timothy Blair Leslie}
+\thesisemail{tim.leslie@gmail.com}
+\thesisdegree{Masters of Science and Technology \\(Mathematics)}
+\thesisdate{October 2009}
+\thesissupervisor{A/Prof. Norman J. Wildberger}
+\thesisassessor{}
+
+\begin{document}
+
+\frontmatter
+
+\maketitle
+\newpage
+\null\vfil
+\pagebreak
+\newpage
+\input{abstract.tex}
+\newpage
+\null\vfil
+\newpage
+
+\tableofcontents
+
+\listoffigures
+
+\newpage
+%\begin{acknowledgements}
+%\input{ack.tex}
+%\end{acknowledgements}
+
+% Page layout setting
+\parindent=0in
+\addtolength{\parskip}{0.5\baselineskip}
+
+\mainmatter
+\input{introduction.tex}
+\backmatter
+\appendix
+\titleformat{\subsubsection}
+	{\normalfont\large\sf\bfseries}{\thesubsubsection}{1em}{}
+%\input{appendix.tex}
+
+\bibliography{report}
+
+\end{document}

@@ -1,0 +1,334 @@
+\chapter{Planar Universal Geometry}\label{chap:metric}
+
+We begin by developing some results about points and lines in the plane when taken with an arbitrary quadratic form as the metric.
+Some of the results presented below are well known results from Euclidean geometry while others are completely novel.
+Those non-original results are included for completeness, so that the reader may have a comprehensive set of results presented in a consistent notation.
+Many of the definitions make reference to a general field $\mathbb{F}$.
+We will take as given that this field is not of characteristic two, as otherwise many of the definitions would break down.
+
+\section{Notation and Definitions}
+
+\begin{definition} Given a field $\mathbb{F}$, a \emph{point} is any element $X \in \mathbb{F}\times\mathbb{F}$ and we write $X = [x, y]$ where $x, y \in \mathbb{F}$.
+\end{definition}
+An alternative representation of a point is as a two element column vector.
+The vector representation allows us to use standard linear algebra notation when doing calculations.
+\begin{definition} The vector representation of a point $X$ is
+\begin{eqnarray}
+\vec{X} & = & \begin{pmatrix} x \\ y \end{pmatrix}.
+\end{eqnarray}
+\end{definition}
+
+\begin{definition} Given a field $\mathbb{F}$, a \emph{line} is the locus of points $[x, y] \in \mathbb{F}\times\mathbb{F}$ which satisfy the equation
+\begin{eqnarray}
+ax + by + c & = & 0,
+\end{eqnarray}
+where $a, b, c \in \mathbb{F}$ and $a$, $b$ are not both zero.
+The standard representation of this line is $\langle a\!:\!b\!:\!c \rangle$, which emphasises the fact that what is important is the ratio between the values of $a$, $b$ and $c$.
+The lines $\langle a\!:\!b\!:\!c \rangle$ and $\langle \lambda a\!:\! \lambda b\!:\! \lambda c \rangle$, where $\lambda \in \mathbb{F}$ is non-zero, are equivalent, as they represent the same locus of points.
+\end{definition}
+
+We can also represent a line as a two element column vector.
+This representation does not completely specify the line and so more care must be taken with its use.
+
+\begin{definition} The vector representation of a line $l$ is
+\begin{eqnarray}
+\vec{l} & = & \begin{pmatrix} -b \\ a \end{pmatrix}.
+\end{eqnarray}
+\end{definition}
+
+We also note here that the forms $\langle a\!:\!b\!:\!c \rangle$ and $\langle \lambda a\!:\! \lambda b\!:\! \lambda c \rangle$ represent the same line, yet have different vector representations.
+As such when using the vector representation of a line we must be careful not to use the scaling properties of the standard representation, as this will lead to inconsistencies.
+
+To perform any kind of geometrical measurement, we require a way to define the quantities being measured.
+By changing the way quantities are measured, we can change the properties of the geometry itself.
+In planar universal geometry measurement is done in terms of a quadratic form, known as the metric.
+
+\begin{definition} Given a field $\mathbb{F}$, a \emph{metric} $G$ is a symmetric, non-singular two-by-two matrix over the field, i.e.
+\begin{eqnarray}
+G & = & \begin{pmatrix} a & b \\ b & c \end{pmatrix}\\
+\Delta_G & = & ac - b^2\nonumber\\
+ & \neq & 0
+\end{eqnarray}
+where $a, b, c \in \mathbb{F}$.
+\end{definition}
+
+To make reading the following proofs simpler, a standard naming convention has been adopted for points, lines and metrics.
+A points will be denoted as $X_n$, and it is assumed that its components are $[x_n, y_n]$.
+A line will be denoted as $l_n$, and it is assumed that its general form is $\langle a_n\!:\!b_n\!:\!c_n \rangle$.
+The metric $G$ will always be assumed to be $\begin{pmatrix} a & b \\ b & c\end{pmatrix}$.
+Unless otherwise specified it can be assumed that this convention is being followed.
+
+We will often associate a geometry with its metric, and thus the phrases ``a geometry with a metric $G$'' and ``a geometry $G$'' will be used interchangeably.
+Planar universal geometry allows many of the ideas of Euclidean geometry to be generalised.
+The dot product is one such operation.
+
+\begin{definition} The \emph{metric dot product} in a geometry with metric $G$ is defined as
+\begin{eqnarray}
+\vec{v}\cdot_G\vec{u} & = & \vec{v}^TG\vec{u}
+\end{eqnarray}
+where $\vec{v}$ and $\vec{u}$ are vectors which may represent either lines or points.
+\end{definition}
+
+The definition of a metric dot product leads naturally to the idea of a metric norm.
+
+\begin{definition} The \emph{metric norm} of a vector $\vec{q}$ in a geometry with metric $G$ is defined as
+\begin{eqnarray}
+\|\vec{q}\|_G & = & \vec{q}^TG\vec{q}.
+\end{eqnarray}
+\end{definition}
+It will often be clear from the context that the metric dot product or metric norm is being used, in which case the $_G$ subscript will be dropped to ease readability.
+
+
+\begin{definition} A line $l$ is a \emph{null line} in the geometry $G$ if the norm of the vector representation of the line is zero, i.e. $\|\vec{l}\|_G = 0$.
+\end{definition}
+
+\begin{definition} A point $X$ is a \emph{null point} in the geometry $G$ if the norm of the vector representation of the point is zero, i.e. $\|\vec{X}\|_G = 0$.
+\end{definition}
+
+In standard Euclidean geometry, the separation of any two points is given in terms of distance, which is calculated using a metric function such as $d(X_0, X_1) = \sqrt{\|\vec{X_1} - \vec{X_0}\|}$.
+Since we wish to use only field operations, we replace the concept of distance with that of quadrance.
+
+\begin{definition} The \emph{quadrance} between two points $X_0$ and $X_1$ in a geometry with metric $G$ is defined as
+\begin{eqnarray}
+Q(X_0, X_1)_G & = & \left\|\vec{X_0} - \vec{X_1}\right\|_G.
+\end{eqnarray}
+\end{definition}
+
+As is the case with distance, the standard measure of separation of lines, the angle between them, cannot be defined in terms of field operations.
+We replace the notion of angle with that of spread.
+
+\begin{definition}The \emph{spread} between two non-null lines $l_1$ and $l_2$ in a geometry with metric $G$ is defined as
+\begin{eqnarray}
+s & = & 1 - \frac{\left(\vec{l_1}\cdot_G \vec{l_2}\right)^2}{\|\vec{l_1}\|_G\|\vec{l_2}\|_G}.
+\end{eqnarray}
+\end{definition}
+If either $l_1$ or $l_2$ are null lines then the spread between these lines is not defined.
+The definition above is essentially identical to that for spread in universal geometry.
+We can use the fact that we are working in two dimensions to simplify this further.
+
+\begin{theorem}\label{th:alt-spread}The spread between the non-null lines $l_1 = \langle a_1\!:\!b_1\!:\!c_1 \rangle$ and $l_2 = \langle a_2\!:\!b_2\!:\!c_2 \rangle$ in a geometry $G$ is
+\begin{eqnarray}
+s & = & \Delta_G\frac{(a_1b_2 - a_2b_1)^2}{\|\vec{l_1}\|\|\vec{l_2}\|}.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}We first evaluate the denominator in the spread formula to get
+\begin{eqnarray*}
+\|\vec{l_1}\|\|\vec{l_2}\| & = & (ab_1^2 -2ba_1b_1 + ca_1^2)(ab_2^2 - 2ba_2b_2 + ca_2^2)\\
+ & = & a^2b_1^2b_2^2 +4b^2a_1a_2b_1b_2 + c^2a_1^2a_2^2 -2abb_1b_2(b_1a_2 + a_1b_2) + \\
+ &  & ac(a_2^2b_1^2 + a_1^2b_2^2) -2bca_1a_2(a_2b_1 + a_1b_2).
+\end{eqnarray*}
+Now, the numerator is
+\begin{eqnarray*}
+\left(\vec{l_1}\cdot \vec{l_2}\right)^2 & = & \left(b_1(ab_2 - ba_2) - a_1(bb_2 - ca_2)\right)^2\\
+ & = & \left(ab_1b_2 - b(a_1b_2 + a_2b_1) + ca_1a_2\right)^2\\
+ & = & a^2b_1^2b_2^2 + b^2(a_1b_2 + a_2b_1)^2 + c^2a_1^2a_2^2 -2abb_1b_2(a_1b_2 + a_2b_1) + \\
+ &   & 2aca_1a_2b_1b_2 - 2bca_1a_2(a_1b_2 + a_2b_1).
+\end{eqnarray*}
+Using the result found for the denominator we can write this as
+\begin{eqnarray*}
+\left(\vec{l_1}\cdot \vec{l_2}\right)^2 & = & \|\vec{l_1}\|\|\vec{l_2}\| + b^2(a_1b_2 + a_2b_1)^2 + 2aca_1a_2b_1b_2 - 4b^2a_1a_2b_1b_2 - \\
+ &  & ac(a_1^2b_2^2 + a_2^2b_1^2)\\
+ & = & \|\vec{l_1}\|\|\vec{l_2}\| + (b^2 - ac)(a_1b_2 - a_2b_1)^2\\
+ & = & \|\vec{l_1}\|\|\vec{l_2}\| - \Delta_G(a_1b_2 - a_2b_1)^2.
+\end{eqnarray*}
+The spread formula now becomes
+\begin{eqnarray*}
+s & = & 1 - \frac{\|\vec{l_1}\|\|\vec{l_2}\| - \Delta_G(a_1b_2 - a_2b_1)^2}{\|\vec{l_1}\|\|\vec{l_2}\|}\\
+ & = & \Delta_G\frac{(a_1b_2 - a_2b_1)^2}{\|\vec{l_1}\|\|\vec{l_2}\|}.
+\end{eqnarray*}
+\end{proof}
+
+\begin{definition}[Archimedes function]
+The function $A : \mathbb{F}\times\mathbb{F}\times\mathbb{F} \to \mathbb{F}$ defined as
+\begin{eqnarray}
+a, b, c & \mapsto & (a + b + c)^2 - 2(a^2 + b^2 + c^2)\label{eq:arch}
+\end{eqnarray}
+is called \emph{Archimedes function}\cite{thebook}.
+\end{definition}
+
+\section{Properties of Lines}
+
+Many of the properties of lines in rational trigonometry extend naturally to planar universal geometry.
+In the following definitions we do not use the metric of the geometry explicitly and so equivalent results can be found in the study of rational trigonometry\cite{thebook}.
+
+\begin{definition} Two lines are \emph{perpendicular} when the spread between them is equal to one.
+\end{definition}
+
+\begin{corollary} If two lines are perpendicular then their metric dot product is zero.
+\end{corollary}
+\begin{proof}This follows directly from the definition of the spread between two lines.
+\end{proof}
+
+\begin{definition} Two lines $l_1$ and $l_2$ are \emph{parallel} if $a_1b_2 - a_2b_1 = 0$.
+\end{definition}
+\begin{corollary} Two non-null lines $l_1$ and $l_2$ are parallel if and only if the spread between them is zero.
+\end{corollary}
+\begin{proof}This follows directly from Theorem \ref{th:alt-spread}.
+\end{proof}
+
+\begin{definition} A \emph{point of intersection} of two lines is a point which lies on both lines.
+\end{definition}
+\begin{theorem}\label{th:intersect}If two lines $l_1$ and $l_2$ are not parallel then they intersect at the point $X = \left[\frac{b_1c_2 - b_2c_1}{a_1b_2 - a_2b_1}, \frac{a_2c_1 - a_1c_2}{a_1b_2 - a_2b_1}\right]$.
+\end{theorem}
+\begin{proof}We need to solve the following two equations for $x$ and $y$:
+\begin{eqnarray*}
+a_1x + b_1y + c_1 & = & 0\\
+a_2x + b_2y + c_2 & = & 0.
+\end{eqnarray*}
+Writing these in matrix form we get
+\begin{eqnarray*}
+\begin{pmatrix}a_1 & b_1 \\ a_2 & b_2 \end{pmatrix}\begin{pmatrix}x \\ y \end{pmatrix} & = & -\begin{pmatrix}c_1 \\ c_2 \end{pmatrix}\\
+\begin{pmatrix} x \\ y \end{pmatrix} & = & -\begin{pmatrix} a_1 & b_1 \\ a_2 & b_2 \end{pmatrix}^{-1}\begin{pmatrix}c_1 \\ c_2 \end{pmatrix}\\
+ & = & \frac{-1}{a_1b_2 - a_2b_1}\begin{pmatrix} b_2 & -b_1 \\ -a_2 & a_1 \end{pmatrix}\begin{pmatrix}c_1 \\ c_2 \end{pmatrix}
+\end{eqnarray*}
+\end{proof}
+
+\begin{definition} Given a point $X_0$ and a line $l_1$, the \emph{residue} of the point with respect to the line is
+\begin{eqnarray}
+l_1(X_0) & = & a_1x_0 + b_1y_0 + c_1.
+\end{eqnarray}
+\end{definition}
+\begin{corollary}If the point $X$ lies on the line $l$ then $l(X) = 0$.
+\end{corollary}
+\begin{proof}
+This is an immediate consequence of the definition of a line as the locus of points satisfying the equation $ax + by + c = 0$.
+\end{proof}
+
+\section{Properties of Points}
+
+Given two distinct points, the line which passes through them is defined independently of the geometry.
+As such the first theorem regarding points is a well known result of Euclidean geometry.
+\begin{theorem} The line which passes through the points $X_0$ and $X_1$ is $\langle a_1\!:\!b_1\!:\!c_1\rangle$ where
+\begin{eqnarray}
+a_1 & = & y_1 - y_0\\
+b_1 & = & x_0 - x_1\\
+c_1 & = & x_1y_0 - x_0y_1.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}If we assume the line has the form given above and then take the residues of $X_0$ and $X_1$ we get
+\begin{eqnarray*}
+l_1(X_0) & = & (y_1 - y_0)x_0 + (x_0 - x_1)y_0 + (x_1y_0 - x_0y_1)\\
+ & = & 0\\
+l_1(X_1) & = & (y_1 - y_0)x_1 + (x_0 - x_1)y_1 + (x_1y_0 - x_0y_1)\\
+ & = & 0.
+\end{eqnarray*}
+Since the residue of both points is zero they both lie on the line, as required.
+\end{proof}
+
+The quadrance between two points is defined in terms of the metric of the geometry.
+As such we expect that the set of points which are equiquadrance from two given points to depend on the metric.
+As is the case with Euclidean geometry, this set of points turns out to always be a line.
+
+\begin{definition} The \emph{equiquadrance line} in a geometry $G$ between two points $X_0$ and $X_1$ is the locus of points such that $Q(X, X_0) = Q(X, X_1)$.
+\end{definition}
+
+\begin{theorem}
+Given two points $X_0$, $X_1$ in a geometry $G$, the equation of the equiquadrance line is $\langle a_1\!:\!b_1\!:\!c_1\rangle$ where
+\begin{eqnarray}
+\begin{pmatrix} a_1 \\ b_1 \end{pmatrix} & = & 2G(\vec{X_0} - \vec{X_1})\\
+c_1 & = & \vec{X_1}^2 - \vec{X_0}^2.
+\end{eqnarray}
+\end{theorem}
+\begin{proof} From the definition we have
+\begin{eqnarray*}
+Q(X, X_0) & = & Q(X, X_1)\\
+\vec{X_0}^2 - 2\vec{X_0}\cdot\vec{X} + \vec{X}^2 & = & \vec{X_1}^2 - 2\vec{X_1}\cdot\vec{X} + \vec{X}^2\\
+2(\vec{X_0} - \vec{X_1})\cdot\vec{X} + \vec{X_1}^2 - \vec{X_0}^2 & = & 0.
+\end{eqnarray*}
+\end{proof}
+
+We can now obtain a result which is inspired by Euclidean geometry.
+In Euclidean geometry, the points on the perpendicular bisector of two points are equidistant from the two points.
+In planar universal geometry we have the following generalised version of this theorem.
+
+\begin{theorem}Given two points $X_0$ and $X_1$, the equiquadrance line is perpendicular to the line between the two points.
+\end{theorem}
+\begin{proof}
+If $l_1$ is the line through $X_0$ and $X_1$, and $l_2$ is their perpendicular bisector then the metric dot product of the two lines is
+\begin{eqnarray*}
+\vec{l_1}\cdot\vec{l_2} & = & \begin{pmatrix}-b_2 \\ a_2\end{pmatrix}\begin{pmatrix}a & b \\ b & c\end{pmatrix}\begin{pmatrix}-b_1 \\ a_1\end{pmatrix}\\
+                        & = & 2\begin{pmatrix}-(b(x_0 - x_1) + c(y_0 - y_1)) \\ a(x_0 - x_1) + b(y_0 - y_1)\end{pmatrix}\begin{pmatrix}a & b \\ b & c\end{pmatrix}\begin{pmatrix}x_1 - x_0 \\ y_1 - y_0\end{pmatrix}\\
+                        & = & 2\begin{pmatrix}-(b(x_0 - x_1) + c(y_0 - y_1)) \\ a(x_0 - x_1) + b(y_0 - y_1)\end{pmatrix}\begin{pmatrix}a(x_1 - x_0) + b(y_1 - y_0) \\ b(x_1 - x_0) + c(y_1 - y_0)\end{pmatrix}\\
+ & = & 0.
+\end{eqnarray*}
+Since their dot product is zero, the lines are perpendicular.
+\end{proof}
+
+\section{Altitudes}
+
+Another idea we can borrow from Euclidean geometry is that of an altitude.
+\begin{definition}In a geometry with metric $G$, given a point $X_0$ and a line $l_1$, an \emph{altitude} is a line which passes through $X_0$ and is perpendicular to $l_1$ with respect to the metric.
+\end{definition}
+While the definition of an altitude in planar universal geometry is equivalent to that in Euclidean geometry, the equation of the altitude line and its foot depend on the metric.
+\begin{theorem}Given a point $X_0$ and a line $l_1$ in a geometry with metric $G$, the altitude $l_a$ has the form $\langle ba_1 - ab_1\!:\!ca_1 - bb_1\!:\!(ab_1 - ba_1)x_0 + (bb_1 - ca_1)y_0 \rangle$.
+\end{theorem}
+\begin{proof}
+We require $l_1$ and $l_a$ to be perpendicular, which means we must have $\vec{l_1}\cdot_G\vec{l_a} = 0$.
+This leads to the equation
+\begin{eqnarray}
+-(ba_1 - ab_1)b_a + (ca_1 - bb_1)a_a & = & 0.\nonumber
+\end{eqnarray}
+A solution to this equation is $\vec{l_a} = (bb_1 - ca_1, ba_1 - ab_1)^T$, giving $l_a = \langle ba_1 - ab_1\!:ca_1 - bb_1\! \!:\! c_a \rangle$.
+We require the altitude $l_a$ to pass through $X_0$ and so
+\begin{eqnarray*}
+l_a(X_0) & = & 0\\
+(ba_1 - ab_1)x_0 + (ca_1 - bb_1)y_0 + c_1 & = & 0\\
+c_1 & = & (ab_1 - ba_1)x_0 + (bb_1 - ca_1)y_0.
+\end{eqnarray*}
+\end{proof}
+
+\begin{definition}In a geometry with metric G, given a line, a point and the altitude from the point to the line, the \emph{altitude foot} is defined as the point where the altitude intersects the line.
+\end{definition}
+\begin{theorem}\label{theorem:foot}Given a point $X_0$ and a line $l_1$ in a geometry with metric $G$, the foot of the altitude is $F = [x_F, y_F]$ where
+\begin{eqnarray}
+F_x & = & -\frac{b_1x_0(ba_1 - ab_1) + (ca_1 - bb_1)(c_1 + b_1y_0)}{\|\vec{l_1}\|}\\
+F_y & = &  \frac{a_1y_0(ca_1 - bb_1) + (ba_1 - ab_1)(c_1 + a_1x_0)}{\|\vec{l_1}\|}.
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+For a given $l_1$ and $X_0$, we wish to find the foot of the altitude, $F = [x_F, y_F]$, which is the point where $l_1$ intersects the altitude $l_a$. From Theorem \ref{th:intersect}, which gives the intersection of two lines, we find that
+\begin{eqnarray}
+F_x & = & \frac{b_1c_a - b_ac_1}{a_1b_a - a_ab_1}\nonumber\\
+    & = & \frac{-b_1((ba_1 - ab_1)x_0 + (ca_1 - bb_1)y_0) - (ca_1 - bb_1)c_1}{a_1(ca_1 - bb_1) - (ba_1 - ab_1)b_1}\nonumber\\
+    & = & \frac{-b_1x_0(ba_1 - ab_1) - (ca_1 - bb_1)(c_1 + b_1y_0) }{\|\vec{l_1}\|}\nonumber\\
+F_y & = & \frac{a_ac_1 - a_1c_a}{a_1b_a - a_ab_1}\nonumber\\
+    & = & \frac{c_1(ba_1 - ab_1) - a_1((ab_1 - ba_1)x_0 + (bb_1 - ca_1)y_0)}{\|\vec{l_1}\|}\nonumber\\
+    & = & \frac{(ba_1 - ab_1)(c_1 + a_1x_0) + (ca_1 - bb_1)a_1y_0}{\|\vec{l_1}\|}.\nonumber
+\end{eqnarray}
+\end{proof}
+While the equation for the foot of the altitude is reasonably complex, the quadrance between the foot and the original point is relatively simple.
+\begin{definition}The \emph{point-line quadrance} between a point and a line is defined as the quadrance between the point and the foot of the altitude formed with the line.
+\end{definition}
+\begin{theorem}Given a point $X_0$ and a line $l_1$ in a geometry with metric $G$, the point-line quadrance is
+\begin{eqnarray}
+Q(X_0, l_1) & = & \frac{l_1(X_0)^2}{\|\vec{l_1}\|}\Delta_G.\label{eq:point-line}
+\end{eqnarray}
+\end{theorem}
+\begin{proof}
+If $X_0 = [x_0, y_0]$ and the foot of the altitude is $F = [x_F, y_F]$ then from the definition we have
+\begin{eqnarray}
+Q(X_0, l_1) & = & Q(X_0, F)\nonumber\\
+        & = & a(x_F - x_0)^2 + 2b(x_F - x_0)(y_F - y_0) + c(y_F - y_0)^2.\label{eq:foot}
+\end{eqnarray}
+From Theorem \ref{theorem:foot} we have
+\begin{eqnarray}
+x_F - x_0 & = & \frac{-b_1x_0(ba_1 - ab_1) - (ca_1 - bb_1)(c_1 + b_1y_0) - (ab_1^2 - 2ba_1b_1 + ca_1^2)x_0}{ab_1^2 - 2ba_1b_1 + ca_1^2}\nonumber\\
+          & = & \frac{ba_1b_1x_0 - (ca_1 - bb_1)(c_1 + b_1y_0) - ca_1^2x_0}{\|\vec{l_1}\|}\nonumber\\
+          & = & \frac{(bb_1 - ca_1)(a_1x_0 + b_1y_0 + c_1)}{\|\vec{l_1}\|}\nonumber\\
+          & = & \frac{l_1(X_0)}{\|\vec{l_1}\|}(bb_1 - ca_1)\nonumber\\
+y_F - y_0 & = & \frac{(ba_1 - ab_1)(c_1 + a_1x_0) + (ca_1 - bb_1)a_1y_0 - (ab_1^2 - 2ba_1b_1 + ca_1^2)y_0 }{ab_1^2 - 2ba_1b_1 + ca_1^2}\nonumber\\
+          & = & \frac{(ba_1 - ab_1)(c_1 + a_1x_0) + ba_1b_1y_0 - ab_1^2y_0 }{\|\vec{l_1}\|}\nonumber\\
+          & = & \frac{(ba_1 - ab_1)(a_1x_0 + b_1y_0 + c_1)}{\|\vec{l_1}\|}\nonumber\\
+          & = & \frac{l_1(X_0)}{\|\vec{l_1}\|}(ba_1 - ab_1).\nonumber
+\end{eqnarray}
+Combining these expressions with equation \ref{eq:foot} we finally find
+\begin{eqnarray}
+Q(X_0, l_1) & = & \left(\frac{l_1(X_0)}{\|\vec{l_1}\|}\right)^2\left( a(bb_1 - ca_1)^2 + 2b(bb_1 - ca_1)(ba_1 - ab_1) + c(ba_1 - ab_1)^2 \right)\nonumber\\
+        & = & \left(\frac{l_1(X_0)}{\|\vec{l_1}\|}\right)^2\left( (ac^2 - b^2c)a_1^2 - 2(abc - b^3)a_1b_1 + (a^2c - ab^2)b_1^2 \right)\nonumber\\
+        & = & \left(\frac{l_1(X_0)}{\|\vec{l_1}\|}\right)^2(ac - b^2)( ca_1^2 - 2ba_1b_1 + ab_1^2)\nonumber\\
+        & = & \frac{l_1(X_0)^2}{\|\vec{l_1}\|}\Delta_G.
+\end{eqnarray}
+\end{proof}
+
+The results in this chapter show how ideas from Euclidean geometry can be expressed in planar universal geometry.
+In the following chapter we will use these ideas to build up a theory of conics.

@@ -1,0 +1,22 @@
+\contentsline {section}{Introduction}{2}
+\contentsline {section}{\numberline {1}BibTeX}{2}
+\contentsline {section}{\numberline {2}The `{\tt astron}' style files}{2}
+\contentsline {subsection}{\numberline {2.1}$\delimiter "026E30F ${\tt cite} and $\delimiter "026E30F ${\tt cite*}}{2}
+\contentsline {subsection}{\numberline {2.2}{\tt astron.bst} and {\tt astron.sty}}{3}
+\contentsline {subsection}{\numberline {2.3}Required, optional, and ignored fields}{3}
+\contentsline {section}{\numberline {3}Examples}{3}
+\contentsline {section}{\numberline {4}Abbreviations}{3}
+\contentsline {section}{\numberline {5}Maintaining the database}{4}
+\contentsline {section}{\numberline {6}Credits}{4}
+\contentsline {section}{\numberline {A}Aspects of publishing with T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m \ and LaTeX}{5}
+\contentsline {subsection}{\numberline {A.1}Generalized Mark-up}{5}
+\contentsline {subsection}{\numberline {A.2}T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m }{6}
+\contentsline {subsection}{\numberline {A.3}LaTeX\ as a Generalized Mark-up Language}{6}
+\contentsline {subsection}{\numberline {A.4}T\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m , and the `typewriter syndrome'}{7}
+\contentsline {subsection}{\numberline {A.5}Consultation and education}{7}
+\contentsline {subsection}{\numberline {A.6}Concluding remarks}{8}
+\contentsline {section}{\numberline {B}Classes of the fields}{9}
+\contentsline {section}{\numberline {C}Changing the style files yourself}{11}
+\contentsline {subsection}{\numberline {C.1}{\tt astron.bst}}{11}
+\contentsline {subsection}{\numberline {C.2}{\tt astron.sty}}{11}
+\contentsline {section}{\numberline {D}Mnemonics}{12}

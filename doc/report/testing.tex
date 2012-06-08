@@ -1,0 +1,175 @@
+\chapter{Testing}\label{chap:test}
+
+For a mathematical software library to be of practical value, the user must trust it to provide correct results.
+Furthermore it must handle all possible inputs the user might give it, either in producing a correct result or else informing the user that their input is invalid.
+To provide this level of assurance it is not sufficient for the library developer to simply claim that their software meets these standards, they must be able to demonstrate it.
+Furthermore, the user must be able to reproduce this demonstration when the software is installed on their own systems.
+
+Such demonstrations generally come in the form of a \emph{test suite}, which is a piece of software designed to utilise the library in a systematic way, verifying the results produced.
+The \pygeom library provides such a test suite, which is described below.
+This test suite aims to provide a level of assurance to the users of the library, however it should be noted that the suite is necessarily incomplete, in that it does not test \emph{every} possibly combination of inputs.
+As such there may be bugs in the library which are not detected by the test suite.
+As the old adage goes, testing can only prove the presence of bugs, not their absence.
+
+Mathematical software libraries such as \pygeom have the nice property that their inputs and outputs represent mathematical objects.
+By taking advantage of the mathematical properties of these objects, it can generally be confirmed that the software is performing as expected.
+For example, if we were to construct the foot of an altitude to a line, a test could confirm that the foot did indeed lie on the original line.
+
+In this chapter we outline some of the techniques used to test \pygeom with the aim of assuring any user that it will perform as expected.
+The users of the library are encouraged to inspect and use these tests to independently verify the correctness of the library.
+
+\section{Unit Testing}
+
+\emph{Unit testing}\footnote{\url{http://en.wikipedia.org/wiki/Unit_testing}} is a method of testing individual components of a software system.
+The software system is broken down into components, or \emph{units}, and tests are written which exercise these units independently from each other.
+A unit might be an individual module, class or function.
+Each \emph{unit test} will execute a particular unit and then check to make sure the results are as expected.
+Each unit may have multiple unit tests, each checking different aspects of the result.
+Furthermore, each unit test may be run multiple times, using different inputs but checking the same output condition each time.
+
+A benefit of unit testing is that when errors are detected, they can generally be tracked down easily, since small pieces of code are being run in a relatively independent manner.
+This reduces the number of places the developer must search to find the underlying cause of an error, which leads to faster debugging.
+A disadvantage of unit testing is that it will not detect errors which arise as a result of interaction between different modules.
+This can be particularly problematic in very large, tightly coupled software systems, such as a word processor or operating system.
+In the case of \pygeom\!\!, which is a simple, loosely coupled system, this is not so much of a concern.
+
+\section{Fuzz Testing}
+
+Another form of testing which is used by \pygeom is \emph{fuzz testing}.
+Fuzz testing involves calling the library with random input and ensuring that it handles the data correctly.
+This allows a wide range of inputs to be tested while also generating input conditions which might have been difficult to manually construct or else might have been overlooked by the developer.
+
+A drawback of fuzz testing, compared to manually constructed examples, is that it cannot use explicit expected output results and must rely on mathematical identities and other invariants.
+For example, if we wanted to test an \texttt{add()} function, which simply added two variables, we could construct an explicit example to test it.
+\begin{verbatim}
+x = 5
+y = 10
+assert add(x, y) == 15
+\end{verbatim}
+Using fuzz testing, we can only test known properties such as the commutative property, e.g.
+\begin{verbatim}
+a = random()
+b = random()
+assert add(a, b) == add(b, a)
+\end{verbatim}
+In a mathematical library such as \pygeom we have many such identities available to use and therefore we can effectively make use of fuzz testing.
+
+\section{Coverage Testing}
+
+When testing a software library it is important to know that the entire library has been tested (or to at least know which parts have \emph{not} been tested!).
+If a particular piece of the library, be it an entire function or a single line, has not been tested, then the developer cannot be sure that it will work as expected.
+\emph{Coverage testing} is a technique which keeps track of each line of code as it is executed by the test suite and then provides a report at the end showing which lines of code were executed and which were not.
+
+Coverage testing provides a useful metric of the extensiveness of a test suite, however the results must be used with caution.
+Simply executing every line of code once is by no means sufficient to claim that the library is fully tested, as each line must be able to deal with many different input conditions.
+As such, complete coverage of the library should be considered a necessary but not sufficient condition for a test suite to be considered complete.
+
+\section{\pygeom Test Framework}
+
+The \pygeom library has a test suite which uses a combination of the above techniques.
+This test suite is built on top of the Nose test framework, which is ``a unittest-based testing framework for python that makes writing and running tests easier''\footnote{\url{http://code.google.com/p/python-nose/}}.
+Running the test suite is done using the \texttt{nosetest} program and produces the following results:
+\begin{verbatim}
+$ nosetests
+................................................
+----------------------------------------------------------------------
+Ran 48 tests in 124.761s
+
+OK
+\end{verbatim}
+If we edit the library to create an error, such as changing the \texttt{Conic.centre\_quadrance()} method to return \texttt{K+1} instead of \texttt{K}, nosetest will indicate the error as follows.
+\scriptsize
+\begin{verbatim}
+$ nosetests
+....F...........................................
+======================================================================
+FAIL: test_conic.test_fuzz_circle
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Library/Python/2.5/site-packages/nose-0.10.3-py2.5.egg/nose/case.py", line 182, in runTest
+    self.test(*self.arg)
+  File "/Users/timleslie/src/pygeom/tests/test_conic.py", line 116, in test_fuzz_circle
+    assert new_K == K
+AssertionError
+
+----------------------------------------------------------------------
+Ran 48 tests in 121.957s
+
+FAILED (failures=1)
+\end{verbatim}
+\normalsize
+By examining the code in the failing test (\texttt{test\_fuzz\_circle} in \texttt{test\_conic.py}) we see that the return value of \texttt{centre\_quadrance()} was not equal to the expected value.
+This corresponds nicely with the nature of the artificial bug and shows how this test framework can help in detecting and tracking down errors.
+
+\subsection{Coverage}
+The Nose test framework supports coverage testing as an additional command line option. When run with coverage testing enabled, \texttt{nosetest} gives the following results for the \pygeom library.
+\begin{verbatim}
+$ nosetests --with-coverage --cover-erase --cover-package=pygeom
+................................................
+Name              Stmts   Exec  Cover   Missing
+-----------------------------------------------
+pygeom                0      0   100%   
+pygeom.core         180    178    98%   27, 33
+pygeom.field        209    209   100%   
+pygeom.geometry      28     28   100%   
+pygeom.pairs        198    198   100%   
+pygeom.util          96     96   100%   
+-----------------------------------------------
+TOTAL               711    709    99%   
+----------------------------------------------------------------------
+Ran 48 tests in 853.834s
+
+OK
+\end{verbatim}
+
+The report shows, for each module in the package, how many executable statements were found (\texttt{Stmts}), the number of these statements which were actually executed (\texttt{Exec}), the coverage as a percentage (\texttt{Cover}), and the line numbers of those lines which were not executed (\texttt{Missing}).
+
+The two lines which do not get executed by the test suite are the bodies of abstract methods in the \texttt{Core} class and thus cannot be executed by design.
+The results thus tell us that the \pygeom test suite has effectively complete coverage.
+This ensures that the entire library is free from trivial bugs, e.g. lines of code which would not work correctly for \emph{any} input.
+As mentioned above however, we must consider the tests themselves to gauge the completeness of the test suite.
+
+\section{\pygeom Test Suite}
+
+The \pygeom test suite consists of a number of Python modules, each of which contain a set of test functions.
+Each test function constitutes a single unit test.
+These functions will generally create some test data, perform some operations on it using the \pygeom library and then verify that the result is as expected.
+Each of these test modules is described below.
+
+
+\subsection{\texttt{test\_field.py}}
+
+This module contains a series of tests for the \texttt{Field}, \texttt{FiniteField} and \texttt{Rational} classes.
+Each of the field operations is tested on concrete examples with known results to ensure that the most trivial calculations give correct numerical results.
+Fuzz testing is then used to test the twelve field axioms\footnote{\url{http://mathworld.wolfram.com/FieldAxioms.html}} on randomly generated values.
+This ensures that the implementation does indeed implement the mathematical objects it claims to.
+
+\subsection{\texttt{test\_rational.py}}
+
+The \texttt{test\_rational.py} module adds some extra tests which are specific to the \texttt{Rational} class.
+These tests ensure that initialisation of rational values behaves correctly over a wide range of cases and also that the internal representation correctly removes common any common factors.
+
+\subsection{\texttt{test\_core.py}}
+
+The \texttt{Point} and \texttt{Line} classes are tested by the \texttt{test\_core.py} module.
+A range of initialisation tests are performed to ensure that creating objects behaves as expected.
+As well as this, fuzz testing is performed on random points to ensure that \texttt{Point} objects behave properly as vectors.
+This requires making sure that vector addition and scalar multiplication work as expected.
+
+\subsection{\texttt{test\_conic.py}}
+The \texttt{Conic} class is tested separately from the other core objects, as it has a significantly larger API to cover.
+The module \texttt{test\_conic.py} uses fuzz testing to generate points and lines which in turn are used to create general conics, parabola, circle, quadrolas and grammolas.
+The generated conics are then tested to ensure that they satisfy the respective properties which have been derived in Chapter \ref{chap:conics}.
+
+\subsection{\texttt{test\_pairs.py}}
+
+The \texttt{test\_pairs.py} module works in much the same way as the \texttt{test\_conics.py} module.
+It uses fuzz testing to generate random points and lines, then combines these into pair objects.
+These pair objects then have their methods called, and the returned objects are compared with the expected results from Chapter \ref{chap:metric}.
+
+\section{Summary}
+
+This chapter has outlined the \pygeom test suite.
+These tests should allow the user to trust that the library will perform correctly in a wide range of situations.
+Furthermore, they will serve as useful tool in any future developments of the library, as the developers will be able to quickly verify that any changes they make do not break existing functionality.
+
